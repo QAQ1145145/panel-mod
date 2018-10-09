@@ -1,7 +1,7 @@
 
 
 
-{include file='user/main.tpl'}
+G{include file='user/main.tpl'}
 {$ssr_prefer = URL::SSRCanConnect($user, 0)}
 
 
@@ -135,11 +135,11 @@
 													</div>
 													<div class="tab-pane fade" id="all_ssr_ios">
                                                         <p><span class="icon icon-lg text-white">looks_one</span> 切换<code>App Store</code>账号-ID:<code>
-														    {if $user->class>4}                                          	 down@m-e.me
+														    {if $user->class>1}                                          	 down@m-e.me
 															{else}															VIP用户可见
 															{/if}
 														</code>密码<code>
-														{if $user->class>4}															Gg112211
+														{if $user->class>1}															Gg112211
 															{else}															VIP用户可见
 															{/if}
 														</code>注意特殊符号与大小写,如果显示需要解锁账号，请提交工单或邮件。（千万不要试图登陆iCloud，会上传您的照片与通讯录到这个账户上）</p>
