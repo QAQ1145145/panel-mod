@@ -83,6 +83,10 @@ $app->post('/telegram_callback', 'App\Controllers\HomeController:telegram');
 $app->get('/yft/notify', 'App\Controllers\YFTPayCallBackController:yft_notify');
 $app->get('/codepay_callback', 'App\Controllers\HomeController:codepay_callback');
 $app->post('/codepay_callback', 'App\Controllers\HomeController:codepay_pay_callback');
+$app->get('/legal', 'App\Controllers\HomeController:legal');
+$app->get('/legal/tos', 'App\Controllers\HomeController:tos');
+$app->get('/legal/privacy', 'App\Controllers\HomeController:privacy');
+$app->get('/legal/aup', 'App\Controllers\HomeController:aup');
 
 
 // User Center
