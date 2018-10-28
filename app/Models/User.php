@@ -44,6 +44,11 @@ class User extends Model
         return "/images/Avatar.jpg";//.$hash;
     }
 
+	public function renew_date()
+    {
+        return $this->attributes['auto_reset_day'];
+    }
+	
     public function isAdmin()
     {
         return $this->attributes['is_admin'];
