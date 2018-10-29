@@ -95,7 +95,7 @@ G{include file='user/main.tpl'}
                                                         {$user = URL::getSSRConnectInfo($pre_user)}
 														{$ssr_url_all = URL::getAllUrl($pre_user, 0, 0)}
 														{$ssr_url_all_mu = URL::getAllUrl($pre_user, 1, 0)}
-														<p><span class="icon icon-lg text-white">looks_one</span> 下载<a href="https://raw.githubusercontent.com/bfsdo0/ss-tap-mod/master/ssr-win.7z">客户端</a>和<a href="/user/getpcconf?is_mu=0&is_ss=0">配置文件</a></p>
+														<p><span class="icon icon-lg text-white">looks_one</span> 下载<a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ssr-win.7z">客户端</a>和<a href="/user/getpcconf?is_mu=0&is_ss=0">配置文件</a></p>
                                                           <p><span class="icon icon-lg text-white">looks_two</span> 解压后将配置文件放到客户端目录下</p>
                                                           <p><span class="icon icon-lg text-white">looks_3</span> 运行程序</p>
 
@@ -110,7 +110,7 @@ G{include file='user/main.tpl'}
                                                        <p><a href="https://wiki.maile3.com/?p=20">点击这里查看Windows傻瓜式教程</a></p>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_mac">
-															<p><span class="icon icon-lg text-white">looks_one</span><a href="https://raw.githubusercontent.com/bfsdo0/ss-tap-mod/master/ssr-mac.dmg"> 点击我下载</a></p>
+															<p><span class="icon icon-lg text-white">looks_one</span><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ssr-mac.dmg"> 点击我下载</a></p>
                                                       		<p><span class="icon icon-lg text-white">looks_two</span> 打开下载的Dmg文件</p>
                                                      	    <p><span class="icon icon-lg text-white">looks_3</span> 把ShadowsocksX拖入到Finder的应用程序列表(Applications)</p>
                                                       		<p><span class="icon icon-lg text-white">looks_4</span> 打开Launchapad里的ShadowsocksX</p>
@@ -157,7 +157,7 @@ G{include file='user/main.tpl'}
                                                       <p><a href="https://wiki.maile3.com/?p=24">点击这里查看iOS傻瓜式教程</a></p>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_android">
-														<p><span class="icon icon-lg text-white">filter_1</span><a href="https://github.com/bfsdo0/ss-tap-mod/raw/master/ssr-android.apk"> 点击我下载</a>并安装</p>
+														<p><span class="icon icon-lg text-white">filter_1</span><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ssr-android.apk"> 点击我下载</a>并安装</p>
                                                       <p><span class="icon icon-lg text-white">filter_2</span> 打开App，点击右下角的<span class="icon icon-lg text-white">add</span>号图标</p>
                                                         <p><span class="icon icon-lg text-white">filter_3</span> 添加/升级 SSR订阅</p>
                                                           <p><span class="icon icon-lg text-white">filter_4</span> 添加订阅地址，输入以下订阅地址后确定</p>
@@ -184,7 +184,7 @@ G{include file='user/main.tpl'}
                                                       <p><a href="https://wiki.maile3.com/?p=29">点击这里查看路由器傻瓜式教程</a></p>
 													</div>
                                                     <div class="tab-pane fade" id="all_ssr_game">
-														 <p><span class="icon icon-lg text-white">looks_one</span><a href="https://raw.githubusercontent.com/bfsdo0/ss-tap-mod/master/%E5%8F%AE%E5%BD%93%E5%8A%A0%E9%80%9F%E5%99%A8-setup.exe">点击我下载</a></p>
+														 <p><span class="icon icon-lg text-white">looks_one</span><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/%E5%8F%AE%E5%BD%93%E5%8A%A0%E9%80%9F%E5%99%A8-setup.exe">点击我下载</a></p>
                                                        <p><span class="icon icon-lg text-white">looks_two</span> 安装期间会安装虚拟网卡，请点击允许或确认</p>
                                                        <p><span class="icon icon-lg text-white">looks_3</span> 打开桌面程序叮当加速器</p>
                                                        <p><span class="icon icon-lg text-white">looks_4</span> 输入您的邮箱和密码</p>
@@ -287,19 +287,19 @@ G{include file='user/main.tpl'}
 														{/if}
 													</div>
 													<div class="tab-pane fade" id="all_ss_windows">
-														<p><a href="https://github.com/bfsdo0/ss-tap-mod/raw/master/ss-win.zip">下载</a>，解压，运行程序，然后您有两种方式导入所有节点<br>
+														<p><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ss-win.zip">下载</a>，解压，运行程序，然后您有两种方式导入所有节点<br>
 															(1)下载<a href="/user/getpcconf?is_mu=0&is_ss=0">这个（普通端口）</a>，放到小飞机的目录下，然后打开小飞机。<br>
 															(2)点击<a class="copy-text" data-clipboard-text="{$ss_url_all_win}">这里（普通端口）</a>, 然后右键小飞机 -- 从剪贴板导入 URL<br>
 													</div>
 													<div class="tab-pane fade" id="all_ss_mac">
-														<p><a href="https://raw.githubusercontent.com/bfsdo0/ss-tap-mod/master/ss-mac.zip">下载</a>，安装，然后下载<a href="/user/getpcconf?is_mu=0&is_ss=1">这个（普通端口）</a>或者<a href="/user/getpcconf?is_mu=1&is_ss=1">这个（单端口多用户）</a>，运行程序，小飞机上右键 服务器列表 子菜单 的 “导入服务器配置文件...” 导入这个文件，然后选择一个合适的服务器，更新一下PAC，然后开启系统代理即可上网。</p>
+														<p><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ss-mac.zip">下载</a>，安装，然后下载<a href="/user/getpcconf?is_mu=0&is_ss=1">这个（普通端口）</a>或者<a href="/user/getpcconf?is_mu=1&is_ss=1">这个（单端口多用户）</a>，运行程序，小飞机上右键 服务器列表 子菜单 的 “导入服务器配置文件...” 导入这个文件，然后选择一个合适的服务器，更新一下PAC，然后开启系统代理即可上网。</p>
 													</div>
 													<div class="tab-pane fade" id="all_ss_ios">
 														<p>推荐下载<a href="https://itunes.apple.com/cn/app/shadowrocket/id932747118?mt=8">Shadowrocket</a>，请在左侧菜单栏里提交工单申请已购买软件的美国商店Apple ID自行切换商店账号下载安装，为了您的隐私安全，请不要登录 iCloud 。下载完成后在 Safari 中点击<a href="{$ss_url_all}">这个（普通端口）</a>或者<a href="{$ss_url_all_mu}">这个（单端口多用户）</a>，然后点击确定，就可以批量添加节点。</p>
 														<p>iOS 下载<a href="/link/{$ios_token}?is_ss=1">这个（普通端口）</a>或者<a href="/link/{$ios_token}?is_ss=1&is_mu=1">这个（单端口多用户）</a>，导入到 Surge 中，然后就可以随意切换服务器上网了。</p>
 													</div>
 													<div class="tab-pane fade" id="all_ss_android">
-														<p><a href="https://github.com/bfsdo0/ss-tap-mod/raw/master/ssr-android.apk">下载</a>，再<a href="https://github.com/bfsdo0/ss-tap-mod/raw/master/ss-android-obfs.apk">下载</a>，然后安装，然后在手机上点击 <a class="copy-text" data-clipboard-text="{$ss_url_all}"> 这个链接（普通端口）</a>或者<a class="copy-text" data-clipboard-text="{$ss_url_all_mu}">这个链接（单端口多用户端口）</a>复制到剪贴板，打开 Shadowsocks 客户端，选择从剪贴板导入，然后选择一个节点，设置一下路由为绕过大陆，点击飞机就可以上网了。</p>
+														<p><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ssr-android.apk">下载</a>，再<a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ss-android-obfs.apk">下载</a>，然后安装，然后在手机上点击 <a class="copy-text" data-clipboard-text="{$ss_url_all}"> 这个链接（普通端口）</a>或者<a class="copy-text" data-clipboard-text="{$ss_url_all_mu}">这个链接（单端口多用户端口）</a>复制到剪贴板，打开 Shadowsocks 客户端，选择从剪贴板导入，然后选择一个节点，设置一下路由为绕过大陆，点击飞机就可以上网了。</p>
 													</div>
 													<div class="tab-pane fade" id="all_ss_router">
 														<p>路由器 刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">这个固件</a>，然后 SSH 登陆路由器，执行以下命令（导入普通端口）<br>

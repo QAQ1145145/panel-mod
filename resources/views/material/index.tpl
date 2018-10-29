@@ -111,11 +111,11 @@
 	                        <article id="5">
 							<h2 class="major">软件下载</h2>
 							<ul>
-							  <li><a href="/ssr-download/ssr-win.7z" class="icon fa-windows"><span class="label"></span> Windows</a></li>
-							  <li><a href="/ssr-download/ssr-mac.dmg" class="icon fa-apple"><span class="label">Mac</span> Mac</a></li>
-							  <li><a href="/ssr-download/ssr-android.apk" class="icon fa-android"><span class="label">Android</span> Android</a></li>
+							  <li><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ssr-win.7z" class="icon fa-windows"><span class="label"></span> Windows</a></li>
+							  <li><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ssr-mac.dmg" class="icon fa-apple"><span class="label">Mac</span> Mac</a></li>
+							  <li><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/ssr-android.apk" class="icon fa-android"><span class="label">Android</span> Android</a></li>
 							  <li><a href="#ios" class="icon fa-apple"><span class="label">iOS</span> iOS</a></li>
-                              <li><a href="/ssr-download/SSTap.7z" class="icon fa-gamepad"><span class="label">Win游戏专用</span> Win游戏专用</a></li>
+                              <li><a href="https://gitee.com/bfsdo0/tap-mod/raw/master/%E5%8F%AE%E5%BD%93%E5%8A%A0%E9%80%9F%E5%99%A8-setup.exe" class="icon fa-gamepad"><span class="label">Win游戏专用</span> Win游戏专用</a></li>
                             
 	                         </ul>
                              </article>
