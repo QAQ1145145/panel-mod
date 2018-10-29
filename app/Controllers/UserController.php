@@ -56,8 +56,7 @@ class UserController extends BaseController
     }
 
     public function index($request, $response, $args)
-    {
-
+    { 
         $user = $this->user;
 
         $ios_token = LinkController::GenerateIosCode("smart", 0, $this->user->id, 0, "smart");
@@ -77,8 +76,6 @@ class UserController extends BaseController
         }
 
         $Ann = Ann::orderBy('date', 'desc')->first();
-      
-
 
         return $this->view()->assign("ssr_sub_token", $ssr_sub_token)->assign("router_token", $router_token)
                 ->assign("router_token_without_mu", $router_token_without_mu)->assign("acl_token", $acl_token)
