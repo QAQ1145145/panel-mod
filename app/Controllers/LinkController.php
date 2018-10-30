@@ -327,11 +327,7 @@ class LinkController extends BaseController
                 "sameHostForSameTarget" : true,
                 "keepVisitTime" : 180,
                 "isHideTips" : true,
-                "serverSubscribes": [
-      			  {
-          			"URL": "'.Config::get('baseUrl').'/link/'.LinkController::GenerateSSRSubCode($user->id, 0).'?mu=0",
-        		    "Group": "'.Config::get('appName').'"
-     		      }
+
   			    ],
                 "token" : {
 
