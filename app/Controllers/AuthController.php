@@ -336,6 +336,13 @@ class AuthController extends BaseController
             }
         }
 
+      	// check user_name
+        if (strlen($name) <4) {
+            $res['ret'] = 0;
+            $res['msg'] = "昵称请大于4位";
+            return $response->getBody()->write(json_encode($res));
+        }
+
         // check pwd length
         if (strlen($passwd) < 8) {
             $res['ret'] = 0;
