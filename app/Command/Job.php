@@ -788,10 +788,12 @@ class Job
                 $user->u = 0;
                 $user->d = 0;
                 $user->last_day_t = 0;
+				$user->auto_reset_day = 0;
+				$user->auto_reset_bandwidth = 0;
 
                 $subject = Config::get('appName')."-您的用户等级已经过期了";
                 $to = $user->email;
-                $text = "您好，系统发现您的账号等级已经过期了。流量已经被重置为".$reset_traffic.'GB' ;
+                $text = "您好，系统发现您的账号等级已经过期了。流量已经被重置为".Config::get('enable_class_expire_reset_traffic').'GB' ;	
                 try {
                     Mail::send($to, $subject, 'news/warn.tpl', [
                         "user" => $user,"text" => $text
