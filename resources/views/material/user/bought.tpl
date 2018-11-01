@@ -23,7 +23,6 @@
 						<div class="card-main">
 							<div class="card-inner">
 								<p>系统中您的购买记录。</p>
-                                <p>若您想取消自动续费，只需要退订套餐即可。该操作将在等级到期后取消自动续费。</p>
 							</div>
 						</div>
 					</div>
@@ -61,7 +60,7 @@
 								<td>自动重置</td>
 								{/if}
                               <td>
-                                    <a class="btn btn-brand" {if $shop->renew==0}disabled{else} href="javascript:void(0);" onClick="delete_modal_show('{$shop->id}')"{/if}>退订</a>
+                                    <a class="btn btn-brand" {if $shop->renew==0}disabled{else} href="javascript:void(0);" onClick="delete_modal_show('{$shop->id}')"{/if}>取消自动续费</a>
                                 </td>
                                 
                             </tr>
@@ -76,7 +75,7 @@
 							<div class="modal-content">
 								<div class="modal-heading">
 									<a class="modal-close" data-dismiss="modal">×</a>
-									<h2 class="modal-title">确认要退订？</h2>
+									<h2 class="modal-title">确认要取消自动续费？</h2>
 								</div>
 								<div class="modal-inner">
 									<p>请您确认。</p>
