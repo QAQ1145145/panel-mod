@@ -1,10 +1,10 @@
 
 
 
-G{include file='user/main.tpl'}
+{include file='user/main.tpl'}
 {$ssr_prefer = URL::SSRCanConnect($user, 0)}
 
-g
+
 	<main class="content">
 
 		<div class="content-header ui-content-header">
