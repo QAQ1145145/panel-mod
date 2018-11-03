@@ -104,7 +104,7 @@ class Pay
                         <label class="floating-label" for="price">充值金额</label>
                         <input id="type" class="form-control" name="amount" />
                         </div>
-                        <a class="btn btn-flat waves-attach" id="urlChange" ><span class="icon">check</span>&nbsp;充值</a>
+                        <a class="btn btn-flat waves-attach" id="urlChange" ><span class="icon">√</span>&nbsp;充值</a>
                         </div>
                         <div class="form-group pull-right">
                         <img src="/images/qianbai-4.png" height="205" width="166" />
