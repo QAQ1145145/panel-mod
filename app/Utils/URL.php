@@ -219,6 +219,7 @@ class URL
     public static function getAllUrl($user, $is_mu, $is_ss = 0, $enter = 0) {
         $return_url = '';
         if ($user->transfer_enable >0){
+			$return_url .= URL::getAnnouncement($user).($enter == 0 ? ' ' : "\n");
             $return_url .= URL::getUserTraffic($user).($enter == 0 ? ' ' : "\n");
             $return_url .= URL::getUserClassExpiration($user).($enter == 0 ? ' ' : "\n");
         }
@@ -465,7 +466,14 @@ class URL
         $new_user = clone $user;
         return $new_user;
     }
-
+	
+	public static function getAnnouncement($user){
+		if($user->class !=0){
+			$ssurl = "127.0.0.1:1:auth_chain_a:chacha20:tls1.2_ticket_auth:YnJlYWt3YWxs/?obfsparam=&protoparam=&remarks=".Tools::base64_url_encode("双11活动,请关注官网")."&group=".Tools::base64_url_encode(Config::get('appName'));
+		}
+      	return "ssr://".Tools::base64_url_encode($ssurl);
+	}
+	
 	public static function getUserTraffic($user){
 		if($user->class !=0){
 			$ssurl = "127.0.0.1:1:auth_chain_a:chacha20:tls1.2_ticket_auth:YnJlYWt3YWxs/?obfsparam=&protoparam=&remarks=".Tools::base64_url_encode("剩余流量：".number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)."% ".$user->unusedTraffic())."&group=".Tools::base64_url_encode(Config::get('appName'));
