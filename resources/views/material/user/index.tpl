@@ -360,7 +360,12 @@
 											  <code><span id="days-account-expire"></span></code>
 											  <span class="label-account-expire">天</span>
                                            </p>
-
+                                           <p><dt>QQ通知&amp;交流群</dt>
+                                              <i class="icon icon-md">event</i>
+                                             				{if $user->class>1}                                          	 <code><a href="http://qm.qq.com/cgi-bin/qm/qr?k=1ah84mwCycS76CGWD3P75GG6TwG5HQPC" target="_blank">点击加入</a></code>(请勿使用小号，以及请填写备注)
+															{else}															VIP用户可见
+															{/if}                                          
+                                           </p>
 											<p><dt>速度限制</dt>
 											{if $user->node_speedlimit!=0}
 											<dd><i class="icon icon-md">settings_input_component</i>&nbsp;<code>{$user->node_speedlimit}</code>Mbps</dd>
