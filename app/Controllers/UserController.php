@@ -56,7 +56,7 @@ class UserController extends BaseController
     }
 
     public function index($request, $response, $args)
-    { 
+    {
         $user = $this->user;
 
         $ios_token = LinkController::GenerateIosCode("smart", 0, $this->user->id, 0, "smart");
@@ -76,9 +76,25 @@ class UserController extends BaseController
         }
 
         $Ann = Ann::orderBy('date', 'desc')->first();
+        $bought = Bought::where("userid", $user->id)->orderBy("id","desc")->first();
+        $shop = Shop::where("id", $bought->shopid)->first();
 
+        if(json_decode($shop->content)->reset > 0){
+            $resetTime = json_decode($shop->content)->reset * 24 * 60 * 60;
+            $buyTime = $bought->datetime;
+
+            for($i = 1; $i == 1; ){
+                $buyTime = $buyTime + $resetTime;
+                if($buyTime + $resetTime > time() - $resetTime){
+                    $i = 2;
+                }
+            }
+
+        }
+        $lastDay = date("m月d日",$buyTime);
         return $this->view()->assign("ssr_sub_token", $ssr_sub_token)->assign("router_token", $router_token)
                 ->assign("router_token_without_mu", $router_token_without_mu)->assign("acl_token", $acl_token)
+                ->assign("lastDay", $lastDay)
                 ->assign('ann', $Ann)->assign('geetest_html', $GtSdk)->assign("ios_token", $ios_token)
                 ->assign('enable_duoshuo', Config::get('enable_duoshuo'))->assign('duoshuo_shortname', Config::get('duoshuo_shortname'))
                 ->assign("user", $this->user)->registerClass("URL", "App\Utils\URL")->assign('baseUrl', Config::get('baseUrl'))->display('user/index.tpl');
@@ -422,7 +438,7 @@ class UserController extends BaseController
     {
 		$price=Config::get('port_price');
         $user = $this->user;
-		
+
 		if ($user->money<$price){
 			$res['ret'] = 0;
             $res['msg'] = "余额不足。";
@@ -452,7 +468,7 @@ class UserController extends BaseController
     {
 		$price=Config::get('port_price_specify');
         $user = $this->user;
-		
+
 		if ($user->money<$price){
 			$res['ret'] = 0;
             $res['msg'] = "余额不足。";
@@ -930,7 +946,7 @@ class UserController extends BaseController
         if (isset($request->getQueryParams()["page"])) {
             $pageNum = $request->getQueryParams()["page"];
         }
-        $paybacks = Payback::where("ref_by", $this->user->id)->orderBy("id", "desc")->paginate(15, ['*'], 'page', $pageNum);       
+        $paybacks = Payback::where("ref_by", $this->user->id)->orderBy("id", "desc")->paginate(15, ['*'], 'page', $pageNum);
         if (!$paybacks_sum = Payback::where("ref_by", $this->user->id)->sum('ref_get')) {
             $paybacks_sum = 0;
         }
@@ -986,7 +1002,7 @@ class UserController extends BaseController
 		$user->money-=$amount;
 		$user->save();
         $res['ret'] = 1;
-        $res['msg'] = "邀请次数添加成功。";  
+        $res['msg'] = "邀请次数添加成功。";
 		return $response->getBody()->write(json_encode($res));
 	}
 
@@ -1117,7 +1133,7 @@ class UserController extends BaseController
 				$res['ret'] = 0;
 				$res['msg'] = "优惠码次数已用完";
 				return $response->getBody()->write(json_encode($res));
-			}			
+			}
 		}
 
         $res['ret'] = 1;
@@ -1345,6 +1361,7 @@ class UserController extends BaseController
             $res['msg'] = "请求中有不正当的词语。";
             return $this->echoJson($response, $res);
         }
+
 
 
         $ticket_main=Ticket::where("id", "=", $id)->where("rootid", "=", 0)->first();
@@ -1804,14 +1821,14 @@ class UserController extends BaseController
         $newResponse = $response->withStatus(302)->withHeader('Location', '/user');
         return $newResponse;
     }
-	
+
     public function backtoadmin($request, $response, $args)
     {
         $userid = Utils\Cookie::get('uid');
         $adminid = Utils\Cookie::get('old_uid');
         $user = User::find($userid);
         $admin = User::find($adminid);
-      
+
         if (!$admin->is_admin || !$user) {
             Utils\Cookie::set([
             "uid" => null,
