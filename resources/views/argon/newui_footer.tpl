@@ -30,9 +30,6 @@
             <li class="nav-item">
               <a href="/user" class="nav-link" >用户中心</a>
             </li>
-            <li class="nav-item">
-              <a href="https://t.me/Godanns" class="nav-link" >Argon主题</a>
-            </li>
           </ul>
         </div>
       </div>

@@ -63,7 +63,7 @@
               <i class="ni ni-money-coins text-primary"></i>
             </div>
             <h5 class="mt-3">价格灵活</h5>
-            <p class=" mt-3">{$config["appName"]}提供了多种多样的套餐，您可以任意选择自己需要的。当然我们也会对大客户提供定制服务</p>
+            <p class=" mt-3">我们提供了多种多样的套餐，您可以任意选择自己需要的。当然我们也会对大客户提供定制服务</p>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@
                       <h6 class="category">免费套餐</h6>
 							<h1 class="card-title">￥0<small></small></h1>
                                 <ul>
-                            <li><b>2</b> 节点</li>
+                            <li><b>Random</b> 节点</li>
                             <li><b>签到领取</b> 流量</li>
                             <li><b>3</b> 台设备</li>
                             <li><b>永久</b> 有效期</li>
@@ -102,7 +102,7 @@
                       <h6 class="category">轻度套餐</h6>
 							<h1 class="card-title">￥4.9<small>/月</small></h1>
                        <ul>
-                         <li><b>10+</b> 节点</li>
+                         <li><b>15+</b> 节点</li>
                          <li><b>50GB</b> 流量</li>
                          <li><b>3</b> 台设备</li>
                          <li><b>30</b> 天有效期</li>
@@ -117,7 +117,7 @@
                       <h6 class="category">普通套餐</h6>
 							<h1 class="card-title">￥7.9<small>/月</small></h1>
                                 <ul>
-                            <li><b>10+</b> 节点</li>
+                            <li><b>15+</b> 节点</li>
                             <li><b>100GB</b> 流量</li>
                             <li><b>3</b> 台设备</li>
                             <li><b>30</b> 天有效期</li>
