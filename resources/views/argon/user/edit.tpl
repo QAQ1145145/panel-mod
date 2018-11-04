@@ -28,7 +28,7 @@
               <div class="col-lg-3 order-lg-2" >
                 <div class="card-profile-image">
                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="{$user->gravatar}" alt="user-image" class="rounded-circle" >
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
                   </a>
                 </div>
               </div>
@@ -58,22 +58,21 @@
 			
 						
 						
-			        <div class="row row-grid justify-content-between align-items-center mt-lg">
-						<div class="col-lg-6">
+		<div class="row row-grid justify-content-between align-items-center mt-lg">				
+
+			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
-										<p class="card-heading">Telegram 绑定</p>
-										<p>Telegram 添加机器人账号 <a href="https://t.me/{$telegram_bot}">@{$telegram_bot}</a>，拍下下面这张二维码发给它。</p>
+										<p class="card-heading">节点连接密码修改</p>
+										<p>当前连接密码：<code id="ajax-user-passwd">{$user->passwd}</code></p>
 										<div class="form-group form-group-label">
-											<div class="text-center">
-												<div id="telegram-qr"></div>
-												{if $user->telegram_id != 0}当前绑定：<a href="https://t.me/{$user->im_value}">@{$user->im_value}</a>{/if}
-											</div>
+											<label class="floating-label" for="sspwd">新连接密码</label>
+											<input class="form-control" id="sspwd" type="text">
 										</div>
-									<a class="btn btn-primary mt-4" href="/user/telegram_reset" >&nbsp;解绑</a>
+								<button class="btn btn-primary mt-4" id="ss-pwd-update"  >&nbsp;提交</button>
                   </div>
                 </div>
-            </div>						
+            </div>	
 			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
@@ -96,19 +95,6 @@
                   </div>
                 </div>
             </div>
-			<div class="col-lg-6">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-										<p class="card-heading">节点连接密码修改</p>
-										<p>当前连接密码：<code id="ajax-user-passwd">{$user->passwd}</code></p>
-										<div class="form-group form-group-label">
-											<label class="floating-label" for="sspwd">新连接密码</label>
-											<input class="form-control" id="sspwd" type="text">
-										</div>
-								<button class="btn btn-primary mt-4" id="ss-pwd-update"  >&nbsp;提交</button>
-                  </div>
-                </div>
-            </div>	
 			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
@@ -208,7 +194,9 @@
             </div>	
 			
 						{/if}
-			
+	
+
+
 				<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
@@ -226,7 +214,7 @@
                   </div>
                 </div>
             </div>	
-			
+<!--			
 			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
@@ -242,6 +230,7 @@
                   </div>
                 </div>
             </div>	
+-->
 			
 			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
@@ -291,7 +280,8 @@
                   </div>
                 </div>
             </div>
-			
+	
+<!--
 				<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
@@ -309,6 +299,7 @@
                 </div>
             </div>	
         </div>
+-->
 						
 						
           </div>

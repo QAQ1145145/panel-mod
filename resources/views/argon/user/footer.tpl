@@ -21,3 +21,4 @@
 	<script src="https://cdn.godann.com/theme/material/js/clipboard.min.js"></script>
 </body>
 </html>
+{if $config["enable_crisp"] == 'true'}{include file='crisp.tpl'}{/if}

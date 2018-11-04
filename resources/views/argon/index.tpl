@@ -84,60 +84,60 @@
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">基础套餐</h6>
-							<h1 class="card-title">￥10<small>/月</small></h1>
-                       <ul>
-                         <li><b>10+</b> 节点</li>
-                         <li><b>100GB</b> 流量</li>
-                         <li><b>3</b> 台设备</li>
-                         <li><b>30</b> 天有效期</li>
-                       </ul>
-                    <a href="#" class="btn btn-primary mt-4">立刻购买</a>
+                      <h6 class="category">免费套餐</h6>
+							<h1 class="card-title">￥0<small></small></h1>
+                                <ul>
+                            <li><b>2</b> 节点</li>
+                            <li><b>签到领取</b> 流量</li>
+                            <li><b>3</b> 台设备</li>
+                            <li><b>永久</b> 有效期</li>
+                                </ul>
+                    <a href="/user" class="btn btn-primary mt-4">免费使用</a>
                   </div>
                 </div>
               </div>
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">进阶套餐</h6>
-							<h1 class="card-title">￥11<small>/月</small></h1>
+                      <h6 class="category">轻度套餐</h6>
+							<h1 class="card-title">￥4.9<small>/月</small></h1>
+                       <ul>
+                         <li><b>10+</b> 节点</li>
+                         <li><b>50GB</b> 流量</li>
+                         <li><b>3</b> 台设备</li>
+                         <li><b>30</b> 天有效期</li>
+                       </ul>
+                    <a href="/user/shop" class="btn btn-primary mt-4">立刻购买</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="card-body py-5">
+                      <h6 class="category">普通套餐</h6>
+							<h1 class="card-title">￥7.9<small>/月</small></h1>
                                 <ul>
-                            <li><b>30+</b> 节点</li>
+                            <li><b>10+</b> 节点</li>
                             <li><b>100GB</b> 流量</li>
                             <li><b>3</b> 台设备</li>
                             <li><b>30</b> 天有效期</li>
                                 </ul>
-                    <a href="#" class="btn btn-primary mt-4">立刻购买</a>
+                    <a href="/user/shop" class="btn btn-primary mt-4">立刻购买</a>
                   </div>
                 </div>
               </div>
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">旗舰套餐</h6>
-							<h1 class="card-title">￥20<small>/月</small></h1>
+                      <h6 class="category">高级套餐</h6>
+							<h1 class="card-title">￥9.9<small>/月</small></h1>
                                 <ul>
-                            <li><b>30+</b> 节点</li>
+                            <li><b>60+</b> 节点</li>
                             <li><b>200GB</b> 流量</li>
-                            <li><b>3</b> 台设备</li>
+                            <li><b>6</b> 台设备</li>
                             <li><b>30</b> 天有效期</li>
                                 </ul>
-                    <a href="#" class="btn btn-primary mt-4">立刻购买</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="card card-lift--hover shadow border-0">
-                  <div class="card-body py-5">
-                      <h6 class="category">定制服务</h6>
-							<h1 class="card-title">N<small>/A</small></h1>
-                                 <ul>
-                            <li><b>N/A</b> 节点</li>
-                            <li><b>N/A</b> 流量</li>
-                            <li><b>N/A</b> 台设备</li>
-                            <li><b>N/A</b> 天有效期</li>
-                                </ul>
-                    <a href="#" class="btn btn-primary mt-4">立刻购买</a>
+                    <a href="/user/shop" class="btn btn-primary mt-4">立刻购买</a>
                   </div>
                 </div>
               </div>

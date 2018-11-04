@@ -23,16 +23,17 @@
 					<div class="px-4">
 						<div class="row justify-content-center">
 							<div class="col-lg-3 order-lg-2" >
-								<div class="card-profile-image">
-									<a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-										<img src="{$user->gravatar}" alt="user-image" class="rounded-circle" >
-									</a>
-								</div>
+             				   <div class="card-profile-image">
+                 				 <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                 			     <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
+            			         </a>
+              				  </div>
 							</div>
 							<div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
 								<div class="card-profile-actions py-4 mt-lg-0">
-									<a href="/user/node" class="btn btn-sm btn-primary">节点列表</a>
-									<a href="/user/shop" class="btn btn-sm btn-default float-right">商店</a>
+									<a href="/user/code" class="btn btn-sm btn-default">在线充值</a>
+                  					<a href="/user/shop" class="btn btn-sm btn-default">购买套餐</a>
+                  					<a href="/user" class="btn btn-sm btn-primary float-right">用户中心</a>
 								</div>
 							</div>
 							<div class="col-lg-4 order-lg-1">
@@ -52,7 +53,6 @@
 								</div>
 							</div>
 						</div>
-
 
 		<div class="container">
 			<div class="col-lg-12 col-sm-12">
@@ -85,13 +85,12 @@
 									<div class="form-group form-group-label">
 										<label class="floating-label" for="port">端口</label>
 										<select id="port" class="form-control" name="port">
+											<option value="0">所有端口</option>
 											{foreach $ports as $port}
 												<option value="{$port}">{$port}</option>
 											{/foreach}
 										</select>
 									</div>
-
-
 
 									<div class="form-group form-group-label">
 										<label class="floating-label" for="priority">优先级</label>
@@ -103,45 +102,26 @@
 							</div>
 						</div>
 
-
-			  <div class="mt-5 py-5 text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-9">
-
+						<div class="mt-5 py-5 text-center">
+							<div class="row justify-content-center">
+								<div class="col-lg-9">
 									<div class="form-group">
-											<div class=" col-md-push-1">
-												<button id="submit" type="submit" class="btn btn-block btn-primary waves-attach waves-light copy-text">添加</button>
-											</div>
+										<div class=" col-md-push-1">
+											<button id="submit" type="submit" class="btn btn-block btn-primary waves-attach waves-light copy-text">添加</button>
+										</div>
 									</div>
-									
 								</div>
 							</div>
 						</div>
-						
-						
 					</form>
 					{include file='newui_dialog.tpl'}
 				<section>
-
 			</div>
-
-
-
 		</div>
 	</main>
 
-
-
-
-
-
-
-
-
-
-
 {include file='user/newui_footer.tpl'}
-
+{include file='newui_dialog.tpl'}
 
 {literal}
 <script>

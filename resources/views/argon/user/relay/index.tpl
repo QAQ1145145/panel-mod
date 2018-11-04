@@ -27,21 +27,22 @@
               <div class="col-lg-3 order-lg-2" >
                 <div class="card-profile-image">
                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="{$user->gravatar}" alt="user-image" class="rounded-circle" >
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
                   </a>
                 </div>
               </div>
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                 <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="/user" class="btn btn-sm btn-primary">用户中心</a>
-                  <a href="/user/shop" class="btn btn-sm btn-default float-right">商店</a>
+                  <a href="/user/code" class="btn btn-sm btn-default">在线充值</a>
+                  <a href="/user/shop" class="btn btn-sm btn-default">购买套餐</a>
+                  <a href="/user" class="btn btn-sm btn-primary float-right">用户中心</a>
                 </div>
               </div>
               <div class="col-lg-4 order-lg-1">
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div>
                     <span class="heading">{$user->money}</span>
-                    <span class="description">剩余金币</span>
+                    <span class="description">余额</span>
                   </div>
                   <div>
                     <span class="heading">L{$user->class}</span>
@@ -49,7 +50,7 @@
                   </div>
                   <div>
                     <span class="heading">{$user->online_ip_count()}</span>
-                    <span class="description">在线设备数</span>
+                    <span class="description">在线 IP 数</span>
                   </div>
                 </div>
               </div>
@@ -111,7 +112,7 @@
 													{foreach $rules as $rule}
 														<tr>
 														<td>
-															<a  {if $rule->user_id == 0}disabled{else}href="/{$rule->id}/edit"{/if}><button class="btn btn-primary">编辑</button></a>
+															<a  {if $rule->user_id == 0}{else}href="/user/relay/{$rule->id}/edit"{/if}><button class="btn btn-primary"{if $rule->user_id == 0}disabled{/if}>编辑</button></a>
 															<button class="btn btn-primary" id="delete" value="{$rule->id}" {if $rule->user_id == 0}disabled="disabled"{else}href="javascript:void(0);" onClick="delete_modal_show('{$rule->id}')"{/if}>删除</button>
 														</td>
 														<td>#{$rule->id}</td>

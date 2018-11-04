@@ -16,7 +16,7 @@
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
       <div class="container">
         <a class="navbar-brand mr-lg-5" href="/">
-          <img src="https://cdn.godann.com/kitui/img/brand/white.png">
+          <img src="/white.png">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="/">
-                  <img src="https://cdn.godann.com/kitui/img/brand/blue.png">
+                  <img src="/blue.png">
                 </a>
               </div>
               <div class="col-6 collapse-close">
@@ -39,9 +39,15 @@
           </div>
           
           <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+             <li class="nav-item dropdown">
+              <a href="/user" class="nav-link" >
+                <i class="ni ni-circle-08"></i>
+                <span class="nav-link-inner--text">首页</span>
+              </a>
+            </li>
             <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-circle-08"></i>
+                <i class="ni ni-settings"></i>
                 <span class="nav-link-inner--text">设置中心</span>
               </a>
               <div class="dropdown-menu">
@@ -56,22 +62,29 @@
               </a>
             </li>
             <li class="nav-item dropdown">
+              <a href="/user/relay" class="nav-link" >
+                <i class="ni ni-relay"></i>
+                <span class="nav-link-inner--text">中转设置</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
                 <i class="ni ni-cart"></i>
-                <span class="nav-link-inner--text">购买</span>
+                <span class="nav-link-inner--text">商店</span>
               </a>
               <div class="dropdown-menu">
                 <a href="/user/code" class="dropdown-item">充值</a>
-                <a href="/user/shop" class="dropdown-item">商店</a>
+                <a href="/user/shop" class="dropdown-item">购买套餐</a>
                 <a href="/user/bought" class="dropdown-item">购买记录</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a href="/user/invite" class="nav-link" >
                 <i class="ni ni-money-coins"></i>
-                <span class="nav-link-inner--text">邀请赢现金</span>
+                <span class="nav-link-inner--text">邀请赚返利</span>
               </a>
             </li>
+            <!--
             <li class="nav-item dropdown">
               <a href="/user/ticket" class="nav-link"  data-toggle="dropdown" href="#" role="button" >
                 <i class="ni ni-single-copy-04"></i>
@@ -82,13 +95,8 @@
                 <a href="/user/ticket/create" class="dropdown-item">新建工单</a>
               </div>
             </li>
+			--->
             
-            <li class="nav-item dropdown">
-              <a href="/user/logout" class="nav-link">
-                <i class="ni ni-user-run"></i>
-                <span class="nav-link-inner--text">登出</span>
-              </a>
-            </li>
             {if $user->isAdmin()}
             
             <li class="nav-item dropdown">
@@ -98,8 +106,23 @@
               </a>
             </li>
             {/if}
+            <li class="nav-item dropdown">
+              <a href="/user/logout" class="nav-link">
+                <i class="ni ni-user-run"></i>
+                <span class="nav-link-inner--text">登出</span>
+              </a>
+            </li>
+                                          	{if $can_backtoadmin}
+       								 	     <li class="nav-item dropdown">
+            								  <a href="/user/backtoadmin" class="nav-link">
+               								  <i class="ni ni-settings"></i>
+                							  <span class="nav-link-inner--text">返回管理员身份</span>
+              								  </a>
+           									 </li>
+                                                {/if}
           </ul>
         </div>
       </div>
     </nav>
   </header>
+{if $config["enable_crisp"] == 'true'}{include file='crisp.tpl'}{/if}

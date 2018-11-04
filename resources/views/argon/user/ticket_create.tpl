@@ -28,7 +28,7 @@
               <div class="col-lg-3 order-lg-2" >
                 <div class="card-profile-image">
                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="{$user->gravatar}" alt="user-image" class="rounded-circle" >
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
                   </a>
                 </div>
               </div>

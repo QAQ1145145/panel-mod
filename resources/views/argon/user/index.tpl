@@ -26,6 +26,13 @@
         <div class="card card-profile shadow mt--300">
           <div class="px-4">
             <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2" >
+                <div class="card-profile-image">
+                  <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
+                  </a>
+                </div>
+              </div>
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                 <div class="card-profile-actions py-4 mt-lg-0">
                   <div class="text-center">
@@ -42,21 +49,21 @@
                     <span class="description">剩余金币</span>
                   </div>
                   <div>
-                    <span class="heading">L{$user->class}</span>
+                    <span class="heading">Lv.{$user->class}</span>
                     <span class="description">等级</span>
                   </div>
-                  <div>     
+                  <div>
 					<span class="heading">{$user->online_ip_count()}</span>
 					<span class="description">在线IP数</span>
                   </div>
                 </div>
               </div>
             </div>
-			
-			
-			
-			
-			
+
+
+
+
+
 			        <div class="row row-grid justify-content-between align-items-center mt-lg">
 						<div class="col-lg-8">
                 <div class="card card-lift shadow border-0">
@@ -68,7 +75,7 @@
                 <div class="progress-info">
                   <div class="progress-percentage">
                     <span style="color:#B5B5B5;" title="{number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% 剩余">{$user->LastusedTraffic()}</span>
-                    <span style=""> / </span><span style="color:#32CD32;" title="{number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% 剩余">{$user->unusedTraffic()}</span> 
+                    <span style=""> / </span><span style="color:#32CD32;" title="{number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% 剩余">{$user->unusedTraffic()}</span>
                     <span>({number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}%)</span>
                   </div>
                 </div>
@@ -83,27 +90,32 @@
                     <button disabled="disabled" class="btn btn-primary mt-4" style="margin-left: 1rem;">签到</button>
                     {/if}
 					   <p class="col mt-4" style="text-align: right;">
-                   </p>	
+                   </p>
                   </div>
                   </div>
                 </div>
-            </div>						
+            </div>
 			<div class="col-lg-4">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
                   <div class="progress-label">
-                    <span>流量重置日期</span>
+                    <span>流量重置日和到期日期</span>
                   </div>
 						<h2 class="card-title">
-                          <p class="mt-4" style="font-weight: 650;">{$user->class_expire}</p>
+                          {if $user->auto_reset_day !==0}
+                          <p class="mt-4" style="font-weight: 650;">{$user->auto_reset_day}日重置流量</p>
+                          {else}
+                          <p class="mt-4" style="font-weight: 650;">{$lastDay}重置流量</p>
+                          {/if}
+                          <p class="mt-4" style="font-weight: 650;">{$user->class_expire}到期</p>
 						</h2>
-                    <a  class="btn btn-primary mt-4" href="/user/shop">续费</a>
+                    <a class="btn btn-primary mt-4" href="/user/shop">续费</a>
                   </div>
                 </div>
             </div>
         </div>
-			
-			
+
+
             <div class="mt-5 py-5 border-top text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-9">
@@ -112,16 +124,16 @@
               </div>
 										{if $user->lastSsTime()=='从未使用喵'}
 										<p style="color:#ff9180">系统检测到您从没使用过，是否需要帮助呢？</p>
-										<p style="color:#ff9180">来这里看看我们的<a href="https://docs.flyue.cc"/>教程</a>吧</p>
+										<p style="color:#ff9180">来这里看看我们的<a href="https://wiki.maile3.com" target="_blank"/>教程</a>吧</p>
 										<hr>
 										{/if}
-										<p>{$ann->content}更新日期<code>{$ann->date}</code></p>     
+										<p>{$ann->content}更新日期<code>{$ann->date}</code></p>
                 </div>
               </div>
             </div>
-			
-			
-			
+
+
+
             <div class="mt-5 py-5 border-top text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-9">
@@ -131,22 +143,57 @@
               <div class="nav-wrapper">
                 <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-text" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link mb-sm-3 mb-md-0 active" id="all_info-tab" data-toggle="tab" href="#all_info" role="tab" aria-controls="all_info" aria-selected="true">配置信息</a>
+                    <a class="nav-link mb-sm-3 mb-md-0 active" id="all_ssr-tab" data-toggle="tab" href="#all_ssr" role="tab" aria-controls="all_ssr" aria-selected="true">SSR快速配置</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link mb-sm-3 mb-md-0" id="all_ssr-tab" data-toggle="tab" href="#all_ssr" role="tab" aria-controls="all_ssr" aria-selected="false">SSR快速配置</a>
+                    <a class="nav-link mb-sm-3 mb-md-0" id="all_info-tab" data-toggle="tab" href="#all_info" role="tab" aria-controls="all_info" aria-selected="false">配置信息</a>
                   </li>
-                   {if URL::SSCanConnect($user)}
+                  <li class="nav-item">
+                    <a class="nav-link mb-sm-3 mb-md-0" id="download-tab" data-toggle="tab" href="#download" role="tab" aria-controls="download" aria-selected="false">软件下载</a>
+                  </li>
+                  <!--{if URL::SSCanConnect($user)}
                   <li class="nav-item">
                     <a class="nav-link mb-sm-3 mb-md-0" id="all_ss-tab" data-toggle="tab" href="#all_ss" role="tab" aria-controls="all_ss" aria-selected="false">SS快速配置</a>
                   </li>
-                   {/if}
+                   {/if}-->
+                  <li class="nav-item">
+                    <a class="nav-link mb-sm-3 mb-md-0" href="https://wiki.maile3.com" target="_blank">使用教程</a>
+                  </li>
                 </ul>
               </div>
               <div class="card shadow">
                 <div class="card-body">
                   <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="all_info" role="tabpanel" aria-labelledby="all_info-tab">
+                    <div class="tab-pane fade show active" id="all_ssr" role="tabpanel" aria-labelledby="all_ssr-tab">
+													{$pre_user = URL::cloneUser($user)}
+														{$user = URL::getSSRConnectInfo($pre_user)}
+														{$ssr_url_all = URL::getAllUrl($pre_user, 0, 0)}
+														{$ssr_url_all_mu = URL::getAllUrl($pre_user, 1, 0)}
+															<div style="padding:18px">
+																<h4 style="margin-top:12px">订阅连接</h4>
+																<p><code><a class="copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0">{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0</a></code></p>
+																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0">点击拷贝</button>
+															</div>
+																<hr>
+															<div style="padding:18px">
+																<h4 style="margin-top:12px">配置文件</h4>
+                                                              	<p><code>/user/getpcconf?is_mu=0&is_ss=0</code></p>
+																<a class="btn btn-primary mt-4" href="/user/getpcconf?is_mu=0&is_ss=0">点击下载</a>
+															</div>
+																<hr>
+															<div style="padding:18px">
+																<h4 style="margin-top:12px">一键配置(不推荐)</h4>
+                                                              	<!--<p><code>/user/getpcconf?is_mu=0&is_ss=0</code></p>-->
+																<a class="btn btn-primary mt-4" href="{$ssr_url_all}">点击添加</a>
+															</div>
+																<hr>
+															<div style="padding:18px">
+																<h4 style="margin-top:12px">使用教程</h4>
+																<a class="btn btn-primary mt-4" href="https://wiki.maile3.com" target="_blank">点击查看</a>
+															</div>
+																<hr>
+                      </div>
+                    <div class="tab-pane fade" id="all_info" role="tabpanel" aria-labelledby="all_info-tab">
                                       	<p>{$agent}</p>
 														<dl class="dl-horizontal">
 															<p><dt>端口</dt>
@@ -166,80 +213,74 @@
 														</dl>
 														<a class="btn btn-primary mt-4" href="/user/url_reset">重置所有链接</a>
                  </div>
-                    <div class="tab-pane fade" id="all_ssr" role="tabpanel" aria-labelledby="all_ssr-tab">
-													{$pre_user = URL::cloneUser($user)}
-														{$user = URL::getSSRConnectInfo($pre_user)}
-														{$ssr_url_all = URL::getAllUrl($pre_user, 0, 0)}
-														{$ssr_url_all_mu = URL::getAllUrl($pre_user, 1, 0)}
-															<div style="padding:18px">
-																<h4 style="margin-top:12px">普通端口订阅连接</h4>
-																<p><code><a class="copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0">{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0</a></code></p>
-																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0">点击拷贝</button>
-																<h4 style="margin-top:12px">单端口订阅连接</h4>
-																<p><code><a class="copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=1">{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=1</a></code></p>
-																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=1">点击拷贝</button>
-															</div>
-																<hr>
-															<div style="padding:18px">
-																<h4 style="margin-top:12px">普通端口JSON</h4>
-                                                              	<p><code>/user/getpcconf?is_mu=0&is_ss=0</code></p>
-																<a class="btn btn-primary mt-4" href="/user/getpcconf?is_mu=0&is_ss=0">点击下载</a>
-																<h4 style="margin-top:12px">单端口JSON</h4>
-                                                              	<p><code>/user/getpcconf?is_mu=1&is_ss=0</code></p>
-																<a class="btn btn-primary mt-4" href="/user/getpcconf?is_mu=1&is_ss=0">点击下载</a>
-															</div>
-																<hr>
-															<div style="padding:18px">
-																<h4 style="margin-top:12px">普通端口配置文件</h4>
-																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$ssr_url_all}">点击拷贝</button>
-																<h4 style="margin-top:12px">单端口配置文件</h4>
-																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$ssr_url_all}">点击拷贝</button>
-															</div>
-																<hr>
-															<div style="padding:18px">
-																<h4 style="margin-top:12px">普通端口路由器脚本</h4>
-																<p><code><a >wget -O- {$baseUrl}/link/{$router_token}?is_ss=0 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token}?is_ss=0 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond</a></code></p>
-																<h4 style="margin-top:12px">单端口路由器脚本</h4>
-																<p><code><a >wget -O- {$baseUrl}/link/{$router_token_without_mu}?is_ss=0 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token_without_mu}?is_ss=0 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond	</a></code></p>
-																<hr>
-															</div>
-                      </div>
-                    <div class="tab-pane fade" id="all_ss" role="tabpanel" aria-labelledby="all_ss-tab">
-													{$user = URL::getSSConnectInfo($pre_user)}
-														{$ss_url_all = URL::getAllUrl($pre_user, 0, 1)}
-														{$ss_url_all_mu = URL::getAllUrl($pre_user, 1, 1)}
-														{$ss_url_all_win = URL::getAllUrl($pre_user, 0, 2)}
-																<h4 style="margin-top:12px">订阅连接</h4>
-																<p><code><a class="copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=1">{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=1</a></code></p>
-																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=1">点击拷贝</button>
-																<hr>
-																<h4 style="margin-top:12px">配置JSON</h4>
+                    									<div class="tab-pane fade" id="all_ss" role="tabpanel" aria-labelledby="all_ss-tab">
+															{$user = URL::getSSConnectInfo($pre_user)}
+															{$ss_url_all = URL::getAllUrl($pre_user, 0, 1)}
+															{$ss_url_all_mu = URL::getAllUrl($pre_user, 1, 1)}
+															{$ss_url_all_win = URL::getAllUrl($pre_user, 0, 2)}
+																<h4 style="margin-top:12px">配置文件</h4>
                                                               	<p><code>/user/getpcconf?is_mu=1&is_ss=0</code></p>
 																<a class="btn btn-primary mt-4" href="/user/getpcconf?is_mu=0&is_ss=1">点击下载</a>
 																<hr>
 																<h4 style="margin-top:12px">所有连接</h4>
-																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$ss_url_all_win}">点击拷贝</button><hr>
-																<h4 style="margin-top:12px"></h4>
-																<h4 style="margin-top:12px">普通端口路由器脚本</h4>
-																<p><code><a >wget -O- {$baseUrl}/link/{$router_token}?is_ss=0 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token}?is_ss=0 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond</a></code></p>
+																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$ss_url_all_win}">点击拷贝</button>
+                      											<hr>
+                      											<div style="padding:18px">
+																<h4 style="margin-top:12px">使用教程</h4>
+																<a class="btn btn-primary mt-4 copy-text" href="https://wiki.maile3.com" target="_blank">点击查看</a>
+																</div>
 																<hr>
-																<h4 style="margin-top:12px">单端口路由器脚本</h4>
-																<p><code><a >wget -O- {$baseUrl}/link/{$router_token_without_mu}?is_ss=0 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token_without_mu}?is_ss=0 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond	</a></code></p>
-																<hr>
-                     </div>
+                     									</div>
+												<div class="tab-pane fade" id="download" role="tabpanel" aria-labelledby="download-tab">
+											<!----->
+                                                  <h4 style="margin-top:12px">叮当加速器</h4>
+                    							  <p><img src="images/clients/logo.png" style="margin-top:12px" width="80px" align="center"></p>
+                                                  <a class="btn btn-primary mt-2" href="https://github.com/bfsdo0/ss-tap-mod/raw/master/%E5%8F%AE%E5%BD%93%E5%8A%A0%E9%80%9F%E5%99%A8-setup.exe">立即下载</a>
+                                                  <hr>
+                                                  <h4 style="margin-top:12px">ShadowsocksR For Windows</h4>
+                    							  <p><img src="images/clients/ss-windows.svg" style="margin-top:12px" width="80px" align="center"></p>
+                                                  <a class="btn btn-primary mt-2" href="https://github.com/bfsdo0/ss-tap-mod/raw/master/ssr-win.7z">软件下载</a>
+                                                  <a class="btn btn-primary mt-2" href="https://www.maile3.com/user/getpcconf?is_mu=0&is_ss=0">配置下载</a>
+                                                  <hr>
+                                                  <h4 style="margin-top:12px">Shadowrocket</h4>
+                    							  <p><img src="images/clients/shadowrocket.svg" style="margin-top:12px" width="80px" align="center"></p>
+                                                  <p>AppleID:<code>
+														    {if $user->class>1}                                          	 down@m-e.me
+															{else}															VIP用户可见
+															{/if}
+														</code>密码<code>
+														{if $user->class>1}															Gg112211
+															{else}															VIP用户可见
+															{/if}
+														</code></p>
+                                                  <a class="btn btn-primary mt-2" href="itms-services://?action=download-manifest&url=https://down.m-e.me/ipa.plist">立即下载</a>
+                                                  <hr>
+                                                  <h4 style="margin-top:12px">Shadowsocks For Android</h4>
+                    							  <p><img src="images/clients/ss-android.png" style="margin-top:12px" width="80px" align="center"></p>
+                                                  <a class="btn btn-primary mt-2" href="https://github.com/bfsdo0/ss-tap-mod/raw/master/ssr-android.apk">立即下载</a>
+                                                  <hr>
+                                                  <h4 style="margin-top:12px">ShadowsocksR For MacOS</h4>
+                    							  <p><img src="images/clients/ss-mac.svg" style="margin-top:12px" width="80px" align="center"></p>
+                                                  <a class="btn btn-primary mt-2" href="https://raw.githubusercontent.com/bfsdo0/ss-tap-mod/master/ss-mac.zip">立即下载</a>
+                                                  <hr>
+                                                  <h4 style="margin-top:12px">Linux、路由器</h4>
+                                                  <a class="btn btn-primary mt-4" href="https://wiki.maile3.com">请戳这里</a>
+                                                  <hr>
+                                            <!----->
+                 </div>
                   </div>
                 </div>
               </div>
                 </div>
               </div>
             </div>
-			
+
           </div>
         </div>
       </div>
-      
+
     </section>
-    
+
 
 	<div class="modal fade" id="delete_modal" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
@@ -260,9 +301,9 @@
         </div>
     </div>
     </div>
-	
-	
-	
+
+
+
     <div class="modal fade" id="info_form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
               <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
                 <div class="modal-content">
@@ -273,8 +314,8 @@
                           <small>账户信息</small>
                         </div>
                           <div class="text-center">
-						  
-						  
+
+
                           </div>
                       </div>
                     </div>
@@ -298,7 +339,7 @@ $(".copy-text").click(function () {
 	$("#result").modal();
 	$("#msg").html("已复制到您的剪贴板，请您继续接下来的操作。");
 });
-  
+
 {if $geetest_html == null}
 window.onload = function() {
     var myShakeEvent = new Shake({
@@ -437,5 +478,5 @@ $(document).ready(function(){
 		delete_id();
 	});
 })
-	
+
 </script>

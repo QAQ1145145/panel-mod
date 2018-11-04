@@ -23,7 +23,7 @@
               <div class="col-lg-3 order-lg-2" >
                 <div class="card-profile-image">
                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="{$user->gravatar}" alt="user-image" class="rounded-circle" >
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
                   </a>
                 </div>
               </div>
@@ -50,7 +50,7 @@
                 </div>
               </div>
             </div>
-			{if $user->money <5}
+			{if $user->money <4.9}
 			  <div class="mt-5 py-5 text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-9">
@@ -131,7 +131,7 @@
 									</div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary"  data-dismiss="modal" id="coupon_input" type="button">确定</button>
+                <button  class="btn btn-primary"  data-dismiss="modal" id="coupon_input">确定</button>
             </div>
         </div>
     </div>
@@ -199,7 +199,8 @@
 
 
 <script>
-function buy(id,auto) {
+function buy(id,auto,auto_reset) {
+	auto_renew=auto;
 	if(auto==0)
 	{
 		document.getElementById('autor').style.display="none";
@@ -208,6 +209,16 @@ function buy(id,auto) {
 	{
 		document.getElementById('autor').style.display="";
 	}
+	
+	if(auto_reset==0)
+	{
+		document.getElementById('auto_reset').style.display="none";
+	}
+	else
+	{
+		document.getElementById('auto_reset').style.display="";
+	}
+	
 	shop=id;
 	$("#coupon_modal").modal();
 }
@@ -250,13 +261,6 @@ $("#order_input").click(function () {
 		{
 			var autorenew=0;
 		}
-
-		if(document.getElementById('disableothers').checked){
-			var disableothers=1;
-		}
-		else{
-			var disableothers=0;
-		}
 			
 		$.ajax({
 			type: "POST",
@@ -265,8 +269,7 @@ $("#order_input").click(function () {
 			data: {
 				coupon: $("#coupon").val(),
 				shop: shop,
-				autorenew: autorenew,
-				disableothers:disableothers
+				autorenew: autorenew
 			},
 			success: function (data) {
 				if (data.ret) {
@@ -284,5 +287,4 @@ $("#order_input").click(function () {
 			}
 		})
 	});
-
 </script>

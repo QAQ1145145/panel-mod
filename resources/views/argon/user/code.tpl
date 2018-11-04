@@ -28,10 +28,10 @@
               <div class="col-lg-3 order-lg-2" >
                 <div class="card-profile-image">
                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="{$user->gravatar}" alt="user-image" class="rounded-circle" >
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
                   </a>
                 </div>
-              </div>
+              </div> 
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                 <div class="card-profile-actions py-4 mt-lg-0">
                   <div class="text-center">
@@ -64,8 +64,19 @@
 			
 			
 		 <div class="row row-grid justify-content-between align-items-center mt-lg">
-					{if $pmw!=''}
-						<div class="col-lg-6">
+			<div class="col-lg-6">
+                <div class="card card-lift shadow border-0">
+                  <div class="card-body">
+						<h6 class="category">红包码</h6>
+										<div class="form-group form-group-label">
+											<label class="floating-label" for="code">与充值无关,支付宝扫码(手机点击图片)领红包,立减现金!</label>
+											<p><a href="https://qr.alipay.com/c1x09807njeutfbehmjrxe2"><img src="/assets/public/img/hongbao.jpg" height="150" width="150"></a></p>
+										</div>
+                  </div>
+                </div>
+            </div>
+           			{if $pmw!=''}
+			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 										{$pmw}
@@ -73,18 +84,7 @@
                 </div>
             </div>			
 					{/if}
-			<div class="col-lg-6">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-						<h6 class="category">充值码充值</h6>
-										<div class="form-group form-group-label">
-											<label class="floating-label" for="code">充值码</label>
-											<input class="form-control" id="code" type="text">
-										</div>
-											<button class="btn btn-primary mt-4" id="code-update" >&nbsp;充值</button>
-                  </div>
-                </div>
-            </div>
+
         </div>
 			
 			
@@ -154,26 +154,48 @@
 
 					<div aria-hidden="true" class="modal modal-va-middle fade" id="readytopay" role="dialog" tabindex="-1">
 						<div class="modal-dialog modal-xs">
-							<div class="modal-content">
-								<div class="modal-heading">
-									<a class="modal-close" data-dismiss="modal">×</a>
-									<h2 class="modal-title">正在连接支付宝</h2>
+							<div style="background-clip: padding-box;background-color: #fff;border: 1px solid transparent;border-radius: 25px;position: relative;box-shadow: 0 1px 50px rgba(245,124,0,.5);outline: 0;box-sizing: border-box;display: block;">
+								<div style="margin-top: 24px;padding-right: 24px;padding-left: 24px;position: relative;box-sizing: border-box;display: block;">
+									<a style="color: #727272;cursor: pointer;display: block;float: right;margin-right: -8px;padding-right: 8px;padding-left: 8px;font-size: 20px;line-height: 28px;background-color: transparent;color: #ff0022;text-decoration: none;background-image: none;box-sizing: border-box;" data-dismiss="modal">×</a>
+									<h2 style="color: #32325d: 400;margin-top: 48px;margin-bottom: 12px;box-sizing: border-box;display: block;font-size: 1.5em;-webkit-margin-before: 0.83em;-webkit-margin-after: 0.83em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;">正在连接支付宝</h2>
 								</div>
 								<div class="modal-inner">
-									<p id="title">正在处理...</p>
+									<p id="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正在处理...</p>
+                                  	<p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/qianbai-2.png" height="200" width="200" /></p>
 								</div>
 							</div>
 						</div>
 					</div>
 					
-					<div aria-hidden="true" class="modal modal-va-middle fade" id="alipay" role="dialog" tabindex="-1">
-						<div class="modal-dialog modal-xs">
-							<div class="modal-content">
-							<div class="modal-heading">
-									<a class="modal-close" data-dismiss="modal">×</a>
-                              <h2 class="modal-title">请使用支付宝App扫码充值：</h2>
-								</div>
-								<div class="modal-inner">
+					<div class="modal fade"  id="readytopay" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-default">正在连接支付宝</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+						<p id="title">正在处理...</p>
+            </div>
+        </div>
+    </div>
+    </div>
+					
+					
+					
+					<div class="modal fade"  id="alipay" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-default">请使用支付宝App扫码充值：</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+											<div class="modal-inner">
                                    <div class="text-center">
                                     <p id="divide">-------------------------------------------------------------</p>
 									<p id="title">手机端请点击二维码转跳app</p>
@@ -181,15 +203,13 @@
 									<p id="qrcode"></p>
 									<p id="info"></p>
 								</div>
-                                  </div>
+            </div>
+        </div>
+    </div>
+    </div>
+					
+					
 
-								<div class="modal-footer">
-									<p class="text-right"><button class="btn btn-flat btn-brand waves-attach" data-dismiss="modal" id="alipay_cancel" type="button">取消</button></p>
-								</div>
-							</div>
-						</div>
-					</div>
-	
 	
 	
 {include file='newui_dialog.tpl'}

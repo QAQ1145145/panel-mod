@@ -26,9 +26,9 @@
           <div class="px-4">
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2" >
-                <div class="card-profile-image">
+                 <div class="card-profile-image">
                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="{$user->gravatar}" alt="user-image" class="rounded-circle" >
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
                   </a>
                 </div>
               </div>
@@ -76,7 +76,7 @@
                             {foreach $shops as $shop}
                             <tr>
 								<td>
-                                    <button class="btn btn-primary" {if $shop->renew==0}disabled{else} href="javascript:void(0);" onClick="delete_modal_show('{$shop->id}')"{/if}>退订</button>
+                                    <button class="btn btn-primary" {if $shop->renew==0}disabled{else} href="javascript:void(0);" onClick="delete_modal_show('{$shop->id}')"{/if}>取消自动续费</button>
                                 </td>
                                 <td>#{$shop->id}</td>
                                 <td>{$shop->shop()->name}</td>
@@ -121,7 +121,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>是否退订当前套餐</p>
+                <p>是否取消自动续费？</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal">取消</button>

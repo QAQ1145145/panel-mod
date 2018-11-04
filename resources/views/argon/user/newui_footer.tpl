@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row align-items-center justify-content-md-between">
         <div class="col-md-6">
-          <div class="copyright">Copyright &copy;2017-{date("Y")} <a href="{$config["baseUrl"]}">{$config["appName"]}</a> All rights reserved</div>
+          <div class="copyright">Copyright &copy;2016-{date("Y")} <a href="{$config["baseUrl"]}">{$config["appName"]}</a> All rights reserved</div>
         </div>
         <div class="col-md-6">
           <ul class="nav nav-footer justify-content-end">
@@ -13,13 +13,10 @@
               <a href="/legal" class="nav-link" >服务及保障</a>
             </li>
             <li class="nav-item">
-              <a href="https://docs.flyue.cc" class="nav-link" target="_blank">文档中心</a>
+              <a href="https://wiki.maile3.com" class="nav-link" target="_blank">帮助中心</a>
             </li>
             <li class="nav-item">
               <a href="/user" class="nav-link" >用户中心</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://t.me/Godanns" class="nav-link" >Argon主题</a>
             </li>
           </ul>
         </div>

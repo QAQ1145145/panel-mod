@@ -15,13 +15,7 @@
 	<div class="container">
 		<section class="content-inner margin-top-no">
 
-			<div class="card">
-				<div class="card-main">
-					<div class="card-inner">
-						<p>公共邀请码功能已废弃，如需开放注册请在 .config.php 中将 register_mode 项目设置为 open </p>
-					</div>
-				</div>
-			</div>
+
 
 
 			<div class="card">

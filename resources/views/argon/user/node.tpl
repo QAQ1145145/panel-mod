@@ -1,9 +1,3 @@
-
-
-
-
-
-
 {include file='user/newui_header.tpl'}
 
 
@@ -28,7 +22,7 @@
               <div class="col-lg-3 order-lg-2" >
                 <div class="card-profile-image">
                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="{$user->gravatar}" alt="user-image" class="rounded-circle" >
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
                   </a>
                 </div>
               </div>
@@ -80,56 +74,21 @@
 																		{$relay_rule = $tools->pick_out_relay_rule($node->id, $user->port, $relay_rules)}
 																	{/if}
 
-																	{if $node->mu_only != 1}
 						<div class="col-lg-6" style=" margin-top: 3rem;">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 							<div class="card-main">
 								<div class="card-inner">
 									<p class="card-heading" >
-										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}-{$node->traffic_rate}
+										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
-										{if $node->node_class > $user->class}
-											<a class="btn btn-flat pull-right" >等级不足</a>
-										{else}
-											<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">配置信息</a>
+										{if $node->mu_only != 1 && $node->sort != 11}
+											{if $node->node_class > $user->class}
+													<a class="btn btn-flat pull-right" >等级不足</a>
+												{else}
+													<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">普通端口</a>
+											{/if}
 										{/if}
-									<p>
-										节点状态：
-										{if $node_heartbeat[$prefix]=="在线"}
-										<span class="badge badge-pill badge-success text-uppercase">正常</span>
-										{else}{if $node_heartbeat[$prefix]=='暂无数据'}
-										<span class="badge badge-pill badge-info text-uppercase">暂无数据</span>
-										{else}
-										<span class="badge badge-pill badge-danger text-uppercase">离线</span>
-										{/if}{/if}
-									</p>
-									{if $node->sort == 0||$node->sort==7||$node->sort==8||$node->sort==10}
-										<p>流量比例：
-										<span class="label label-red">
-										{$node->traffic_rate}
-										</span></p>
-									{/if}
-										<p>节点类型：
-										{$node->info}</p>
-										<p>在线人数：
-									{$node_alive[$prefix]}
-										</p>
-										<p>流量情况：
-									{if isset($node_bandwidth[$prefix])==true}{$node_bandwidth[$prefix]}{else}N/A{/if}
-										</p>			
-								</div>
-							</div>
-                  </div>
-            </div>				
-          </div>
-			{/if}
-																				{if $node->sort == 0 || $node->sort == 10}
-																		{$point_node=$node}
-																	{/if}
-
-
-
 																	{if ($node->sort == 0 || $node->sort == 10) && $node->custom_rss == 1 && $node->mu_only != -1}
 																		{foreach $node_muport as $single_muport}
 
@@ -145,22 +104,11 @@
 																			{if $node->sort == 10 && $single_muport['user']['is_multi_user'] != 2}
 																				{$relay_rule = $tools->pick_out_relay_rule($node->id, $single_muport['server']->server, $relay_rules)}
 																			{/if}
-
-				<div class="col-lg-6" style=" margin-top: 3rem;">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-							<div class="card-main">
-								<div class="card-inner">
-									<p class="card-heading" >
-										{$prefix} {if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}-{$single_muport['server']->server} 端口
-									</p>
-										{if $node->node_class > $user->class}
-											<a class="btn btn-flat pull-right" >等级不足</a>
-										{else}
-											{if $node->sort > 2 && $node->sort != 5 && $node->sort != 10}
-											<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">配置信息</a>
-											{/if}
-										{/if}
+                                  
+                                  									<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',{$single_muport['server']->server},{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">{$single_muport['server']->server} 端口</a>
+																						
+																		{/foreach}
+																	{/if}
 									<p>
 										节点状态：
 										{if $node_heartbeat[$prefix]=="在线"}
@@ -190,8 +138,6 @@
                   </div>
             </div>				
           </div>
-			{/foreach}
-		{/if}
 	{/foreach}
 		{/if}
 {/foreach}
@@ -210,7 +156,7 @@
 			        <div class="row row-grid justify-content-between align-items-center mt-lg">
 																{$id=0}
 											{foreach $node_prefix as $prefix => $nodes}		
-										{if $node_class[$prefix] < 3}				
+										{if $node_class[$prefix] >= 1 & $node_class[$prefix] < 4 }			
 												{$id=$id+1}
 																{foreach $nodes as $node}		
 
@@ -218,57 +164,21 @@
 																	{if $node->sort == 10}
 																		{$relay_rule = $tools->pick_out_relay_rule($node->id, $user->port, $relay_rules)}
 																	{/if}
-
-																	{if $node->mu_only != 1}
 						<div class="col-lg-6" style=" margin-top: 3rem;">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 							<div class="card-main">
 								<div class="card-inner">
 									<p class="card-heading" >
-										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}-{$node->traffic_rate}
+										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
-										{if $node->node_class > $user->class}
-											<a class="btn btn-flat pull-right" >等级不足</a>
-										{else}
-											<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">配置信息</a>
-										{/if}
-									<p>
-										节点状态：
-										{if $node_heartbeat[$prefix]=="在线"}
-										<span class="badge badge-pill badge-success text-uppercase">正常</span>
-										{else}{if $node_heartbeat[$prefix]=='暂无数据'}
-										<span class="badge badge-pill badge-info text-uppercase">暂无数据</span>
-										{else}
-										<span class="badge badge-pill badge-danger text-uppercase">离线</span>
-										{/if}{/if}
-									</p>
-									{if $node->sort == 0||$node->sort==7||$node->sort==8||$node->sort==10}
-										<p>流量比例：
-										<span class="label label-red">
-										{$node->traffic_rate}
-										</span></p>
-									{/if}
-										<p>节点类型：
-										{$node->info}</p>
-										<p>在线人数：
-									{$node_alive[$prefix]}
-										</p>
-										<p>流量情况：
-									{if isset($node_bandwidth[$prefix])==true}{$node_bandwidth[$prefix]}{else}N/A{/if}
-										</p>			
-								</div>
-							</div>
-                  </div>
-            </div>				
-          </div>
-			{/if}
-																				{if $node->sort == 0 || $node->sort == 10}
-																		{$point_node=$node}
-																	{/if}
-
-
-
+											{if $node->mu_only != 1 && $node->sort != 11}
+												{if $node->node_class > $user->class}
+													<a class="btn btn-flat pull-right" >等级不足</a>
+												{else}
+													<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">普通端口</a>
+												{/if}
+											{/if}
 																	{if ($node->sort == 0 || $node->sort == 10) && $node->custom_rss == 1 && $node->mu_only != -1}
 																		{foreach $node_muport as $single_muport}
 
@@ -284,22 +194,11 @@
 																			{if $node->sort == 10 && $single_muport['user']['is_multi_user'] != 2}
 																				{$relay_rule = $tools->pick_out_relay_rule($node->id, $single_muport['server']->server, $relay_rules)}
 																			{/if}
-
-				<div class="col-lg-6" style=" margin-top: 3rem;">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-							<div class="card-main">
-								<div class="card-inner">
-									<p class="card-heading" >
-										{$prefix} {if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}-{$single_muport['server']->server} 端口
-									</p>
-										{if $node->node_class > $user->class}
-											<a class="btn btn-flat pull-right" >等级不足</a>
-										{else}
-											{if $node->sort > 2 && $node->sort != 5 && $node->sort != 10}
-											<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">配置信息</a>
-											{/if}
-										{/if}
+                                  
+                                  									<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',{$single_muport['server']->server},{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">{$single_muport['server']->server} 端口</a>
+																						
+																		{/foreach}
+																	{/if}
 									<p>
 										节点状态：
 										{if $node_heartbeat[$prefix]=="在线"}
@@ -329,8 +228,6 @@
                   </div>
             </div>				
           </div>
-			{/foreach}
-		{/if}
 	{/foreach}
 		{/if}
 {/foreach}
@@ -350,7 +247,7 @@
 																{$id=0}
 											{foreach $node_prefix as $prefix => $nodes}
 
-										{if $node_class[$prefix] >=3}
+										{if $node_class[$prefix] >3 }
 										
 										
 												{$id=$id+1}
@@ -360,54 +257,21 @@
 																	{if $node->sort == 10}
 																		{$relay_rule = $tools->pick_out_relay_rule($node->id, $user->port, $relay_rules)}
 																	{/if}
-
-																	{if $node->mu_only != 1}
 						<div class="col-lg-6" style=" margin-top: 3rem;">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 							<div class="card-main">
 								<div class="card-inner">
 									<p class="card-heading" >
-										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}-{$node->traffic_rate}
+										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
-										{if $node->node_class > $user->class}
-											<a class="btn btn-flat pull-right" >等级不足</a>
-										{else}
-											<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">配置信息</a>
+										{if $node->mu_only != 1 && $node->sort != 11}
+											{if $node->node_class > $user->class}
+												<a class="btn btn-flat pull-right" >等级不足</a>
+											{else}
+												<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">普通端口</a>
+											{/if}
 										{/if}
-									<p>
-										节点状态：
-										{if $node_heartbeat[$prefix]=="在线"}
-										<span class="badge badge-pill badge-success text-uppercase">正常</span>
-										{else}{if $node_heartbeat[$prefix]=='暂无数据'}
-										<span class="badge badge-pill badge-info text-uppercase">暂无数据</span>
-										{else}
-										<span class="badge badge-pill badge-danger text-uppercase">离线</span>
-										{/if}{/if}
-									</p>
-									{if $node->sort == 0||$node->sort==7||$node->sort==8||$node->sort==10}
-										<p>流量比例：
-										<span class="label label-red">
-										{$node->traffic_rate}
-										</span></p>
-									{/if}
-										<p>节点类型：
-										{$node->info}</p>
-										<p>在线人数：
-									{$node_alive[$prefix]}
-										</p>
-										<p>流量情况：
-									{if isset($node_bandwidth[$prefix])==true}{$node_bandwidth[$prefix]}{else}N/A{/if}
-										</p>			
-								</div>
-							</div>
-                  </div>
-            </div>				
-          </div>
-			{/if}
-					{if $node->sort == 0 || $node->sort == 10}
-						{$point_node=$node}
-					{/if}
 																	{if ($node->sort == 0 || $node->sort == 10) && $node->custom_rss == 1 && $node->mu_only != -1}
 																		{foreach $node_muport as $single_muport}
 
@@ -423,22 +287,11 @@
 																			{if $node->sort == 10 && $single_muport['user']['is_multi_user'] != 2}
 																				{$relay_rule = $tools->pick_out_relay_rule($node->id, $single_muport['server']->server, $relay_rules)}
 																			{/if}
-
-				<div class="col-lg-6" style=" margin-top: 3rem;">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-							<div class="card-main">
-								<div class="card-inner">
-									<p class="card-heading" >
-										{$prefix} {if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}-{$single_muport['server']->server} 端口
-									</p>
-										{if $node->node_class > $user->class}
-											<a class="btn btn-flat pull-right" >等级不足</a>
-										{else}
-											{if $node->sort > 2 && $node->sort != 5 && $node->sort != 10}
-											<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">配置信息</a>
-											{/if}
-										{/if}
+                                  
+                                  									<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',{$single_muport['server']->server},{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">{$single_muport['server']->server} 端口</a>
+																						
+																		{/foreach}
+																	{/if}
 									<p>
 										节点状态：
 										{if $node_heartbeat[$prefix]=="在线"}
@@ -468,8 +321,6 @@
                   </div>
             </div>				
           </div>
-			{/foreach}
-		{/if}
 	{/foreach}
 		{/if}
 {/foreach}
