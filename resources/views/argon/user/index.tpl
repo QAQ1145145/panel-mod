@@ -264,7 +264,7 @@
                                                   <a class="btn btn-primary mt-2" href="https://raw.githubusercontent.com/bfsdo0/ss-tap-mod/master/ss-mac.zip">立即下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Linux、路由器</h4>
-                                                  <a class="btn btn-primary mt-4" href="https://wiki.maile3.com">请戳这里</a>
+                                                  <a class="btn btn-primary mt-4" href="https://wiki.maile3.com/?p=29" target="_blank">请戳这里</a>
                                                   <hr>
                                             <!----->
                  </div>
