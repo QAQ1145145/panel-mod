@@ -64,7 +64,7 @@
             </li>
             <li class="nav-item dropdown">
               <a href="/user/relay" class="nav-link" >
-                <i class="ni ni-relay"></i>
+                <i class="ni ni-app"></i>
                 <span class="nav-link-inner--text">中转设置</span>
               </a>
             </li>
