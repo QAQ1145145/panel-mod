@@ -197,23 +197,7 @@
 	
 
 
-				<div class="col-lg-6">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-										<p class="card-heading">主题修改</p>
-										<p>当前主题：{$user->theme}</p>
-										<div class="form-group form-group-label">
-											<label class="floating-label" for="theme">主题</label>
-											<select id="theme" class="form-control">
-												{foreach $themes as $theme}
-													<option value="{$theme}">{$theme}</option>
-												{/foreach}
-											</select>
-										</div>
-								<button class="btn btn-primary mt-4"  id="theme-update">&nbsp;提交</button>
-                  </div>
-                </div>
-            </div>	
+
 <!--			
 			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
@@ -231,7 +215,8 @@
                 </div>
             </div>	
 -->
-			
+
+          
 			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
@@ -281,7 +266,23 @@
                 </div>
             </div>
 	
-<!--
+				<div class="col-lg-6">
+                <div class="card card-lift shadow border-0">
+                  <div class="card-body">
+										<p class="card-heading">主题修改</p>
+										<p>当前主题：{$user->theme}</p>
+										<div class="form-group form-group-label">
+											<label class="floating-label" for="theme">主题</label>
+											<select id="theme" class="form-control">
+												{foreach $themes as $theme}
+													<option value="{$theme}">{$theme}</option>
+												{/foreach}
+											</select>
+										</div>
+								<button class="btn btn-primary mt-4"  id="theme-update">&nbsp;提交</button>
+                  </div>
+                </div>
+            </div>	
 				<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
@@ -298,8 +299,9 @@
                   </div>
                 </div>
             </div>	
+
         </div>
--->
+
 						
 						
           </div>
