@@ -125,7 +125,7 @@
 										{$node->traffic_rate}
 										</span></p>
 									{/if}
-										<p>节点类型：
+										<p>节点说明：
 										{$node->info}</p>
 										<p>在线人数：
 									{$node_alive[$prefix]}
@@ -215,7 +215,7 @@
 										{$node->traffic_rate}
 										</span></p>
 									{/if}
-										<p>节点类型：
+										<p>节点说明：
 										{$node->info}</p>
 										<p>在线人数：
 									{$node_alive[$prefix]}
@@ -308,7 +308,7 @@
 										{$node->traffic_rate}
 										</span></p>
 									{/if}
-										<p>节点类型：
+										<p>节点说明：
 										{$node->info}</p>
 										<p>在线人数：
 									{$node_alive[$prefix]}
