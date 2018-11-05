@@ -104,6 +104,10 @@
 						<h2 class="card-title">
                           {if $user->auto_reset_day !==0}
                           <p class="mt-4" style="font-weight: 650;">{$user->auto_reset_day}日重置流量</p>
+                          {else if strtotime($user->class_expire)<time()}
+                          <p class="mt-4" style="font-weight: 650;">不重置流量</p>
+                          {else if $lastDay == "01月01日" }
+                          <p class="mt-4" style="font-weight: 650;">{date('m-d',strtotime($user->class_expire))}重置流量</p>
                           {else}
                           <p class="mt-4" style="font-weight: 650;">{$lastDay}重置流量</p>
                           {/if}
