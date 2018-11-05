@@ -18,6 +18,9 @@
             <li class="nav-item">
               <a href="/user" class="nav-link" >用户中心</a>
             </li>
+            <li class="nav-item">
+              <a href="http://qm.qq.com/cgi-bin/qm/qr?k=1ah84mwCycS76CGWD3P75GG6TwG5HQPC"  target="_blank" class="nav-link" >加入我们</a>
+            </li>
           </ul>
         </div>
       </div>

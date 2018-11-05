@@ -43,7 +43,7 @@
                       </div>
                       <input class="form-control" placeholder="邮箱验证码" id="email_code" type="text">
                     </div>
-							<button id="email_verify" class="btn btn-primary mt-4">获取验证码</button>
+							<button id="email_verify" class="btn btn-primary" style="mrgin-top:0px;">获取验证码</button>
                   </div>
                 {/if}
                   <div class="form-group">
@@ -61,20 +61,44 @@
                       </div>
                       <input class="form-control" placeholder="重复密码" id="repasswd" type="password">
                     </div>
-                  </div>							                       
+                  </div>	
+                <label class="floating-label" for="imtype">选择您的联络方式</label>
+										<div class="form-group">
+											<div class="input-group input-group-alternative">
+													<select class="form-control" id="imtype">
+														<option></option>
+														<option value="1">微信</option>
+														<option value="2">QQ</option>
+														<option value="3">Facebook</option>
+														<option value="4">Telegram</option>
+													</select>
+											</div>
+										</div>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-archive-2"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="在这输入联络方式账号" id="wechat" type="wechat">
+                    </div>
+                  </div>                
                   <div class="form-group">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-key-25"></i></span>
                       </div>
                       <input class="form-control" placeholder="邀请码{if $enable_invite_code == 'false'}(没有就不填){/if}" id="code" type="text">
-                    </div>{if $enable_invite_code == 'true'}
+                    </div>
+                    <div>
+                    <p style="color: rgba(0,0,0,.26): text;font-size: 12px;position: absolute;">若您没有可用优惠码，请填入<code style="color: rgba(0.6,0,0,0.26)">welcome</code></p>
+                    </div>
+                    {if $enable_invite_code == 'false'}
 							<button id="view_code" data-toggle="modal" data-target="#reg_code" class="btn btn-primary mt-4">查看公共邀请码</button>
                     {/if}
                   </div>
 				  
 							{if $geetest_html != null}
-											<div class="form-group form-group-label">
+											<div class="form-group form-group-label" style="margin-top:23px;">
 												<div class="row">
 													<div class="col-md-10 col-md-push-1">
 														<div id="embed-captcha"></div>
@@ -82,19 +106,19 @@
 												</div>
 											</div>
 										{/if}
-						
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                  <input class="custom-control-input" id="oneclick_theme" name="oneclick_theme" type="checkbox"> 
+                  <label class="custom-control-label" for="oneclick_theme">
+                    <span>我已阅读<a href="/legal" target="_blank">《服务条款》</a>和<a href="/legal/privacy" target="_blank">《隐私条款》</a>，并且保证所录入信息的真实性(如有不实信息会导致账号被删除)</span>
+                  </label>
+                </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
                     <input class="custom-control-input" id="legal" name="legal" type="checkbox"> 
                     <label class="custom-control-label" for="legal">
-                      <span>我已阅读<a href="/legal" target="_blank">《服务条款》</a>和<a href="/legal/privacy" target="_blank">《隐私条款》</a>，并且保证所录入信息的真实性(如有不实信息会导致账号被删除)</span>
+                      <span>我会自己参考<a href="https://wiki.maile3.com" target="_blank">教程</a>解决使用问题</span>
                     </label>
                   </div>
-                  <div class="custom-control custom-control-alternative custom-checkbox">
-                    <input class="custom-control-input" id="oneclick_theme" name="oneclick_theme" type="checkbox"> 
-                    <label class="custom-control-label" for="oneclick_theme">
-                      <span>我是小白，需要更明了的操作方式</span>
-                    </label>
-                  </div>
+
                   <div class="text-center">
 						 <button id="tos" type="submit" disabled class="btn btn-primary mt-4">注册</button>
                   </div>

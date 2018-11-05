@@ -8,23 +8,23 @@
         <div class="row justify-content-center">
           <div class="col-lg-5">
             <div class="card bg-secondary shadow border-0">
-              <div class="card-header bg-white pb-5">
-                <div class="text-muted text-center mb-3">
-                  <small>登录到用户中心</small>
+              <div class="card-header bg-white pb-4">
+                <div class="text-muted text-center">
+                  <h5><b>登录到用户中心</b></h5>
                 </div>                    
-                <div class="btn-wrapper text-center">
+                <!--<div class="btn-wrapper text-center">
                   <a  class="btn btn-neutral btn-icon">
                     <span class="btn-inner--icon">
                       <img src="https://cdn.godann.com/kitui/img/icons/common/telegram.svg">
                     </span>
                     <span class="btn-inner--text" data-toggle="modal" data-target="#tg_login">Telegram 登陆</span>
                   </a>
-                </div>
+                </div>-->
               </div>
               <div class="card-body px-lg-5 py-lg-5">
-                <div class="text-center text-muted mb-4">
+                <!--<div class="text-center text-muted mb-4">
                   <small>或使用密码登陆</small>
-                </div>
+                </div>-->
                 <form action="javascript:void(0);" method="POST">
                   <div class="form-group mb-3">
                     <div class="input-group input-group-alternative">
