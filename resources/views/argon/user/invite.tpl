@@ -72,7 +72,7 @@
 										<p>您每邀请1位用户注册：</p>
 										<p>对方充值时您还会获得对方充值金额的 <code>{$config["code_payback"]} %</code> 的返利。</p>
 										<p class="card-heading">已获得返利：<code>{$paybacks_sum}</code> 元</p>
-                    <button class="btn btn-primary mt-4" onClick="txqq()" type="button" id="txqq" >申请提现</button>
+                    <!--<button class="btn btn-primary mt-4" onClick="txqq()" type="button" id="txqq" >申请提现</button>-->
 					
 					
 					

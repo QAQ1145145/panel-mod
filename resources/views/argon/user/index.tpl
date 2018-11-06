@@ -89,7 +89,7 @@
                     {else}
                     <button disabled="disabled" class="btn btn-primary mt-4" style="margin-left: 1rem;">今日已签到</button>
                     {/if}
-					<p class="col mt-4" style="text-align: right;"><dt>上次签到时间：</dt><dd>&nbsp;{$user->lastCheckInTime()}</dd>
+					<p class="col mt-4" style="text-align: right;"><font style="font-weight: 650;">上次签到时间：</font>&nbsp;&nbsp;{$user->lastCheckInTime()}
                   	</p>
                   </div>
                   </div>
