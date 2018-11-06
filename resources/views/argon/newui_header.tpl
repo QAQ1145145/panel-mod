@@ -45,7 +45,7 @@
                 <span class="nav-link-inner--text">介绍</span>
               </a>
               <div class="dropdown-menu">
-                <a href="https://docs.flyue.cc" class="dropdown-item">帮助文档</a>
+                <a href="https://wiki.maile3.com" target="_blank" class="dropdown-item">帮助文档</a>
                 <a href="/staff" class="dropdown-item">STAFF</a>
               </div>
             </li>
