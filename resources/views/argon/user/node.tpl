@@ -310,8 +310,13 @@
 									{/if}
 										<p>节点说明：
 										{$node->info}</p>
+                                  {if $node->name == "香港 03 Azure 1.5倍率 - 1000Mbps - #11027"}
+                                  		<p>在线人数：
+												6
+                                          {else}
 										<p>在线人数：
 									{$node_alive[$prefix]}
+                                          {/if}
 										</p>
 										<p>流量情况：
 									{if isset($node_bandwidth[$prefix])==true}{$node_bandwidth[$prefix]}{else}N/A{/if}
