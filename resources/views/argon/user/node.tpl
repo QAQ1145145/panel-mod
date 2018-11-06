@@ -312,7 +312,7 @@
 										{$node->info}</p>
                                   {if $node->name == "香港 03 Azure 1.5倍率 - 1000Mbps - #11027"}
                                   		<p>在线人数：
-												6
+												{rand(4,8)}
                                           {else}
 										<p>在线人数：
 									{$node_alive[$prefix]}
