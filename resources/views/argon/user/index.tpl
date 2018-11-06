@@ -84,13 +84,13 @@
                 </div>
               </div>
                  <div class="row">
-                    {if $user->isAbleToCheckin() == 1  && $user->class > 0}
+                    {if $user->isAbleToCheckin() == 1}
                     <button id="checkin" class="btn btn-primary mt-4" style="margin-left: 1rem;">签到</button>
                     {else}
-                    <button disabled="disabled" class="btn btn-primary mt-4" style="margin-left: 1rem;">签到</button>
+                    <button disabled="disabled" class="btn btn-primary mt-4" style="margin-left: 1rem;">今日已签到</button>
                     {/if}
-					   <p class="col mt-4" style="text-align: right;">
-                   </p>
+					<p class="col mt-4" style="text-align: right;"><dt>上次签到时间：</dt><dd>&nbsp;{$user->lastCheckInTime()}</dd>
+                  	</p>
                   </div>
                   </div>
                 </div>
