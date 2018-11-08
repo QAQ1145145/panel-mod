@@ -132,6 +132,7 @@
 										<hr>
 										{/if}
 										<p>{$ann->content}更新日期<code>{$ann->date}</code></p>
+                        <p style="background-color:transparent;color: #ff4081;text-decoration: none;cursor: pointer;"><a href="/user/announcement">更多公告</a></p>
                 </div>
               </div>
             </div>
