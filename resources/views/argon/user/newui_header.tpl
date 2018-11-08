@@ -54,6 +54,7 @@
               <div class="dropdown-menu">
                 <a href="/user/edit" class="dropdown-item">资料编辑</a>
                 <a href="/user/profile" class="dropdown-item">用户信息</a>
+                <a href="/user/announcement" class="dropdown-item">系统公告</a>
               </div>
             </li>
             <li class="nav-item dropdown">
