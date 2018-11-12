@@ -1,4 +1,9 @@
 
+
+
+
+
+
 {include file='user/newui_header.tpl'}
 
 
@@ -20,17 +25,14 @@
         <div class="card card-profile shadow mt--300">
           <div class="px-4">
 			   <div class="row justify-content-center">
-              <div class="col-lg-3 order-lg-2" >
-                <div class="card-profile-image">
-                  <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
-                  </a>
-                </div>
-              </div>
+
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                 <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="/user" class="btn btn-sm btn-primary">用户中心</a>
-                  <a href="/user/node" class="btn btn-sm btn-default float-right">节点列表</a>
+                  <div class="text-center">
+                  <a href="/user/node" class="btn btn-sm btn-default">节点列表</a>
+                  <a href="/user/shop" class="btn btn-sm btn-primary ">用户中心</a>
+                  <a href="/user/code" class="btn btn-sm btn-primary">充值金币</a>
+                  </div>
                 </div>
               </div>
               <div class="col-lg-4 order-lg-1">
@@ -50,39 +52,47 @@
                 </div>
               </div>
             </div>
-			{if $user->money <4.9}
-			  <div class="mt-5 py-5 text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-9">
-              <div class="mb-3">
-                <small class="text-uppercase font-weight-bold">好像余额不足了哦</small>
-              </div>
-			  
-                    <a  class="btn btn-primary mt-4"  href="/user/code">充值中心</a>
+			        
+					<div class="row row-grid justify-content-between align-items-center mt-lg">
 					
-                </div>
-              </div>
-            </div>
-			{/if}
-			        <div class="row row-grid justify-content-between align-items-center mt-lg">
+						<div class="col-lg-12">
+							<div class="card card-lift shadow border-0">
+								<div class="card-body">
+								<p>注意：购买同级别套餐将叠加到期时间，您可以用金币兑换下面的套餐。</p>
+                                  <p>当前剩余金币：<code>{$user->money} </code></p>
+								</div>
+							</div>
+						</div>	
+					</div>
+			
 					
-					
-					
-					
+	<section class="section section-lg">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="row row-grid">
+			
 					 {foreach $shops as $shop}
-						<div class="col-lg-6" style=" margin-top: 3rem;">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-							<div class="card-main">
-								<div class="card-inner">
-									<p class="card-heading" >
-										{$shop->name}-<code>{$shop->price}</code>金币
-									</p>
-                                 <a id="buy_button" class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew},{$shop->auto_reset_bandwidth})">购买</a>
-									<p>
-										套餐详情<br>
-										<code>{$shop->content()}</code>
-									</p>
+					
+              <div class="col-lg-4" style=" margin-top: 3rem;">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="card-body py-5">
+                      <h6 class="category">{$shop->name}</h6>
+							<h1 class="card-title">￥{$shop->price}<small>/{if $shop->class_expire() ==30 || $shop->class_expire() ==31}月{else}{if $shop->class_expire() == 90 }季{else}{if $shop->class_expire() == 180 }半年{else}{if $shop->class_expire() == 360 }年{else}次{/if}{/if}{/if}{/if}</small></h1>
+                       			套餐详情<br>
+                                    <ul>
+                                      <li>重置流量{$shop->bandwidth()}G</li>
+                                      <li>网络加速/游戏加速解锁</li>
+                                      {if $shop->user_class()>=4}
+                                      <li>用户等级修改为高级用户</li>
+                                      {else if $shop->user_class()>=2}
+                                      <li>用户等级修改为普通用户</li>
+                                      {/if}
+                                      {if $shop->auto_renew>31}
+                                      <li>每月{date(d)}日重置流量</li>
+                                      {/if}
+                                    </ul>
+                  <!----
                                 {if $shop->auto_renew==0}
 										<p><span class="label label-red">
 										不能自动续费
@@ -91,7 +101,7 @@
 										<p><span class="label label-red">
 										可选在 {$shop->auto_renew} 天后自动续费
 										</span></p>
-								{/if}		                                
+								{/if}
 								{if $shop->auto_reset_bandwidth==0}
 										<p><span class="label label-red">
 										不可自动重置
@@ -100,16 +110,36 @@
 										<p><span class="label label-red">
 										可自动重置
 										</span></p>
-								{/if}	
-								</div>
-							</div>
-                  </div>
-            </div>				
-          </div>
-		  
+								{/if}
+				   ---->
+                                 <a id="buy_button" class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew},{$shop->auto_reset_bandwidth})">购买</a>
+              </div>
+                </div>
+              </div>
+			  
 					{/foreach}
-						{$shops->render()}
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+					
+					
+					
+					
+					
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
        </div>
      </div>
    </div>
@@ -131,12 +161,11 @@
 									</div>
             </div>
             <div class="modal-footer">
-                <button  class="btn btn-primary"  data-dismiss="modal" id="coupon_input">确定</button>
+                <button type="button" class="btn btn-primary"  data-dismiss="modal" id="coupon_input" type="button">确定</button>
             </div>
         </div>
     </div>
     </div>
-					
 					
 					
 	<div class="modal fade"  id="order_modal"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
@@ -154,14 +183,21 @@
 									<p id="credit">优惠额度：</p>
 									<p id="total">总金额：</p>
 									
-									<div class="checkbox switch" id="autor">       
-									<p id="auto_reset">在到期时自动续费</p>
-										<label class="custom-toggle">
-											<input type="checkbox" id="autorenew" >
-											<span class="custom-toggle-slider rounded-circle"></span>
-										</label>
+								
+									<div class="checkbox switch custom-control custom-checkbox mb-3" id="disableo">
+              							<input class="custom-control-input" checked id="disableothers" type="checkbox">
+              								<label class="custom-control-label" for="disableothers">
+                									<span>关闭旧套餐自动续费</span>
+              								</label>
+									</div>
+									<div class="checkbox switch custom-control custom-checkbox mb-3" id="autor">
+              							<input class="custom-control-input" checked id="autorenew" type="checkbox">
+              								<label class="custom-control-label" for="autorenew">
+                									<span>到期时自动续费</span>
+              								</label>
 									</div>
 
+              
 									
 									
             </div>
@@ -195,7 +231,6 @@
 
 
 {include file='user/newui_footer.tpl'}
-
 
 
 <script>
