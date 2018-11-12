@@ -103,13 +103,13 @@
                   </div>
 						<h2 class="card-title">
                           {if $user->auto_reset_day !==0}
-                          <p class="mt-4" style="font-weight: 650;">{$user->auto_reset_day}日重置流量</p>
+                          <p class="mt-4" style="font-weight: 650;">{$user->auto_reset_day}日重置流量 {if $user->node_speedlimit!=0}限速{$user->node_speedlimit}Mbps{else}不限速{/if}</p>
                           {else if strtotime($user->class_expire)<time()}
-                          <p class="mt-4" style="font-weight: 650;">不重置流量</p>
+                          <p class="mt-4" style="font-weight: 650;">不重置流量 {if $user->node_speedlimit!=0}限速{$user->node_speedlimit}Mbps{else}不限速{/if}</p>
                           {else if $lastDay == "01月01日" }
-                          <p class="mt-4" style="font-weight: 650;">{date('m-d',strtotime($user->class_expire))}重置流量</p>
+                          <p class="mt-4" style="font-weight: 650;">{date('m-d',strtotime($user->class_expire))}重置流量 {if $user->node_speedlimit!=0}限速{$user->node_speedlimit}Mbps{else}不限速{/if}</p>
                           {else}
-                          <p class="mt-4" style="font-weight: 650;">{$lastDay}重置流量</p>
+                          <p class="mt-4" style="font-weight: 650;">{$lastDay}重置流量 {if $user->node_speedlimit!=0}限速{$user->node_speedlimit}Mbps{else}不限速{/if}</p>
                           {/if}
                           <p class="mt-4" style="font-weight: 650;">{$user->class_expire}到期</p>
 						</h2>
@@ -426,6 +426,7 @@ var handlerPopup = function (captchaObj) {
 				$("#checkin-msg").html(data.msg);
 				$("#checkin-btn").hide();
 				$("#result").modal();
+
 				$("#msg").html(data.msg);
 			},
 			error: function (jqXHR) {

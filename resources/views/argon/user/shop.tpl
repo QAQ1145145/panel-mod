@@ -94,6 +94,7 @@
                                       {else if $shop->user_class()>=2}
                                       <li>用户等级修改为普通用户</li>
                                       {/if}
+                                      <li>速度限制:{if $shop->speedlimit()!=0}{$shop->speedlimit()}Mbps{else}不限速{/if}</li>
                                       {if $shop->auto_renew>31}
                                       <li>每月{date(d)}日重置流量</li>
                                       {/if}
