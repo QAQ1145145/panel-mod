@@ -61,7 +61,14 @@
 			
 			
 			
-			
+		 <div>
+			<div>
+                  <div class="card-body">
+										<div class="form-group form-group-label">
+											<label class="floating-label" for="code">感谢您的捐赠，我们会回馈您相同数量的金币。</label>
+                  </div>
+                </div>
+            </div>			
 			
 		 <div class="row row-grid justify-content-between align-items-center mt-lg">
 			<div class="col-lg-6">
@@ -99,7 +106,7 @@
 												<table class="table table-hover">
 													<tr>
 														<th>ID</th>
-														<th>代码</th>
+														<th>捐赠方式</th>
 														<th>类型</th>
 														<th>金额</th>
 														<th>充值时间</th>
@@ -109,7 +116,7 @@
 														{if $code->type!=-2}
 															<tr>
 																<td>#{$code->id}</td>
-																<td>{$code->code}</td>
+																<td>{if $code->code=="支付宝 充值"}支付宝{else}{$code->code}{/if}</td>
 																{if $code->type==-1}
 																<td>金额捐赠</td>
 																{/if}
