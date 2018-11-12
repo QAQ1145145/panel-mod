@@ -24,8 +24,14 @@
       <div class="container">
         <div class="card card-profile shadow mt--300">
           <div class="px-4">
-			   <div class="row justify-content-center">
-
+			<div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2" >
+                 <div class="card-profile-image">
+                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                     <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
+                   </a>
+                 </div>
+               </div>
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                 <div class="card-profile-actions py-4 mt-lg-0">
                   <div class="text-center">
