@@ -69,7 +69,7 @@
                   <div class="card-body">
 						<h6 class="category">红包码</h6>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="code">与充值无关,支付宝扫码(手机点击图片)领红包,立减现金!</label>
+											<label class="floating-label" for="code">与捐赠无关,支付宝扫码(手机点击图片)领红包,立减现金!</label>
 											<p><a href="https://qr.alipay.com/c1x09807njeutfbehmjrxe2"><img src="/assets/public/img/hongbao.jpg" height="150" width="150"></a></p>
 										</div>
                   </div>
@@ -93,7 +93,7 @@
               <div class="row justify-content-center">
                 <div class="col-lg-11">
               <div class="mb-3">
-                <small class="text-uppercase font-weight-bold">充值记录</small>
+                <small class="text-uppercase font-weight-bold">捐赠记录</small>
               </div>
 									{$codes->render()}
 												<table class="table table-hover">
@@ -111,7 +111,7 @@
 																<td>#{$code->id}</td>
 																<td>{$code->code}</td>
 																{if $code->type==-1}
-																<td>金额充值</td>
+																<td>金额捐赠</td>
 																{/if}
 																{if $code->type==10001}
 																<td>流量充值</td>
@@ -189,7 +189,7 @@
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="modal-title" id="modal-title-default">请使用支付宝App扫码充值：</h6>
+                <h6 class="modal-title" id="modal-title-default">请使用支付宝App扫码捐赠：</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>

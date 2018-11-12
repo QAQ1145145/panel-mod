@@ -1,5 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>叮当加速—专注外服游戏加速</title>
+  <meta name="msvalidate.01" content="4652A53480D3E379798BE86168C0A149" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://cdn.godann.com/kitui/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="https://cdn.godann.com/kitui/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!--<link type="text/css" href="https://cdn.godann.com/kitui/css/argon.css" rel="stylesheet">-->
+  <link href="/argon-halloween.css" rel="stylesheet">
+</head>
 
-{include file='newui_header.tpl'}
+<body>
+  <header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="/">
+          <img src="/white.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="/">
+                  <img src="/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-collection"></i>
+                <span class="nav-link-inner--text">介绍</span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="https://wiki.maile3.com" class="dropdown-item" target="_blank">帮助文档</a>
+                <a href="/staff" class="dropdown-item">STAFF</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-books"></i>
+                <span class="nav-link-inner--text">服务及保障</span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="/legal" class="dropdown-item">条款总则</a>
+                <a href="/legal/tos" class="dropdown-item">服务条款</a>
+                <a href="/legal/privacy" class="dropdown-item">隐私条款</a>
+                <a href="/legal/aup" class="dropdown-item">可接受使用政策</a>
+              </div>
+            </li>
+			{if $user->isLogin}
+            <li class="nav-item dropdown">
+              <a href="/user" class="nav-link" >
+                <i class="ni ni-circle-08"></i>
+                <span class="nav-link-inner--text">用户中心</span>
+              </a>
+            </li>
+			{else}
+			 <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-atom"></i>
+                <span class="nav-link-inner--text">登录</span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="/user" class="dropdown-item">登录</a>
+                <a href="/auth/register" class="dropdown-item">注册</a>
+              </div>
+            </li>
+			{/if}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  {if $config["enable_crisp"] == 'true'}{include file='crisp.tpl'}{/if}
   <main>
     <div class="position-relative">
       <!-- shape Hero -->
@@ -20,7 +106,7 @@
             <div class="row">
               <div class="col-lg-6">
                 <h1 class="display-3  text-white">{$config["appName"]}</h1>
-                <p class="lead  text-white">飞跃万里长城，带你优雅看世界</p>
+                <p class="lead  text-white">专注外服加速，助你轻松游戏</p>
               </div>
             </div>
           </div>
@@ -37,7 +123,7 @@
           <div class="col-lg-8 text-center">
             <h2 class="display-3">高速 | 安全 | 低价</h2>
             <p class="lead">
-              {$config["appName"]} 依托全球 20+ 家运营商互联网基础服务提供商和云计算服务提供商的 IP 和优质云计算资源，采用全球范围内的业界顶级数据中心，中国优化线路(CN2、GIA等) ，带宽总量高达 30Gbps，可以为每位用户提供最高可达 100Mbps 的带宽，随时随地加速您的网络环境，帮助您访问您喜欢的网站和服务，改善外服游戏体验，为您开辟全球业务保驾护航。
+              {$config["appName"]} 依托全球 20+ 家运营商互联网基础服务提供商和云计算服务提供商的 IP 和优质云计算资源，采用全球范围内的业界顶级数据中心，中国优化线路(CN2、GIA等) ，带宽总量高达 30Gbps，可以为每位用户提供最高可达 1Gbps 的带宽，随时随地加速您的网络环境，帮助您访问您喜欢的网站和服务，改善外服游戏体验，为您开辟全球业务保驾护航。
             </p>
           </div>
         </div>
@@ -86,12 +172,12 @@
                   <div class="card-body py-5">
                       <h6 class="category">免费套餐</h6>
 							<h1 class="card-title">￥0<small></small></h1>
-                                <ul>
+                          <ul>
                             <li><b>Random</b> 节点</li>
                             <li><b>签到领取</b> 流量</li>
                             <li><b>3</b> 台设备</li>
                             <li><b>永久</b> 有效期</li>
-                                </ul>
+                          </ul>
                     <a href="/user" class="btn btn-primary mt-4">免费使用</a>
                   </div>
                 </div>
