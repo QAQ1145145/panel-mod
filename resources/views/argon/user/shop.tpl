@@ -1,9 +1,4 @@
 
-
-
-
-
-
 {include file='user/newui_header.tpl'}
 
 
@@ -24,14 +19,14 @@
       <div class="container">
         <div class="card card-profile shadow mt--300">
           <div class="px-4">
-			<div class="row justify-content-center">
+			   <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2" >
-                 <div class="card-profile-image">
-                   <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                     <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
-                   </a>
-                 </div>
-               </div>
+                <div class="card-profile-image">
+                  <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
+                  </a>
+                </div>
+              </div>
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                 <div class="card-profile-actions py-4 mt-lg-0">
                   <div class="text-center">
@@ -58,26 +53,23 @@
                 </div>
               </div>
             </div>
-			        
 					<div class="row row-grid justify-content-between align-items-center mt-lg">
 					
 						<div class="col-lg-12">
 							<div class="card card-lift shadow border-0">
 								<div class="card-body">
 								<p>注意：购买同级别套餐将叠加到期时间，您可以用金币兑换下面的套餐。</p>
-                                  <p>当前剩余金币：<code>{$user->money} </code></p>
+                                  <p>当前剩余金币：<code>{$user->money} </code>{if $user->money <4.9}&nbsp;&nbsp;(好像金币不足了哦){/if}</p>
 								</div>
 							</div>
 						</div>	
 					</div>
-			
+
+			        <div class="row row-grid justify-content-between align-items-center mt-lg">
 					
-	<section class="section section-lg">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-12">
-            <div class="row row-grid">
-			
+					
+					
+					
 					 {foreach $shops as $shop}
 					
               <div class="col-lg-4" style=" margin-top: 3rem;">
@@ -125,28 +117,8 @@
               </div>
 			  
 					{/foreach}
-            </div>
-          </div>
+						{$shops->render()}
         </div>
-      </div>
-    </section>
-					
-					
-					
-					
-					
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
        </div>
      </div>
    </div>
@@ -168,11 +140,12 @@
 									</div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary"  data-dismiss="modal" id="coupon_input" type="button">确定</button>
+                <button  class="btn btn-primary"  data-dismiss="modal" id="coupon_input">确定</button>
             </div>
         </div>
     </div>
     </div>
+					
 					
 					
 	<div class="modal fade"  id="order_modal"  tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
@@ -190,21 +163,14 @@
 									<p id="credit">优惠额度：</p>
 									<p id="total">总金额：</p>
 									
-								
-									<div class="checkbox switch custom-control custom-checkbox mb-3" id="disableo">
-              							<input class="custom-control-input" checked id="disableothers" type="checkbox">
-              								<label class="custom-control-label" for="disableothers">
-                									<span>关闭旧套餐自动续费</span>
-              								</label>
-									</div>
-									<div class="checkbox switch custom-control custom-checkbox mb-3" id="autor">
-              							<input class="custom-control-input" checked id="autorenew" type="checkbox">
-              								<label class="custom-control-label" for="autorenew">
-                									<span>到期时自动续费</span>
-              								</label>
+									<div class="checkbox switch" id="autor">       
+									<p id="auto_reset">在到期时自动续费</p>
+										<label class="custom-toggle">
+											<input type="checkbox" id="autorenew" >
+											<span class="custom-toggle-slider rounded-circle"></span>
+										</label>
 									</div>
 
-              
 									
 									
             </div>
@@ -238,6 +204,7 @@
 
 
 {include file='user/newui_footer.tpl'}
+
 
 
 <script>
