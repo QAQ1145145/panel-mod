@@ -34,8 +34,11 @@
               </div>
               <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
                 <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="/user" class="btn btn-sm btn-primary">用户中心</a>
-                  <a href="/user/shop" class="btn btn-sm btn-default float-right">商店</a>
+                  <div class="text-center">
+                  <a href="/user" class="btn btn-sm btn-default ">用户中心</a>
+                  <a href="/user/node" class="btn btn-sm btn-primary">节点列表</a>
+                  <a href="/user/code" class="btn btn-sm btn-primary">兑换金币</a>
+                  </div>
                 </div>
               </div>
               <div class="col-lg-4 order-lg-1">
@@ -45,12 +48,12 @@
                     <span class="description">剩余金币</span>
                   </div>
                   <div>
-                    <span class="heading">L{$user->class}</span>
+                    <span class="heading">Lv.{$user->class}</span>
                     <span class="description">等级</span>
                   </div>
                   <div>
                     <span class="heading">{$user->online_ip_count()}</span>
-                    <span class="description">在线设备数</span>
+                    <span class="description">在线IP数</span>
                   </div>
                 </div>
               </div>
