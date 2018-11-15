@@ -112,7 +112,7 @@
 										</span></p>
 								{/if}
 				   ---->
-                                 <a id="buy_button" class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew},{$shop->auto_reset_bandwidth})">购买</a>
+                                 <a id="buy_button" class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="buy('{$shop->id}',{$shop->auto_renew},{$shop->auto_reset_bandwidth})">兑换</a>
               </div>
                 </div>
               </div>
@@ -162,10 +162,10 @@
              					<p><font color="red">如您是更换套餐,那剩余流量和有效期将会重置。</font></p>					   
 									<p id="name">商品名称：</p>
 									<p id="credit">优惠额度：</p>
-									<p id="total">总金额：</p>
+									<p id="total">使用金币：</p>
 									
 									<div class="checkbox switch" id="autor">       
-									<p id="auto_reset">在到期时自动续费</p>
+									<p id="auto_reset">在到期时自动续期</p>
 										<label class="custom-toggle">
 											<input type="checkbox" id="autorenew" >
 											<span class="custom-toggle-slider rounded-circle"></span>
@@ -247,7 +247,7 @@ $("#coupon_input").click(function () {
 				if (data.ret) {
 					$("#name").html("商品名称："+data.name);
 					$("#credit").html("优惠额度："+data.credit);
-					$("#total").html("总金额："+data.total);
+					$("#total").html("花费金币："+data.total);
 					$("#order_modal").modal();
 				} else {
 					$("#result").modal();
