@@ -53,8 +53,8 @@
                     <span class="description">等级</span>
                   </div>
                   <div>
-                    <span class="heading">{$user->online_ip_count()}</span>
-                    <span class="description">在线IP数</span>
+					<span class="heading">{$user->online_ip_count()}</span>
+					<span class="description">在线IP数</span>
                   </div>
                 </div>
               </div>
@@ -250,11 +250,11 @@
                                                   <h4 style="margin-top:12px">Shadowrocket</h4>
                     							  <p><img src="images/clients/shadowrocket.svg" style="margin-top:12px" width="80px" align="center"></p>
                                                   <p>AppleID:<code>
-														    {if $user->class>1}                                          	 down@m-e.me
+														    {if $user->class>1 and $user->class!=4}                                          	 down@m-e.me
 															{else}															VIP用户可见
 															{/if}
 														</code>密码<code>
-														{if $user->class>1}															Gg112211
+														{if $user->class>1 and $user->class!=4}															Gg112211
 															{else}															VIP用户可见
 															{/if}
 														</code></p>
@@ -426,7 +426,6 @@ var handlerPopup = function (captchaObj) {
 				$("#checkin-msg").html(data.msg);
 				$("#checkin-btn").hide();
 				$("#result").modal();
-
 				$("#msg").html(data.msg);
 			},
 			error: function (jqXHR) {
