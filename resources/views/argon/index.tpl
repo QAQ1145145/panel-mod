@@ -175,7 +175,7 @@
                           <ul>
                             <li><b>Random</b> 节点</li>
                             <li><b>签到领取</b> 流量</li>
-                            <li><b>3</b> 台设备</li>
+                            <li><b>3</b> 台设备(IP)</li>
                             <li><b>永久</b> 有效期</li>
                           </ul>
                     <a href="/user" class="btn btn-primary mt-4">免费使用</a>
@@ -189,8 +189,8 @@
 							<h1 class="card-title">￥4.9<small>/月</small></h1>
                        <ul>
                          <li><b>15+</b> 节点</li>
-                         <li><b>50GB</b> 流量</li>
-                         <li><b>3</b> 台设备</li>
+                         <li><b>30GB</b> 流量</li>
+                         <li><b>3</b> 台设备(IP)</li>
                          <li><b>30</b> 天有效期</li>
                        </ul>
                     <a href="/user/shop" class="btn btn-primary mt-4">立刻购买</a>
@@ -205,7 +205,7 @@
                                 <ul>
                             <li><b>15+</b> 节点</li>
                             <li><b>100GB</b> 流量</li>
-                            <li><b>3</b> 台设备</li>
+                            <li><b>3</b> 台设备(IP)</li>
                             <li><b>30</b> 天有效期</li>
                                 </ul>
                     <a href="/user/shop" class="btn btn-primary mt-4">立刻购买</a>
@@ -220,7 +220,7 @@
                                 <ul>
                             <li><b>60+</b> 节点</li>
                             <li><b>200GB</b> 流量</li>
-                            <li><b>6</b> 台设备</li>
+                            <li><b>6</b> 台设备(IP)</li>
                             <li><b>30</b> 天有效期</li>
                                 </ul>
                     <a href="/user/shop" class="btn btn-primary mt-4">立刻购买</a>
