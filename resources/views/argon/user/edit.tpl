@@ -181,6 +181,7 @@
 									{/if}
 									{if $config['port_price_specify']>=0}
 									<div class="card-inner">
+                                      	<br>
 										<p class="card-heading">钦定端口</p>
 										<p>不想摇号？来钦定端口吧～！</p>
 										<p>价格：<code>{$config['port_price_specify']}</code>元/次</p>
@@ -190,7 +191,7 @@
 											<input class="form-control" id="port-specify" type="num">
 										</div>
 									</div>
-									<button class="btn btn-primary mt-4" id="portreset" >&nbsp;摇号</button>
+									<button class="btn btn-primary mt-4" id="portspecify" >&nbsp;摇号</button>
 									{/if}
                   </div>
                 </div>
@@ -739,6 +740,7 @@ $(".copy-text").click(function () {
                 dataType: "json",
                 data: {
                     method: $("#method").val()
+
                 },
                 success: function (data) {
                     if (data.ret) {
