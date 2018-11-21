@@ -176,22 +176,23 @@
 										<p>随机更换一个端口使用，价格：<code>{$config['port_price']}</code>元/次</p>
 										<p>重置后1分钟内生效</p>
 										<p>当前端口：<code id="ajax-user-port">{$user->port}</code></p>
+										<button class="btn btn-primary mt-2" id="portreset" >&nbsp;摇号</button>
 									</div>
-											<button class="btn btn-primary mt-4" id="portreset" >&nbsp;摇号</button>
+
 									{/if}
 									{if $config['port_price_specify']>=0}
+                    				<br>
 									<div class="card-inner">
-                                      	<br>
-										<p class="card-heading">钦定端口</p>
-										<p>不想摇号？来钦定端口吧～！</p>
+										<p class="card-heading">指定端口</p>
+										<p>不想摇号？来指定端口吧～！</p>
 										<p>价格：<code>{$config['port_price_specify']}</code>元/次</p>
 										<p>端口范围：<code>{$config['min_port']}～{$config['max_port']}</code></p>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="port-specify">在这输入想钦定的号</label>
+											<label class="floating-label" for="port-specify">在这输入想指定的端口号</label>
 											<input class="form-control" id="port-specify" type="num">
 										</div>
 									</div>
-									<button class="btn btn-primary mt-4" id="portspecify" >&nbsp;摇号</button>
+									<button class="btn btn-primary mt-2" id="portspecify" >&nbsp;选择</button>
 									{/if}
                   </div>
                 </div>
@@ -740,7 +741,6 @@ $(".copy-text").click(function () {
                 dataType: "json",
                 data: {
                     method: $("#method").val()
-
                 },
                 success: function (data) {
                     if (data.ret) {
