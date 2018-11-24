@@ -189,7 +189,7 @@
 							<h1 class="card-title">￥4.9<small>/月</small></h1>
                        <ul>
                          <li><b>15+</b> 节点</li>
-                         <li><b>30GB</b> 流量</li>
+                         <li><b>20GB</b> 流量</li>
                          <li><b>3</b> 台设备(IP)</li>
                          <li><b>30</b> 天有效期</li>
                        </ul>
@@ -216,11 +216,11 @@
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
                       <h6 class="category">高级套餐</h6>
-							<h1 class="card-title">￥9.9<small>/月</small></h1>
+							<h1 class="card-title">￥11.9<small>/月</small></h1>
                                 <ul>
                             <li><b>60+</b> 节点</li>
-                            <li><b>200GB</b> 流量</li>
-                            <li><b>6</b> 台设备(IP)</li>
+                            <li><b>180GB</b> 流量</li>
+                            <li><b>5</b> 台设备(IP)</li>
                             <li><b>30</b> 天有效期</li>
                                 </ul>
                     <a href="/user/shop" class="btn btn-primary mt-4">立刻购买</a>
