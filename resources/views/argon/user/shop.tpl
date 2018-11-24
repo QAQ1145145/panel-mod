@@ -85,11 +85,15 @@
                                       <li>可用节点：60+条</li>
                                       {else if $shop->user_class()>=2}
                                       <li>可用节点：20+条</li>
+                                      {else}
+                                      <li>可用节点:参考等级</li>
                                       {/if}
                                       <li>限制在线IP数:{$shop->connector()}个</li>
                                       <li>速度限制:{if $shop->speedlimit()!=0}{$shop->speedlimit()}Mbps{else}不限速{/if}</li>
-                                      {if $shop->auto_renew>31}
+                                      {if $shop->auto_renew>31 & $shop->id !=25 & $shop->id !=24}
                                       <li>每月{date(d)}日重置流量</li>
+                                      {else}
+                                      <li>到期重置流量</li>
                                       {/if}
                                     </ul>
                   <!----
