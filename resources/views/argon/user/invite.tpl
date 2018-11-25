@@ -63,48 +63,62 @@
 			
 			
 			
-			        <div class="row row-grid justify-content-between align-items-center mt-lg">
-					
-					
-						<div class="col-lg-6">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-				  
-				  
-              <p class="card-heading">说明</p>
-										<p>您每邀请1位用户注册：</p>
-										<p>对方充值时您还会获得对方充值金额的 <code>{$config["code_payback"]} %</code> 的返利。</p>
-										<p class="card-heading">已获得返利：<code>{$paybacks_sum}</code> 元</p>
-                    <!--<button class="btn btn-primary mt-4" onClick="txqq()" type="button" id="txqq" >申请提现</button>-->
-					
-					
-					
-					
-                  </div>
-                </div>
-            </div>			
+			 <div class="row row-grid justify-content-between align-items-center mt-lg">
+				<div class="col-lg-6">
+                	<div class="card card-lift shadow border-0">
+                  		<div class="card-body">
+							<p class="card-heading">说明</p>
+							<p>您每邀请1位用户注册：</p>
+							<p>对方充值时您还会获得对方充值金额的 <code>{$config["code_payback"]} %</code> 的返利。</p>
+							<p class="card-heading">已获得返利：<code>{$paybacks_sum}</code> 元</p>
+                   		    <!--<button class="btn btn-primary mt-4" onClick="txqq()" type="button" id="txqq" >申请提现</button>-->
+						</div>
+                	</div>
+            	</div>			
 			
 			
 			<div class="col-lg-6">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
-				  
-				  
-				  
 						<h6 class="category">您的邀请链接</h6>
 						<h2 class="card-title">
 						<p><code>{$config["baseUrl"]}/auth/register?code={$code->code}</code></p>
 										<p>剩余可邀请次数：{if $user->invite_num<0}无限{else}<code>{$user->invite_num}</code>{/if}</p>
-                    <button  class="copy-text btn btn-primary mt-4"  data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">点击复制链接</button>
+                    <button  class="copy-text btn btn-primary mt-2"  data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">点击复制链接</button>
+                 	<!--<button class="reset-invitelink btn btn-primary mt-4" type="button">重置邀请链接</button>-->
+                  
+                  
+								{if $config['invite_price']>=0}
+
+
+							<div class="card-main">
+								<div class="card-inner">
+									<div class="card-inner">
+									<div class="cardbtn-edit">
+									</div>		
+										
+										<div class="form-group form-group-label">
+                                          
+											<h6 class="floating-label" style="margin-top:15px;"for="buy-invite-num">购买邀请次数</h6><p>邀请次数价格：<code>{$config['invite_price']}</code>元/个</p>
+											<input class="form-control maxwidth-edit" id="buy-invite-num" type="num">
+                                          	<button class="btn btn-flat btn-primary mt-4" id="buy-invite">购买邀请次数</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+					{/if}
 					
 					
 					
 					
                   </div>
+              
                 </div>
             </div>
 			
-			
+
 			
 			
         </div>
@@ -284,5 +298,11 @@ $("#buy-invite").click(function () {
 $(document).ready(function(){
  	{include file='table/js_2.tpl'}
 });
+/*  
+$(".reset-invitelink").click(function () {
+	$("#result").modal();
+	$("#msg").html("已重置您的邀请链接，复制您的邀请链接发送给其他人！");
+	window.setTimeout("location.href='/user/inviteurl_reset'", {$config['jump_delay']});
+});*/
 
 </script>
