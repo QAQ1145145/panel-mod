@@ -169,6 +169,7 @@ $app->group('/user', function () {
     $this->post('/unblock', 'App\Controllers\UserController:Unblock');
     $this->get('/bought', 'App\Controllers\UserController:bought');
     $this->delete('/bought', 'App\Controllers\UserController:deleteBoughtGet');
+    $this->get('/inviteurl_reset', 'App\Controllers\UserController:resetInviteURL');
 
     $this->get('/url_reset', 'App\Controllers\UserController:resetURL');
 })->add(new Auth());

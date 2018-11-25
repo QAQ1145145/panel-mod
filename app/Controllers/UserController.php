@@ -55,6 +55,11 @@ class UserController extends BaseController
         $this->user = Auth::getUser();
     }
 
+    public function shopUIswitch()
+     {
+         $this->user = Auth::getUser();
+     }
+
     public function index($request, $response, $args)
     {
         $user = $this->user;
@@ -67,6 +72,7 @@ class UserController extends BaseController
         $router_token_without_mu = LinkController::GenerateRouterCode($this->user->id, 1);
 
         $ssr_sub_token = LinkController::GenerateSSRSubCode($this->user->id, 0);
+      
 
         $uid = time().rand(1, 10000) ;
         if (Config::get('enable_geetest_checkin') == 'true') {
@@ -1821,6 +1827,14 @@ class UserController extends BaseController
         $newResponse = $response->withStatus(302)->withHeader('Location', '/user');
         return $newResponse;
     }
+
+    public function resetInviteURL($request, $response, $args)
+     {
+         $user = $this->user;
+         $user->clear_inviteCodes();
+         $newResponse = $response->withStatus(302)->withHeader('Location', '/user/invite');
+         return $newResponse;
+     }
 
     public function backtoadmin($request, $response, $args)
     {

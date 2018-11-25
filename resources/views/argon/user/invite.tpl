@@ -85,7 +85,7 @@
 						<p><code>{$config["baseUrl"]}/auth/register?code={$code->code}</code></p>
 										<p>剩余可邀请次数：{if $user->invite_num<0}无限{else}<code>{$user->invite_num}</code>{/if}</p>
                     <button  class="copy-text btn btn-primary mt-2"  data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">点击复制链接</button>
-                 	<!--<button class="reset-invitelink btn btn-primary mt-4" type="button">重置邀请链接</button>-->
+                 	<button class="reset-invitelink btn btn-primary mt-2" type="button">重置邀请链接</button>
                   
                   
 								{if $config['invite_price']>=0}
@@ -298,11 +298,11 @@ $("#buy-invite").click(function () {
 $(document).ready(function(){
  	{include file='table/js_2.tpl'}
 });
-/*  
+ 
 $(".reset-invitelink").click(function () {
 	$("#result").modal();
 	$("#msg").html("已重置您的邀请链接，复制您的邀请链接发送给其他人！");
 	window.setTimeout("location.href='/user/inviteurl_reset'", {$config['jump_delay']});
-});*/
+});
 
 </script>
