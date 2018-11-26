@@ -240,11 +240,11 @@
 											<!----->
                                                   <h4 style="margin-top:12px">叮当加速器</h4>
                     							  <p><img src="images/clients/logo.png" style="margin-top:12px" width="80px" align="center"></p>
-                                                  <a class="btn btn-primary mt-2" href="https://github.com/bfsdo0/ss-tap-mod/raw/master/%E5%8F%AE%E5%BD%93%E5%8A%A0%E9%80%9F%E5%99%A8-setup.exe">立即下载</a>
+                                                  <a class="btn btn-primary mt-2" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/%E5%8F%AE%E5%BD%93%E5%8A%A0%E9%80%9F%E5%99%A8-setup.exe">立即下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">ShadowsocksR For Windows</h4>
                     							  <p><img src="images/clients/ss-windows.svg" style="margin-top:12px" width="80px" align="center"></p>
-                                                  <a class="btn btn-primary mt-2" href="https://github.com/bfsdo0/ss-tap-mod/raw/master/ssr-win.7z">软件下载</a>
+                                                  <a class="btn btn-primary mt-2" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-win.7z">软件下载</a>
                                                   <a class="btn btn-primary mt-2" href="https://www.maile3.com/user/getpcconf?is_mu=0&is_ss=0">配置下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Shadowrocket</h4>
@@ -262,11 +262,11 @@
                                                   <hr>
                                                   <h4 style="margin-top:12px">Shadowsocks For Android</h4>
                     							  <p><img src="images/clients/ss-android.png" style="margin-top:12px" width="80px" align="center"></p>
-                                                  <a class="btn btn-primary mt-2" href="https://github.com/bfsdo0/ss-tap-mod/raw/master/ssr-android.apk">立即下载</a>
+                                                  <a class="btn btn-primary mt-2" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-android.apk">立即下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">ShadowsocksR For MacOS</h4>
                     							  <p><img src="images/clients/ss-mac.svg" style="margin-top:12px" width="80px" align="center"></p>
-                                                  <a class="btn btn-primary mt-2" href="https://raw.githubusercontent.com/bfsdo0/ss-tap-mod/master/ss-mac.zip">立即下载</a>
+                                                  <a class="btn btn-primary mt-2" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-mac.dmg">立即下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Linux、路由器</h4>
                                                   <a class="btn btn-primary mt-4" href="https://wiki.maile3.com/?p=29" target="_blank">请戳这里</a>
