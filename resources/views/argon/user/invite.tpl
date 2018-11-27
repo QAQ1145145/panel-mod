@@ -1,16 +1,8 @@
-
-
-
-
-
-
-{include file='user/newui_header.tpl'}
-
-
-
-  <main class="profile-page">
-    <section class="section-profile-cover section-shaped my-0">
-      <div class="shape shape-style-1 shape-default shape-skew alpha-4">
+{include file='newui_header.tpl'}
+  <main>
+    <section class="section section-shaped section-lg my-0">
+      <div class="shape shape-style-1 bg-gradient-default">
+        <span></span>
         <span></span>
         <span></span>
         <span></span>
@@ -19,290 +11,401 @@
         <span></span>
         <span></span>
       </div>
-    </section>
-    <section class="section section-skew">
-      <div class="container">
-        <div class="card card-profile shadow mt--300">
-          <div class="px-4">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 order-lg-2" >
-                <div class="card-profile-image">
-                  <a data-container="body" data-original-title="Popover on Top" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                    <img src="/images/Avatar.png" alt="user-image" class="rounded-circle" width="50%">
-                  </a>
+      <div class="container pt-lg-md">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-body px-lg-5 py-lg-5">
+                <div class="text-center text-muted mb-4">
+                  <small>注册账号</small>
                 </div>
-              </div>
-              <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
-                <div class="card-profile-actions py-4 mt-lg-0">
-                  <div class="text-center">
-                  <a href="/user" class="btn btn-sm btn-default ">用户中心</a>
-                  <a href="/user/node" class="btn btn-sm btn-primary">节点列表</a>
-                  <a href="/user/shop" class="btn btn-sm btn-primary">兑换套餐</a>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="昵称" type="text" id="name" >
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-lg-4 order-lg-1">
-                <div class="card-profile-stats d-flex justify-content-center">
-                  <div>
-                    <span class="heading">{$user->money}</span>
-                    <span class="description">剩余金币</span>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                      </div>
+					  <input class="form-control" id="email" type="text" placeholder="邮箱" >
+                    </div>
                   </div>
-                  <div>
-                    <span class="heading">Lv.{$user->class}</span>
-                    <span class="description">等级</span>
+					{if $enable_email_verify == 'true'}
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-key-25"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="邮箱验证码" id="email_code" type="text">
+                    </div>
+							<button id="email_verify" class="btn btn-primary" style="mrgin-top:0px;">获取验证码</button>
                   </div>
-                  <div>
-					<span class="heading">{$user->online_ip_count()}/{if $user->node_connector==0}不限制{else}{$user->node_connector}{/if}</span>
-                    <span class="description">在线IP数</span>
+                {/if}
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="密码" id="passwd" type="password">
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-			
-			
-			
-			
-			
-			 <div class="row row-grid justify-content-between align-items-center mt-lg">
-				<div class="col-lg-6">
-                	<div class="card card-lift shadow border-0">
-                  		<div class="card-body">
-							<p class="card-heading">说明</p>
-							<p>您每邀请1位用户注册：</p>
-							<p>对方充值时您还会获得对方充值金额的 <code>{$config["code_payback"]} %</code> 的返利。</p>
-							<p class="card-heading">已获得返利：<code>{$paybacks_sum}</code> 元</p>
-                   		    <!--<button class="btn btn-primary mt-4" onClick="txqq()" type="button" id="txqq" >申请提现</button>-->
-						</div>
-                	</div>
-            	</div>			
-			
-			
-			<div class="col-lg-6">
-                <div class="card card-lift shadow border-0">
-                  <div class="card-body">
-						<h6 class="category">您的邀请链接</h6>
-						<h2 class="card-title">
-						<p><code>{$config["baseUrl"]}/auth/register?code={$code->code}</code></p>
-										<p>剩余可邀请次数：{if $user->invite_num<0}无限{else}<code>{$user->invite_num}</code>{/if}</p>
-                    <button  class="copy-text btn btn-primary mt-2"  data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">点击复制链接</button>
-                 	<button class="reset-invitelink btn btn-primary mt-2" type="button">重置邀请链接</button>
-                  
-                  
-								{if $config['invite_price']>=0}
-
-
-							<div class="card-main">
-								<div class="card-inner">
-									<div class="card-inner">
-									<div class="cardbtn-edit">
-									</div>		
-										
-										<div class="form-group form-group-label">
-                                          
-											<h6 class="floating-label" style="margin-top:15px;"for="buy-invite-num">购买邀请次数</h6><p>邀请次数价格：<code>{$config['invite_price']}</code>元/个</p>
-											<input class="form-control maxwidth-edit" id="buy-invite-num" type="num">
-                                          	<button class="btn btn-flat btn-primary mt-4" id="buy-invite">购买邀请次数</button>
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="重复密码" id="repasswd" type="password">
+                    </div>
+                  </div>	
+                <label class="floating-label" for="imtype">选择您的联络方式</label>
+										<div class="form-group">
+											<div class="input-group input-group-alternative">
+													<select class="form-control" id="imtype">
+														<option></option>
+														<option value="1">微信</option>
+														<option value="2">QQ</option>
+														<option value="3">Facebook</option>
+														<option value="4">Telegram</option>
+													</select>
+											</div>
 										</div>
-									</div>
-								</div>
-							</div>
-
-
-					{/if}
-					
-					
-					
-					
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-archive-2"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="在这输入联络方式账号" id="wechat" type="wechat">
+                    </div>
+                  </div>                
+                  <div class="form-group">
+                    <div class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-key-25"></i></span>
+                      </div>
+                      <input class="form-control" placeholder="邀请码(若您没有请输入welcome){if $enable_invite_code == 'false'}(没有就不填){/if}" id="code" type="text">
+                    </div>
+                    <div>
+                    <p style="color: rgba(0,0,0,.26): text;font-size: 12px;position: absolute;">若您没有可用优惠码，请填入<code style="color: rgba(0.6,0,0,0.26)">welcome</code></p>
+                    </div>
+                    {if $enable_invite_code == 'false'}
+							<button id="view_code" data-toggle="modal" data-target="#reg_code" class="btn btn-primary mt-4">查看公共邀请码</button>
+                    {/if}
                   </div>
-              
+				  
+							{if $geetest_html != null}
+											<div class="form-group form-group-label" style="margin-top:23px;">
+												<div class="row">
+													<div class="col-md-10 col-md-push-1">
+														<div id="embed-captcha"></div>
+													</div>
+												</div>
+											</div>
+										{/if}
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                  <input class="custom-control-input" id="oneclick_theme" name="oneclick_theme" type="checkbox"> 
+                  <label class="custom-control-label" for="oneclick_theme">
+                    <span>我已阅读<a href="/legal" target="_blank">《服务条款》</a>和<a href="/legal/privacy" target="_blank">《隐私条款》</a>，并且保证所录入信息的真实性(如有不实信息会导致账号被删除)</span>
+                  </label>
                 </div>
-            </div>
-			
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                    <input class="custom-control-input" id="legal" name="legal" type="checkbox"> 
+                    <label class="custom-control-label" for="legal">
+                      <span>我会自己参考<a href="https://wiki.maile3.com" target="_blank">教程</a>解决使用问题</span>
+                    </label>
+                  </div>
 
-			
-			
-        </div>
-			
-			
-            <div class="mt-5 py-5 text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-11">
-						{$paybacks->render()}
-						<table class="table ">
-							<tr>
-
-                             <!--   <th>ID</th> -->
-                                <th>ID</th>
-								<th>被邀请用户ID</th>
-								<th>获得返利</th>
-                            </tr>
-                            {foreach $paybacks as $payback}
-                            <tr>
-
-                          <!--       <td>#{$payback->id}</td> -->
-                                <td>{$payback->id}</td>
-								<td>{$payback->userid}</td>
-								<td>{$payback->ref_get} 元</td>
-
-                            </tr>
-                            {/foreach}
-                        </table>
-						{$paybacks->render()}
-                </div>
+                  <div class="text-center">
+						 <button id="tos" type="submit" disabled class="btn btn-primary mt-4">注册</button>
+                  </div>
               </div>
             </div>
-			
-			
+            <div class="row mt-3">
+              <div class="col-6">
+                <a href="/auth/login" class="text-light">
+                  <small>已经注册？请登录</small>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
+	  
+						
+				<div class="modal fade" id="tos_modal" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+              <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+						{include file='reg_tos.tpl'}
+						</div>
+                  <div class="modal-footer">
+					<button class="btn btn-primary" data-dismiss="modal" type="button" id="cancel">我不服</button>
+					<button class="btn btn-primary" data-dismiss="modal" id="reg" type="button">同意</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+			<div class="modal fade" id="reg_code" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+              <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+											<tbody style="table-layout:fixed;" >
+                                          				{foreach $codes as $code}
+											<tr>
+												<td><a class="copy-text" data-clipboard-text="{$code->code}">{$code->code}</a></td>
+											</tr>
+                                              <br>
+													<button  class="copy-text btn btn-primary mt-4" data-clipboard-text="{$code->code}">复制邀请码</button>
+											{/foreach}
+                    </tbody>		
+						</div>
+                </div>
+              </div>
+            </div>
     </section>
-    
-
-	<div class="modal fade"  id="tx_modal" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
-    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h6 class="modal-title" id="modal-title-default">信息确认</h6>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-									<p><font color="red">请在下方输入您的支付宝账户以及真实姓名，我们核实后会将奖励金发送至您账户</font></p>	
-									<p><font color="red">我们采集姓名仅做账号核实，不会公开您的信息。详情可见 <a href="{$config["baseUrl"]}/legal/privacy">《隐私策略》</a></font></p>						   
-									<div class="form-group form-group-label">
-										<label class="floating-label" for="alipay">支付宝账户</label>
-										<input class="form-control" id="alipay" type="number"> 
-									</div>									
-									<div class="form-group form-group-label">
-										<label class="floating-label" for="alipayname">真实姓名</label>
-										<input class="form-control" id="alipayname" type="text" >
-									</div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal"  id="tx_input" type="button">确定</button>
-            </div>
-        </div>
-    </div>
-    </div>
-	
-	
-	
-{include file='newui_dialog.tpl'}
-
-
-{include file='user/newui_footer.tpl'}
+  </main></main>
+  
+						{include file='newui_dialog.tpl'}
+  
+						{include file='auth/auth_footer.tpl'}
 
 <script>
-function txqq() {
-	$("#tx_modal").modal();
-}
-	$(function(){
-		new Clipboard('.copy-text');
-	});
+    $("#legal").click(function () {
+      if($('#legal').is(':checked')) {
+      $("#tos").removeAttr("disabled")
+      }else{
+      $('#tos').attr("disabled",true);
+      }
+      });
+  $(function(){
+	new Clipboard('.copy-text');
+});
+  $(".copy-text").click(function () {
+$("#code").val($(this).parent().parent().find("td:eq(0)").text());
+$("#reg_code").modal('hide')
+    	$("#result").modal();
+	$("#msg").html("已复制到您的剪贴板，请您继续接下来的操作。");
+});
+    $(document).ready(function(){
+        function register(){
+			
+			document.getElementById("tos").disabled = true; 
+			
+            $.ajax({
+                type:"POST",
+                url:"/auth/register",
+                dataType:"json",
+                data:{
+                    email: $("#email").val(),
+                    name: $("#name").val(),
+                    passwd: $("#passwd").val(),
+                    repasswd: $("#repasswd").val(),
+					wechat: $("#wechat").val(),
+                  	oneclick_theme: $("#oneclick_theme:checked").val(),
+					imtype: $("#imtype").val(), 
+					code: $("#code").val(){if $enable_email_verify == 'true'},
+					emailcode: $("#email_code").val(){/if}{if $geetest_html != null},
+					geetest_challenge: validate.geetest_challenge,
+                    geetest_validate: validate.geetest_validate,
+                    geetest_seccode: validate.geetest_seccode
+					{/if}
+                },
+                success:function(data){
+                    if(data.ret == 1){
+                        $("#result").modal();
+                        $("#msg").html(data.msg);
+                        window.setTimeout("location.href='/auth/login'", {$config['jump_delay']});
+                    }else{
+                        $("#result").modal();
+                        $("#msg").html(data.msg);
+                        setCookie('code','',0);
+                        $("#code").val(getCookie('code'));
+						document.getElementById("tos").disabled = false;
+						{if $geetest_html != null}
+						captcha.refresh();
+						{/if}
+                    }
+                },
+                error:function(jqXHR){
+						$("#result").modal();
+                        $("#msg").html("注册成功");
+                        window.setTimeout("location.href='/auth/login'", {$config['jump_delay']});
+                }
+            });
+        }
+        $("html").keydown(function(event){
+            if(event.keyCode==13){
+                $("#tos_modal").modal();
+            }
+        });
+		
+		{if $geetest_html != null}
+		$('div.modal').on('shown.bs.modal', function() {
+			$("div.gt_slider_knob").hide();
+		});
+		
+		
+		$('div.modal').on('hidden.bs.modal', function() {
+			$("div.gt_slider_knob").show();
+		});
+		
+        
+		{/if}
+		
+		$("#reg").click(function(){
+            register();
+        });
+		
+		$("#tos").click(function(){
+			{if $geetest_html != null}
+			if(typeof validate == 'undefined')
+			{
+				$("#result").modal();
+                $("#msg").html("请滑动验证码来完成验证。(少数情况验证码会被广告屏蔽插件拦截，请添加到白名单或禁用插件。)");
+				return;
+			}
+			
+			if (!validate) {
+				$("#result").modal();
+                $("#msg").html("请滑动验证码来完成验证。(少数情况验证码会被广告屏蔽插件拦截，请添加到白名单或禁用插件。)");
+				return;
+			}
+			
+			{/if}
+            $("#tos_modal").modal();
+        });
+    })
+</script>
 
-	$(".copy-text").click(function () {
-		$("#result").modal();
-		$("#msg").html("已复制到您的剪贴板，请您继续接下来的操作。");
-	});
-  
+
+{if $enable_email_verify == 'true'}
+<script>
+var wait=60;
+function time(o) {
+		if (wait == 0) {
+			o.removeAttr("disabled");			
+			o.text("获取验证码");
+			wait = 60;
+		} else {
+			o.attr("disabled","disabled");
+			o.text("重新发送(" + wait + ")");
+			wait--;
+			setTimeout(function() {
+				time(o)
+			},
+			1000)
+		}
+	}
+
+
+
     $(document).ready(function () {
-        $("#czye").click(function () {
+        $("#email_verify").click(function () {
+			time($("#email_verify"));
             $.ajax({
                 type: "POST",
-                url: "/user/invite_czye",
+                url: "send",
                 dataType: "json",
+                data: {
+                    email: $("#email").val()
+                },
                 success: function (data) {
-                    $("#result").modal();
-					$("#msg").html(data.msg);
+                    if (data.ret) {
+                        $("#result").modal();
+			$("#msg").html(data.msg);
+						
+                    } else {
+                        $("#result").modal();
+			$("#msg").html(data.msg);
+                    }
                 },
                 error: function (jqXHR) {
                     $("#result").modal();
-					$("#msg").html("发生错误：" + jqXHR.status);
-                }
-            })
-        })
-    })  
-  
-    $(document).ready(function () {
-        $("#invite").click(function () {
-            $.ajax({
-                type: "POST",
-                url: "/user/invite",
-                dataType: "json",
-                success: function (data) {
-                    window.location.reload();
-                },
-                error: function (jqXHR) {
-                    $("#result").modal();
-					$("#msg").html("发生错误：" + jqXHR.status);
-                }
-            })
-        })
-    })    
-  $(document).ready(function () {
-        $("#tx_input").click(function () {
-			$("#tx_modal").modal();
-            $.ajax({
-                type: "POST",
-                url: "/user/invite_txqq",
-                dataType: "json",
-				data: {
-				alipay: $("#alipay").val(),
-				alipayname: $("#alipayname").val()
-				},
-                success: function (data) {
-                    $("#result").modal();
-					$("#msg").html(data.msg);
-                },
-                error: function (jqXHR) {
-                    $("#result").modal();
-					$("#msg").html("发生错误：" + jqXHR.status);
+			$("#msg").html(data.msg+"     出现了一些错误。");
                 }
             })
         })
     })
 </script>
+{/if}
 
+{if $geetest_html != null}
 <script>
-{include file='table/js_1.tpl'}
+	var handlerEmbed = function (captchaObj) {
+        // 将验证码加到id为captcha的元素里
+		
+		captchaObj.onSuccess(function () {
+		    validate = captchaObj.getValidate();
+		});
+		
+		captchaObj.appendTo("#embed-captcha");
 
-$("#buy-invite").click(function () {
-    $.ajax({
-        type: "POST",
-        url: "/user/buy_invite",
-        dataType: "json",
-        data: {
-            num: $("#buy-invite-num").val(),
-        },
-        success: function (data) {
-             if (data.ret) {
-     			$("#result").modal();
-				$("#msg").html(data.msg);
-				window.setTimeout("location.href='/user/invite'", {$config['jump_delay']});
-	        } else {
-                $("#result").modal();
-			    $("#msg").html(data.msg);
-            }
-	    },
-        error: function (jqXHR) {
-            $("#result").modal();
-        	$("#msg").html(data.msg+"     出现了一些错误。");
-        }
-    })
-});
+		captcha = captchaObj;
+		// 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
+    };
+	
+	initGeetest({
+		gt: "{$geetest_html->gt}",
+		challenge: "{$geetest_html->challenge}",
+		product: "embed", // 产品形式，包括：float，embed，popup。注意只对PC版验证码有效
+		offline: {if $geetest_html->success}0{else}1{/if} // 表示用户后台检测极验服务器是否宕机，与SDK配合，用户一般不需要关注
+	}, handlerEmbed);
+</script>
 
-$(document).ready(function(){
- 	{include file='table/js_2.tpl'}
-});
- 
-$(".reset-invitelink").click(function () {
-	$("#result").modal();
-	$("#msg").html("已重置您的邀请链接，复制您的邀请链接发送给其他人！");
-	window.setTimeout("location.href='/user/inviteurl_reset'", {$config['jump_delay']});
-});
+{/if}
+<script>
+	{*dumplin：轮子1.js读取url参数*}
+	function getQueryVariable(variable)
+	{
+	       var query = window.location.search.substring(1);
+	       var vars = query.split("&");
+	       for (var i=0;i<vars.length;i++) {
+	            	var pair = vars[i].split("=");
+	            	if(pair[0] == variable){
+	            		return pair[1];
+	            	}
+	       }
+	       return "";
+	}
+
+	{*dumplin:轮子2.js写入cookie*}
+	function setCookie(cname,cvalue,exdays)
+	{
+	  var d = new Date();
+	  d.setTime(d.getTime()+(exdays*24*60*60*1000));
+	  var expires = "expires="+d.toGMTString();
+	  document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+
+	{*dumplin:轮子3.js读取cookie*}
+	function getCookie(cname)
+	{
+	  var name = cname + "=";
+	  var ca = document.cookie.split(';');
+	  for(var i=0; i<ca.length; i++) 
+	  {
+	    var c = ca[i].trim();
+	    if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+	  }
+	  return "";
+	}
+
+	{*dumplin:读取url参数写入cookie，自动跳转隐藏url邀请码*}
+	if (getQueryVariable('code')!=''){
+		setCookie('code',getQueryVariable('code'),30);
+		window.location.href='/auth/register';
+      } 
+	
+
+	{*dumplin:读取cookie，自动填入邀请码框*}
+	if ((getCookie('code'))!=''){
+		$("#code").val(getCookie('code'));
+		$("#invite_div").hide();
+    }
+	
 
 </script>
