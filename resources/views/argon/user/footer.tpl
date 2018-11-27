@@ -1,7 +1,7 @@
 <footer class="ui-footer">
 <div class="container">
 <a href="{$config["baseUrl"]}" target="_blank">官网</a> |
-<a href="https://docs.flyue.cc" target="_blank">支持文档</a> |
+<a href="https://wiki.maile3.com" target="_blank">支持文档</a> |
 <a href="{$config["baseUrl"]}/legal" target="_blank">服务条款</a> |
 <a href="/staff">致谢</a>
 <br>

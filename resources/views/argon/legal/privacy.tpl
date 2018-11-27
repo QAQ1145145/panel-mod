@@ -29,7 +29,7 @@
 				<h3 class="major">总则</h3>
 									<p>以下内容提到的这个政策适用于 {$config["appName"]} 和您，{$config["appName"]} 的用户.
 
-<li>“{$config["appName"]}” 是网站 flyue.cc（下称“{$config["appName"]}”或“本站”）的拥有者及服务提供商，下文中简称为“{$config["appName"]}”。第一人称代词（我们、我们的等）在本政策中的使用，是指 {$config["appName"]} 的运营实体。此外，当所使用的专有名词“本站”，是指 flyue.cc 和其相关附属站点</li><br>
+<li>“{$config["appName"]}” 是网站 maile3.com（下称“{$config["appName"]}”或“本站”）的拥有者及服务提供商，下文中简称为“{$config["appName"]}”。第一人称代词（我们、我们的等）在本政策中的使用，是指 {$config["appName"]} 的运营实体。此外，当所使用的专有名词“本站”，是指 flyue.cc 和其相关附属站点</li><br>
 
 <li>您，{$config["appName"]} 的用户 – 因为您是 {$config["appName"]} 的用户，因此本政策在下文中提到的“您”及其他第二人称代词（如“您的”、“您”）都指作为 {$config["appName"]} 用户的您。</li><br>
 
