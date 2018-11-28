@@ -219,7 +219,7 @@
 							<h1 class="card-title">￥11.9<small>/月</small></h1>
                                 <ul>
                             <li><b>60+</b> 节点</li>
-                            <li><b>180GB</b> 流量</li>
+                            <li><b>160GB</b> 流量</li>
                             <li><b>5</b> 台设备(IP)</li>
                             <li><b>30</b> 天有效期</li>
                                 </ul>
