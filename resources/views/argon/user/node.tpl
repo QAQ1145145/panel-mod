@@ -79,7 +79,7 @@
                   <div class="card-body">
 							<div class="card-main">
 								<div class="card-inner">
-									<p class="card-heading" >
+									<p class="card-heading">
 										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
 										{if $node->mu_only != 1 && $node->sort != 11}
@@ -169,8 +169,23 @@
                   <div class="card-body">
 							<div class="card-main">
 								<div class="card-inner">
-									<p class="card-heading" >
-										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
+									<p class="card-heading">
+                                     	{if $node->name == "德国 倍率1 原生IP - 100Mbps - #10827"}
+                                      		德国 倍率1 原生IP - 100Mbps
+										{elseif $node->name == "芬兰 倍率1 原生IP- 100Mbps - #10587"}
+                                      		芬兰 倍率1 原生IP- 100Mbps
+                                      	{elseif $node->name == "香港 倍率2 原生IP HGC - 20Mbps - #19358"}
+                                      		香港 倍率2 原生IP HGC - 20Mbps
+                                    	{elseif $node->name == "香港 倍率3 原生IP HKBN - 100Mbps - #11027"}
+                                      		香港 倍率3 原生IP HKBN - 100Mbps
+                                      	{elseif $node->name == "香港13 倍率3 原生IP HKT - 100Mbps - #11027"}
+                                      		香港13 倍率3 原生IP HKT - 100Mbps
+                                    	{elseif $node->name == "香港14 倍率3 原生IP HKT - 100Mbps - #11027"}
+                                      		香港14 倍率3 原生IP HKT - 100Mbps
+                                      	{else}
+                                      		{$node->name}
+                                      	{/if}
+                                      	{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
 											{if $node->mu_only != 1 && $node->sort != 11}
 												{if $node->node_class > $user->class}
@@ -262,8 +277,23 @@
                   <div class="card-body">
 							<div class="card-main">
 								<div class="card-inner">
-									<p class="card-heading" >
-										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
+									<p class="card-heading">
+										{if $node->name == "日本7 倍率1 IDCF 原生IP - 300Mbps - #11027"}
+                                      		日本7 倍率1 IDCF 原生IP - 300Mbps
+                                      	{elseif $node->name == "泉州1 倍率2 CM 回国节点 - 100Mbps - #11027"}
+                                      		泉州1 倍率2 CM 回国节点 - 100Mbps
+                                      	{elseif $node->name == "泉州2 倍率2 CM 回国节点 - 100Mbps - #11027"}
+                                      		泉州2 倍率2 CM 回国节点 - 100Mbps
+                                     	{elseif $node->name =="香港02 倍率1 Azure - 1000Mbps - #11027"}
+                                      		香港02 倍率1 Azure - 1000Mbps
+                                      	{elseif $node->name =="香港05 倍率1 原生IP HKT - 200Mbps - #55112"}
+                                      		香港05 倍率1 原生IP HKT - 200Mbps
+                                      	{elseif $node->name =="中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps - #11027"}
+                                      		中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps
+                                      	{else}
+                                      		{$node->name}
+                                      	{/if}
+                                     	{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
 										{if $node->mu_only != 1 && $node->sort != 11}
 											{if $node->node_class > $user->class}
@@ -310,7 +340,7 @@
 									{/if}
 										<p>节点说明：
 										{$node->info}</p>
-                                  {if $node->name == "香港 03 Azure 1.5倍率 - 1000Mbps - #11027"}
+                                  {if $node->name == "香港02 倍率1 Azure - 1000Mbps - #11027"}
                                   		<p>在线人数：
 												{rand(4,8)}
                                           {else}
