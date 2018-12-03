@@ -280,14 +280,12 @@
 									<p class="card-heading">
 										{if $node->name == "日本7 倍率1 IDCF 原生IP - 300Mbps - #11027"}
                                       		日本7 倍率1 IDCF 原生IP - 300Mbps
-                                      	{elseif $node->name == "泉州1 倍率2 CM 回国节点 - 100Mbps - #11027"}
-                                      		泉州1 倍率2 CM 回国节点 - 100Mbps
-                                      	{elseif $node->name == "泉州2 倍率2 CM 回国节点 - 100Mbps - #11027"}
-                                      		泉州2 倍率2 CM 回国节点 - 100Mbps
-                                     	{elseif $node->name =="香港02 倍率1 Azure - 1000Mbps - #11027"}
-                                      		香港02 倍率1 Azure - 1000Mbps
-                                      	{elseif $node->name =="香港05 倍率1 原生IP HKT - 200Mbps - #55112"}
-                                      		香港05 倍率1 原生IP HKT - 200Mbps
+                                      	{elseif $node->name == "回国 泉州1 倍率2 CM - 100Mbps - #11027"}
+                                      		回国 泉州1 倍率2 CM - 100Mbps
+                                      	{elseif $node->name == "回国 泉州2 倍率2 CM - 100Mbps - #11027"}
+                                      		回国 泉州2 倍率2 CM - 100Mbps
+                                      	{elseif $node->name =="香港01 倍率0.2 原生IP HKT - 200Mbps - #55112"}
+                                      		香港01 倍率0.2 原生IP HKT - 200Mbps
                                       	{elseif $node->name =="中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps - #11027"}
                                       		中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps
                                       	{else}
