@@ -135,21 +135,21 @@
               <i class="ni ni-planet text-primary"></i>
             </div>
             <h5 class="mt-3">优质节点</h5>
-            <p class="mt-3">精选优质云服务供应商和顶级数据中心的线路配合TCP拥塞控制算法，有效降低延时和网络抖动，更能承受诸多生产环境考验，为用户需要的应用加速和功能解锁提供解决方案</p>
+            <p class="mt-3">精选优质云服务供应商和顶级数据中心的线路配合TCP拥塞控制算法，有效降低延时和网络抖动，同时提供中港内网专线保障稳定游戏。</p>
           </div>
           <div class="col-lg-4">
             <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
               <i class="ni ni-lock-circle-open text-primary"></i>
             </div>
             <h5 class="mt-3">安全可靠</h5>
-            <p class="mt-3">经过{$config["appName"]}的数据全程采用通用隧道协议传输，提供众多值得信赖的加密和特征混淆方式供您选择，全面保障隐私和数据安全</p>
+            <p class="mt-3">经过{$config["appName"]}的数据全程采用通用隧道协议传输，提供众多值得信赖的加密和特征混淆方式供您选择，全面保障隐私和数据安全。</p>
           </div>
           <div class="col-lg-4">
             <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
               <i class="ni ni-money-coins text-primary"></i>
             </div>
             <h5 class="mt-3">价格灵活</h5>
-            <p class=" mt-3">我们提供了多种多样的套餐，您可以任意选择自己需要的。当然我们也会对大客户提供定制服务</p>
+            <p class=" mt-3">我们提供了多种多样的套餐，您可以任意选择自己需要的，并且提供低倍率节点，意味着每月您最多可使用1TB+高速流量。</p>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">免费套餐</h6>
+                      <h6 class="category">免费套餐<font style="color:#778899;font-size:20px;">&nbsp;&nbsp;经济!</font></h6>
 							<h1 class="card-title">￥0<small></small></h1>
                           <ul>
                             <li><b>Random</b> 节点</li>
@@ -185,10 +185,10 @@
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">轻度套餐</h6>
+                      <h6 class="category">轻度套餐<font style="color:#778899;font-size:18px;">&nbsp;&nbsp;实惠!</font></h6>
 							<h1 class="card-title">￥4.9<small>/月</small></h1>
                        <ul>
-                         <li><b>15+</b> 节点</li>
+                         <li><b>20+</b> 节点</li>
                          <li><b>20GB</b> 流量</li>
                          <li><b>3</b> 台设备(IP)</li>
                          <li><b>30</b> 天有效期</li>
@@ -200,10 +200,10 @@
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">普通套餐</h6>
+                      <h6 class="category">普通套餐<font style="color:#778899;font-size:18px;">&nbsp;&nbsp;平衡!</font></h6>
 							<h1 class="card-title">￥7.9<small>/月</small></h1>
                                 <ul>
-                            <li><b>15+</b> 节点</li>
+                            <li><b>20+</b> 节点</li>
                             <li><b>100GB</b> 流量</li>
                             <li><b>3</b> 台设备(IP)</li>
                             <li><b>30</b> 天有效期</li>
@@ -215,10 +215,10 @@
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">高级套餐</h6>
+                  	<h6 class="category">高级套餐<font style="color:#778899;font-size:18px;">&nbsp;&nbsp;畅销!</font></h6>
 							<h1 class="card-title">￥11.9<small>/月</small></h1>
                                 <ul>
-                            <li><b>60+</b> 节点</li>
+                            <li><b>70+</b> 节点</li>
                             <li><b>160GB</b> 流量</li>
                             <li><b>5</b> 台设备(IP)</li>
                             <li><b>30</b> 天有效期</li>
