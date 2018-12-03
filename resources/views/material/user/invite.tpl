@@ -30,7 +30,7 @@
 										<p>您每邀请1位用户注册：</p>
 										<p>您会获得<code>{$config["invite_gift"]} G</code>流量奖励。</p>
 										<!--<p>对方将获得<code>{$config["invite_get_money"]}</code>元奖励作为初始资金。</p>-->
-										<p>今后如果对方充值时您还会获得对方充值金额的 <code>{$config["code_payback"]} %</code> 的返利，相当于您只需要邀请4人就可以免费使用！</p>
+										<p>今后如果对方充值时您还会获得对方充值金额的 <code>{$config["code_payback"]} %</code> 的返利</p>
 										<p class="card-heading">已获得返利：<code>{$paybacks_sum}</code> 元</p>
 									</div>
 
@@ -48,10 +48,11 @@
 								<div class="card-inner">
 									<div class="card-inner">
 										<p class="card-heading">邀请链接</p>
+                                      	{if $user->class==0 or $user->class==4}<p>十分抱歉，邀请码只对部分用户开放，请兑换等级套餐后再试。{else}
 										<p>剩余可邀请次数：{if $user->invite_num<0}无限{else}<code>{$user->invite_num}</code>{/if}</p>
 										<p>邀请链接请给认识的需要的人，邀请他人注册时，请将以下链接发给被邀请者</p>
 										<p><a>{$config["baseUrl"]}/auth/register?code={$code->code}</a></p>
-										<p><button class="copy-text btn btn-subscription" type="button" data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">点击拷贝邀请链接</button></p>
+										<p><button class="copy-text btn btn-subscription" type="button" data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">点击拷贝邀请链接</button></p>{/if}
 									</div>
 								</div>
 							</div>
