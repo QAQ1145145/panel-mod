@@ -84,7 +84,6 @@ class TelegramProcess
 						$bot->sendMessage($message->getChat()->getId(), "您的加密协议混淆设置已经设置为SS/SSD配置\r\n请更新订阅后使用。", $parseMode = null, $disablePreview = false, $replyToMessageId = $reply_to);
 					}
 					//SSR
-
 					if ($param == "ssr" ) {
 						$user->method = "aes-256-cfb";
 						$user->protocol = "auth_aes128_md5";
@@ -125,6 +124,11 @@ class TelegramProcess
 					$refBy = $user->ref_by;
 					$regIP = $user->reg_ip;
 					$inviteNum = $user->invite_num;
+                	if($inviteNum<0){
+                    	$inviteNum = "不限";
+                    } else {
+                    	$inviteNum;
+                    }
 					$money = $user->money;
 					$telegramID = $user->telegram_id;
 					$class = $user->class;
@@ -135,6 +139,12 @@ class TelegramProcess
 					} else {
 						$isAdmin = "管理员"; 
 					}
+                	$resetday=$user->auto_reset_day;
+                	if($resetday!=0){
+                    	$resetday;
+                    } else {
+                    	$resetday = $classExpire;
+                    }
 					$bot->sendMessage($message->getChat()->getId(), "账户详情：
 用户ID： ".$id."
 用户名： ".$name."
@@ -142,14 +152,15 @@ class TelegramProcess
 等级： VIP ".$class."
 等级有效期： ".$classExpire."
 剩余流量： ".$user->unusedTraffic()."
+流量重置日：".$resetday."
 账户余额： ".$money." CNY
 注册时间： ".$regDate."
-//注册IP： ".$regIP."
 邀请人ID： ".$refBy."
 剩余邀请次数： ".$inviteNum." 次
-//Telegram ID ： ".$telegramID."
 网站身份： ".$isAdmin."w"
 , $parseMode = null, $disablePreview = false, $replyToMessageId = $reply_to);
+                //注册IP： ".$regIP."
+                //Telegram ID ： ".$telegramID."
 				break;
 
             default:
@@ -198,7 +209,7 @@ class TelegramProcess
 /checkin - 签到（记得日常签到哦）
 /specialcheckin - 特殊签到（偶尔开放）
 /stat - 查询等级/流量
-/account - 用户详情（包含邮箱、注册ip等内容）
+/account - 用户详情
 /prpr - 调戏
 /ping - 查看群组或用户id
 /help - 查看帮助
@@ -338,7 +349,7 @@ class TelegramProcess
 /checkin - 签到（记得日常签到哦）
 /specialcheckin - 特殊签到（偶尔开放）
 /stat - 查询等级/流量
-/account - 用户详情（包含邮箱、注册ip等内容）
+/account - 用户详情
 /prpr - 调戏
 /ping - 查看群组或用户id
 /help - 查看帮助
