@@ -65,10 +65,10 @@
 			<div>
                   <div class="card-body">
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="code">感谢您的捐赠，我们会回馈您相同数量的金币。</label>
+											<label class="floating-label" for="code">欢迎使用支付宝App兑换（捐赠）金币，我们会将您的捐赠金额用于维持长期稳定的服务。</label>
                   </div>
                 </div>
-            </div>			
+            </div>		
 			
 		 <div class="row row-grid justify-content-between align-items-center mt-lg">
 			<div class="col-lg-6">
@@ -76,7 +76,7 @@
                   <div class="card-body">
 						<h6 class="category">红包码</h6>
 										<div class="form-group form-group-label">
-											<label class="floating-label" for="code">与捐赠无关,支付宝扫码(手机点击图片)领红包,立减现金!</label>
+											<label class="floating-label" for="code">与兑换金币无关,支付宝扫码(手机点击图片)领红包,立减现金!</label>
 											<p><a href="https://qr.alipay.com/c1x09807njeutfbehmjrxe2"><img src="/assets/public/img/hongbao.jpg" height="150" width="150"></a></p>
 										</div>
                   </div>
@@ -100,13 +100,13 @@
               <div class="row justify-content-center">
                 <div class="col-lg-11">
               <div class="mb-3">
-                <small class="text-uppercase font-weight-bold">捐赠记录</small>
+                <small class="text-uppercase font-weight-bold">兑换记录</small>
               </div>
 									{$codes->render()}
 												<table class="table table-hover">
 													<tr>
 														<th>ID</th>
-														<th>捐赠方式</th>
+														<th>兑换方式</th>
 														<th>类型</th>
 														<th>金额</th>
 														<th>充值时间</th>
@@ -118,7 +118,7 @@
 																<td>#{$code->id}</td>
 																<td>{if $code->code=="支付宝 充值"}支付宝{else}{$code->code}{/if}</td>
 																{if $code->type==-1}
-																<td>金额捐赠</td>
+																<td>金币兑换</td>
 																{/if}
 																{if $code->type==10001}
 																<td>流量充值</td>
@@ -196,7 +196,7 @@
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="modal-title" id="modal-title-default">请使用支付宝App扫码捐赠：</h6>
+                <h6 class="modal-title" id="modal-title-default">请使用支付宝App扫码兑换金币：</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -205,7 +205,7 @@
 											<div class="modal-inner">
                                    <div class="text-center">
                                     <p id="divide">-------------------------------------------------------------</p>
-									<p id="title">手机端请点击二维码转跳app</p>
+									<p id="title">手机端请点击二维码转跳App</p>
 									<p id="divide">-------------------------------------------------------------</p>
 									<p id="qrcode"></p>
 									<p id="info"></p>
@@ -316,7 +316,7 @@
 					clearTimeout(tid);
 					$("#alipay").modal('hide');
 					$("#result").modal();
-					$("#msg").html("充值成功！");
+					$("#msg").html("兑换成功！");
 					window.setTimeout("location.href=window.location.href", {$config['jump_delay']});
 				}
 			}

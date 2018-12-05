@@ -75,7 +75,7 @@
                 <span class="nav-link-inner--text">商店</span>
               </a>
               <div class="dropdown-menu">
-                <a href="/user/code" class="dropdown-item">充值</a>
+                <a href="/user/code" class="dropdown-item">兑换金币</a>
                 <a href="/user/shop" class="dropdown-item">兑换套餐</a>
                 <a href="/user/bought" class="dropdown-item">兑换记录</a>
               </div>

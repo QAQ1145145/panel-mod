@@ -98,13 +98,13 @@ class Pay
     {
             return '
                         <div class="form-group pull-left">
-                        <p class="modal-title" >欢迎使用支付宝捐赠</p>
-                        <p>输入捐赠金额：</p>
+                        <p class="modal-title" >欢迎使用支付宝兑换金币</p>
+                        <p>输入兑换金额：</p>
                         <div class="form-group form-group-label">
-                        <label class="floating-label" for="price">捐赠金额</label>
+                        <label class="floating-label" for="price">兑换金额</label>
                         <input id="type" class="form-control" name="amount" />
                         </div>
-                        <a class="btn btn-flat waves-attach" id="urlChange" ><span class="icon">√</span>&nbsp;捐赠</a>
+                        <a class="btn btn-flat waves-attach" id="urlChange" ><span class="icon">√</span>&nbsp;兑换</a>
                         </div>
                         <div class="form-group pull-right">
                         <img src="/images/qianbai-4.png" height="205" width="166" />
