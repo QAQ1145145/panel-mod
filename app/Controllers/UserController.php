@@ -103,6 +103,7 @@ class UserController extends BaseController
                 ->assign("lastDay", $lastDay)
                 ->assign('ann', $Ann)->assign('geetest_html', $GtSdk)->assign("ios_token", $ios_token)
                 ->assign('enable_duoshuo', Config::get('enable_duoshuo'))->assign('duoshuo_shortname', Config::get('duoshuo_shortname'))
+          		->assign('subUrl', Config::get('subUrl'))
                 ->assign("user", $this->user)->registerClass("URL", "App\Utils\URL")->assign('baseUrl', Config::get('baseUrl'))->display('user/index.tpl');
     }
 

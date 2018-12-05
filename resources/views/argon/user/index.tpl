@@ -186,6 +186,14 @@
 																<a class="btn btn-primary mt-4" href="/user/getpcconf?is_mu=0&is_ss=0">点击下载</a>
 															</div>
 																<hr>
+                      <!--test-->
+															<div style="padding:18px">
+																<h4 style="margin-top:12px">Shadowrocket</h4>
+																<a href="javascript:void(0);" class="btn-dl btn btn-primary mt-4" style="margin-right:0px;" data-onekeyfor="sub0">一键订阅</a>
+                                                              <input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" style="display:none;" name="input1" id="sub0" readonly value="{$subUrl}{$ssr_sub_token}" readonly="true">
+															</div>
+																<hr>
+                      <!--end--->
 															<div style="padding:18px">
 																<h4 style="margin-top:12px">一键配置(不推荐)</h4>
                                                               	<!--<p><code>/user/getpcconf?is_mu=0&is_ss=0</code></p>-->
@@ -335,6 +343,27 @@
 
 <script src="/theme/material/js/shake.js/shake.js"></script>
 
+<script>
+;(function(){
+	'use strict'
+
+	let onekeysubBTN = document.querySelectorAll('[data-onekeyfor]');
+	for (let i=0;i<onekeysubBTN.length;i++) {
+		onekeysubBTN[i].addEventListener('click',()=>{
+			let onekeyId = onekeysubBTN[i].dataset.onekeyfor;
+			AddSub(onekeyId);
+		});
+	}
+
+	function AddSub(id){
+		let url = document.getElementById(id).value;
+		let tmp = window.btoa(url);
+		tmp = tmp.substring(0,tmp.length);
+		url = "sub://" + tmp + "#";
+		window.location.href = url;
+	}
+})();
+</script>
 
 <script>
 $(function(){
