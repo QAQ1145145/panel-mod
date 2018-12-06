@@ -186,18 +186,10 @@
 																<a class="btn btn-primary mt-4" href="/user/getpcconf?is_mu=0&is_ss=0">点击下载</a>
 															</div>
 																<hr>
-                      <!--test-->
 															<div style="padding:18px">
 																<h4 style="margin-top:12px">Shadowrocket一键订阅</h4>
 																<a href="javascript:void(0);" class="btn-dl btn btn-primary mt-4" style="margin-right:0px;" data-onekeyfor="sub0">一键订阅</a>
                                                               <input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" style="display:none;" name="input1" id="sub0" readonly value="{$subUrl}{$ssr_sub_token}" readonly="true">
-															</div>
-																<hr>
-                      <!--end--->
-															<div style="padding:18px">
-																<h4 style="margin-top:12px">一键配置(不推荐)</h4>
-                                                              	<!--<p><code>/user/getpcconf?is_mu=0&is_ss=0</code></p>-->
-																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$ssr_url_all}">点击复制</a>
 															</div>
 																<hr>
 															<div style="padding:18px">
