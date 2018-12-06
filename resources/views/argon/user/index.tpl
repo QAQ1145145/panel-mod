@@ -197,7 +197,7 @@
 															<div style="padding:18px">
 																<h4 style="margin-top:12px">一键配置(不推荐)</h4>
                                                               	<!--<p><code>/user/getpcconf?is_mu=0&is_ss=0</code></p>-->
-																<a class="btn btn-primary mt-4 copy-text" href="{$ssr_url_all}">点击复制</a>
+																<button class="btn btn-primary mt-4 copy-text" data-clipboard-text="{$ssr_url_all}">点击复制</a>
 															</div>
 																<hr>
 															<div style="padding:18px">
