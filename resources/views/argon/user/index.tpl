@@ -188,7 +188,7 @@
 																<hr>
                       <!--test-->
 															<div style="padding:18px">
-																<h4 style="margin-top:12px">Shadowrocket</h4>
+																<h4 style="margin-top:12px">Shadowrocket一键订阅</h4>
 																<a href="javascript:void(0);" class="btn-dl btn btn-primary mt-4" style="margin-right:0px;" data-onekeyfor="sub0">一键订阅</a>
                                                               <input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" style="display:none;" name="input1" id="sub0" readonly value="{$subUrl}{$ssr_sub_token}" readonly="true">
 															</div>
@@ -197,7 +197,7 @@
 															<div style="padding:18px">
 																<h4 style="margin-top:12px">一键配置(不推荐)</h4>
                                                               	<!--<p><code>/user/getpcconf?is_mu=0&is_ss=0</code></p>-->
-																<a class="btn btn-primary mt-4" href="{$ssr_url_all}">点击添加</a>
+																<a class="btn btn-primary mt-4 copy-text" href="{$ssr_url_all}">点击复制</a>
 															</div>
 																<hr>
 															<div style="padding:18px">
@@ -359,7 +359,7 @@
 		let url = document.getElementById(id).value;
 		let tmp = window.btoa(url);
 		tmp = tmp.substring(0,tmp.length);
-		url = "sub://" + tmp + "#";
+		url = "sub://" + tmp + "#" + "叮当加速";
 		window.location.href = url;
 	}
 })();
