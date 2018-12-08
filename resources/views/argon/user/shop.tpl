@@ -79,10 +79,10 @@
 							<h1 class="card-title">￥{$shop->price}<small>/{if $shop->class_expire() ==30 || $shop->class_expire() ==31}月{else}{if $shop->class_expire() == 90 }季{else}{if $shop->class_expire() == 180 }半年{else}{if $shop->class_expire() == 360 }年{else}次{/if}{/if}{/if}{/if}</small></h1>
                        			套餐详情<br>
                                     <ul>
-                                      <li>重置流量{$shop->bandwidth()}G</li>
+                                      <li>{if $shop->auto_renew>31 & $shop->id !=25 & $shop->id !=24}每月{/if}重置流量{$shop->bandwidth()}G</li>
                                       <li>网络加速/游戏加速解锁</li>
                                       {if $shop->user_class()>=4}
-                                      <li>可用节点：60+条</li>
+                                      <li>可用节点：70+条</li>
                                       {else if $shop->user_class()>=2}
                                       <li>可用节点：20+条</li>
                                       {else}

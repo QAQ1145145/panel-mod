@@ -216,7 +216,7 @@
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
                   	<h6 class="category">高级套餐<font style="color:#778899;font-size:18px;">&nbsp;&nbsp;畅销!</font></h6>
-							<h1 class="card-title">￥11.9<small>/月</small></h1>
+							<h1 class="card-title">￥14.9<small>/月</small></h1>
                                 <ul>
                             <li><b>70+</b> 节点</li>
                             <li><b>160GB</b> 流量</li>
