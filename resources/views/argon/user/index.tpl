@@ -174,6 +174,18 @@
 														{$user = URL::getSSRConnectInfo($pre_user)}
 														{$ssr_url_all = URL::getAllUrl($pre_user, 0, 0)}
 														{$ssr_url_all_mu = URL::getAllUrl($pre_user, 1, 0)}
+                      										<div sryle="padding:18px">
+                                                              	<h4 style="margin-top:12px">AppleID</h4>
+                                                                <p>AppleID:<code>
+                                                                    {if $user->class>1 and $user->class!=4}                                          	 down@m-e.me
+                                                                    {else}															VIP用户可见
+                                                                    {/if}
+                                                                </code>密码<code>
+                                                                {if $user->class>1 and $user->class!=4}															Gg112211
+                                                                    {else}															VIP用户可见
+                                                                    {/if}
+                                                                </code></p><hr>
+                     										</div>
 															<div style="padding:18px">
 																<h4 style="margin-top:12px">订阅连接</h4>
 																<p><code><a class="copy-text" data-clipboard-text="{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0">{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0</a></code></p>
@@ -249,16 +261,11 @@
                                                   <hr>
                                                   <h4 style="margin-top:12px">Shadowrocket</h4>
                     							  <p><img src="images/clients/shadowrocket.svg" style="margin-top:12px" width="80px" align="center"></p>
-                                                  <p>AppleID:<code>
-														    {if $user->class>1 and $user->class!=4}                                          	 down@m-e.me
-															{else}															VIP用户可见
-															{/if}
-														</code>密码<code>
-														{if $user->class>1 and $user->class!=4}															Gg112211
-															{else}															VIP用户可见
-															{/if}
-														</code></p>
-                                                  <a class="btn btn-primary mt-2" href="itms-services://?action=download-manifest&url=https://down.m-e.me/ipa.plist">立即下载</a>
+                                                  <a class="btn btn-primary mt-2" href="itms-services://?action=download-manifest&url=https://down.m-e.me/shadowrocket.plist">立即下载</a>
+                                                  <hr>
+                                                  <h4 style="margin-top:12px">Quantumult</h4>
+                                                  <p><img src="images/clients/quantumult.jpg" style="margin-top:12px;border-radius:50%;" width="80px" align="center"></p>
+                                                  <a class="btn btn-primary mt-2" href="itms-services://?action=download-manifest&url=https://down.m-e.me/quantumult.plist">立即下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Shadowsocks For Android</h4>
                     							  <p><img src="images/clients/ss-android.png" style="margin-top:12px" width="80px" align="center"></p>
@@ -376,6 +383,7 @@ window.onload = function() {
     function shakeEventDidOccur () {
 		if("vibrate" in navigator){
 			navigator.vibrate(500);
+
 		}
         $.ajax({
                 type: "POST",
