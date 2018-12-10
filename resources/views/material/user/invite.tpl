@@ -111,7 +111,7 @@
                                 <th>ID</th>
 								<th>被邀请用户ID</th>
 								<th>获得返利</th>
-                                <th>返利时间(UNIX时间戳)</th>
+                                <th>返利时间</th>
                             </tr>
                             {foreach $paybacks as $payback}
                             <tr>
@@ -120,7 +120,7 @@
                                 <td>{$payback->id}</td>
 								<td>{$payback->userid}</td>
 								<td>{$payback->ref_get} 元</td>
-								<td>{$payback->datetime}</td>
+								<td>{date("20y年m月d日",$payback->datetime)}</td>
                             </tr>
                             {/foreach}
                         </table>
