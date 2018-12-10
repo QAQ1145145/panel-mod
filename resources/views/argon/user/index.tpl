@@ -199,10 +199,11 @@
 															</div>
 																<hr>
 															<div style="padding:18px">
-																<h4 style="margin-top:12px">Shadowrocket一键订阅</h4>
-																<a href="javascript:void(0);" class="btn-dl btn btn-primary mt-4" style="margin-right:0px;" data-onekeyfor="sub0">一键订阅</a>
-                                                              <input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" style="display:none;" name="input1" id="sub0" readonly value="{$subUrl}{$ssr_sub_token}" readonly="true">
-															</div>
+																<h4 style="margin-top:12px">一键订阅</h4>
+																<a href="javascript:void(0);" class="btn-dl btn btn-primary mt-4" style="margin-right:0px;width:200px;" data-onekeyfor="sub0">Shadowrocket<br>一键订阅</a>
+                                                              	<input type="text" class="input form-control form-control-monospace cust-link col-xx-12 col-sm-8 col-lg-7" style="display:none;" name="input1" id="sub0" readonly value="{$subUrl}{$ssr_sub_token}" readonly="true"><br>
+                                                              	<a href="quantumult://configuration?server={str_replace(array('+','/','='),array('-','_',''),{base64_encode("{$config["baseUrl"]}/link/{$ssr_sub_token}?mu=0")})}&filter=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2xoaWUxL1J1bGVzL21hc3Rlci9RdWFudHVtdWx0L1F1YW50dW11bHQuY29uZg&rejection=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2xoaWUxL1J1bGVzL21hc3Rlci9RdWFudHVtdWx0L1F1YW50dW11bHRfVVJMLmNvbmY" class="btn-dl btn btn-primary mt-4" style="margin-right:0px;width:200px;">Quantumult<br>一键订阅&amp;规则</a>
+                      										</div>
 																<hr>
 															<div style="padding:18px">
 																<h4 style="margin-top:12px">使用教程</h4>
