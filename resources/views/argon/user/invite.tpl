@@ -141,7 +141,7 @@
                                 <td>{$payback->id}</td>
 								<td>{$payback->userid}</td>
 								<td>{$payback->ref_get} 元</td>
-                              	<td>{date("20y年m月d日",$payback->datetime)}</td>
+                              	<td>{date("20y年m月d,h:i",$payback->datetime)}</td>
 
                             </tr>
                             {/foreach}

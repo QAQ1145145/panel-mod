@@ -176,7 +176,7 @@
                                       		芬兰 倍率1 原生IP- 100Mbps
                                       	{elseif $node->name == "香港 倍率2 原生IP HGC - 20Mbps - #19358"}
                                       		香港 倍率2 原生IP HGC - 20Mbps
-                                    	{elseif $node->name == "香港 倍率3 原生IP HKBN - 100Mbps - #11027"}
+                                    	{elseif $node->name == "香港 倍率2 原生IP HKBN - 100Mbps - #11027"}
                                       		香港 倍率3 原生IP HKBN - 100Mbps
                                       	{elseif $node->name == "香港13 倍率3 原生IP HKT - 100Mbps - #11027"}
                                       		香港13 倍率3 原生IP HKT - 100Mbps
@@ -280,10 +280,10 @@
 									<p class="card-heading">
 										{if $node->name == "日本7 倍率1 IDCF 原生IP - 300Mbps - #11027"}
                                       		日本7 倍率1 IDCF 原生IP - 300Mbps
-                                      	{elseif $node->name == "回国 泉州1 倍率2 CM - 100Mbps - #11027"}
-                                      		回国 泉州1 倍率2 CM - 100Mbps
-                                      	{elseif $node->name == "回国 泉州2 倍率2 CM - 100Mbps - #11027"}
-                                      		回国 泉州2 倍率2 CM - 100Mbps
+                                      	{elseif $node->name == "回国 泉州1 倍率1 CM - 100Mbps - #11027"}
+                                      		回国 泉州1 倍率1 CM - 100Mbps
+                                      	{elseif $node->name == "回国 泉州2 倍率1 CM - 100Mbps - #11027"}
+                                      		回国 泉州2 倍率1 CM - 100Mbps
                                       	{elseif $node->name =="香港01 倍率0.2 原生IP HKT - 200Mbps - #55112"}
                                       		香港01 倍率0.2 原生IP HKT - 200Mbps
                                       	{elseif $node->name =="中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps - #11027"}
