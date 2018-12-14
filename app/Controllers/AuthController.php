@@ -302,9 +302,9 @@ class AuthController extends BaseController
                 $res['ret'] = 0;
                 $res['msg'] = "邀请人不存在";
                 return $response->getBody()->write(json_encode($res));
-            } else if ($gift_user->class == 0 or $gift_user->class == 4) {
+            } else if ($gift_user->class == 4) {
                 $res['ret'] = 0;
-                $res['msg'] = "邀请人不是VIP或为试用会员";
+                $res['msg'] = "邀请人为试用会员";
                 return $response->getBody()->write(json_encode($res));
             } else if ($gift_user->invite_num == 0) {
                 $res['ret'] = 0;

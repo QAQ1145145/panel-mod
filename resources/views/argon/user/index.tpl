@@ -133,6 +133,7 @@
 										{/if}
 										<p>{$ann->content}更新日期<code>{$ann->date}</code></p>
                         <p style="background-color:transparent;color: #ff4081;text-decoration: none;cursor: pointer;"><a href="/user/announcement">更多公告</a></p>
+              			<p style="background-color:transparent;color: #ff4081;text-decoration: none;cursor: pointer;"><a href="tg://proxy?server=65.52.167.176&port=24000&secret=ddae034d152d3d98aa6ac004e394aa8faa">点击配置TG代理</a></p>
                 </div>
               </div>
             </div>

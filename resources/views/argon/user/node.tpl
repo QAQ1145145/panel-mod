@@ -80,7 +80,22 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<p class="card-heading">
-										{$node->name}{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
+                                        {if $node->name == "德国 倍率1 原生IP - 100Mbps - #10827"}
+                                      		德国 倍率1 原生IP - 100Mbps
+										{elseif $node->name == "芬兰 倍率1 原生IP- 100Mbps - #10587"}
+                                      		芬兰 倍率1 原生IP- 100Mbps
+                                      	{elseif $node->name == "香港 倍率2 原生IP HGC - 20Mbps - #19358"}
+                                      		香港 倍率2 原生IP HGC - 20Mbps
+                                    	{elseif $node->name == "香港 倍率2 原生IP HKBN - 100Mbps - #11027"}
+                                      		香港 倍率2 原生IP HKBN - 100Mbps
+                                      	{elseif $node->name == "香港13 倍率3 原生IP HKT - 100Mbps - #11027"}
+                                      		香港13 倍率3 原生IP HKT - 100Mbps
+                                    	{elseif $node->name == "香港14 倍率3 原生IP HKT - 100Mbps - #11027"}
+                                      		香港14 倍率3 原生IP HKT - 100Mbps
+                                      	{else}
+                                      		{$node->name}
+                                      	{/if}
+										{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
 										{if $node->mu_only != 1 && $node->sort != 11}
 											{if $node->node_class > $user->class}
@@ -145,7 +160,7 @@
 
         </div>
 		
-			<div class="mt-5 py-5 border-top text-center">
+			<!--<div class="mt-5 py-5 border-top text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-9">	
 				普通节点
@@ -248,7 +263,7 @@
 {/foreach}
 
 
-        </div>
+        </div>-->
 		
 		
 <div class="mt-5 py-5 border-top text-center">
@@ -288,6 +303,8 @@
                                       		香港01 倍率0.2 原生IP HKT - 200Mbps
                                       	{elseif $node->name =="中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps - #11027"}
                                       		中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps
+										{elseif $node->name == "香港 倍率2 原生IP HKBN - 100Mbps - #11027"}
+                                      		香港 倍率2 原生IP HKBN - 100Mbps
                                       	{else}
                                       		{$node->name}
                                       	{/if}

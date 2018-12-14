@@ -83,7 +83,7 @@
                   <div class="card-body">
 						<h6 class="category">您的邀请链接</h6>
 						<h2 class="card-title">
-                         	{if $user->class==0 or $user->class==4}<p>十分抱歉，邀请码只对部分用户开放，请兑换等级套餐后再试。</p>{else}
+                         	{if $user->class==4}<p>十分抱歉，邀请码暂时不对试用用户开放开放。</p>{else}
 							<p><code>{$config["baseUrl"]}/auth/register?code={$code->code}</code></p>
 							<p>剩余可邀请次数：{if $user->invite_num<0}无限{else}<code>{$user->invite_num}</code>{/if}</p>
                    			<button  class="copy-text btn btn-primary mt-2"  data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">点击复制链接</button>
