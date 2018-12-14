@@ -790,7 +790,8 @@ class Job
                 $user->last_day_t = 0;
 				$user->auto_reset_day = 0;
 				$user->auto_reset_bandwidth = 0;
-             	$user->node_speedlimit = 20 ;
+             	$user->node_speedlimit = 50 ;
+				$user->node_connector  = 1 ;
 
                 $subject = Config::get('appName')."-您的用户等级已经过期了";
                 $to = $user->email;
