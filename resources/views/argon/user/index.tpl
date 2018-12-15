@@ -182,7 +182,7 @@
                                                                     {else}															VIP用户可见
                                                                     {/if}
                                                                 </code>密码<code>
-                                                                {if $user->class>1 and $user->class!=4}															Gg112211
+                                                                {if $user->class>1 and $user->class!=4}															Tk112211
                                                                     {else}															VIP用户可见
                                                                     {/if}
                                                                 </code></p><hr>

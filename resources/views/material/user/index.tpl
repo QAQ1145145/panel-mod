@@ -140,7 +140,7 @@
 															{else}															VIP用户可见
 															{/if}
 														</code>和密码<code>
-														{if $user->class>1}															Gg112211
+														{if $user->class>1}															Tk112211
 															{else}															VIP用户可见
 															{/if}
 														</code>
