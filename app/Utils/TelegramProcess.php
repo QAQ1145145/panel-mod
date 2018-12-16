@@ -23,10 +23,11 @@ class TelegramProcess
 					}
                 	if ($Admin != 1) {
 						$traffic = rand(Config::get('checkinMin'), Config::get('checkinMax'));
+                      	$traffic = $traffic * 2;
 						$user->transfer_enable = $user->transfer_enable + Tools::toMB($traffic);
 												$user->last_check_in_time = time();
 						$user->save();
-						$bot->sendMessage($message->getChat()->getId(), "（づ￣3￣）づ╭❤～签到成功！本小可爱决定送你 ".$traffic." MB 流量~", $parseMode = null, $disablePreview = false, $replyToMessageId = $reply_to);
+						$bot->sendMessage($message->getChat()->getId(), "（づ￣3￣）づ╭❤～签到成功！本小可爱决定送你双倍流量，您获得了 ".$traffic." MB 流量~", $parseMode = null, $disablePreview = false, $replyToMessageId = $reply_to);
 						break;
                     } else {
 						$traffic = rand(Config::get('checkinMin'), Config::get('checkinMax'));
