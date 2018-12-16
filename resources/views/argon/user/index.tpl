@@ -89,7 +89,7 @@
                     {else}
                     <button disabled="disabled" class="btn btn-primary mt-4" style="margin-left: 1rem;">今日已签到</button>
                     {/if}
-					<p class="col mt-4" style="text-align: right;"><font style="font-weight: 650;">上次签到时间：</font>&nbsp;&nbsp;{$user->lastCheckInTime()}
+					<p class="col mt-4" style="text-align: right;"><font style="font-weight: 650;">上次签到时间：</font>&nbsp;&nbsp;{$user->lastCheckInTime()} <br> <font style="font-size:6px;">小提示：<a href="https://t.me/ddjiasu" target="_blank">Telegram群</a>内签到可获得双倍流量</font>
                   	</p>
                   </div>
                   </div>
