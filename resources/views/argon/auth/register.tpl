@@ -33,6 +33,16 @@
                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                       </div>
 					  <input class="form-control" id="email" type="text" placeholder="邮箱" >
+                      <select class="form-control" id="type">
+                                	<option value="@qq.com">@qq.com</option>
+                                	<option value="@gmail.com">@gmail.com</option>
+                                	<option value="@hotmail.com">@hotmail.com</option>
+                                	<option value="@outlook.com">@outlook.com</option>
+                                	<option value="@icloud.com">@icloud.com</option>
+                                	<option value="@126.com">@126.com</option>
+                                	<option value="@163.com">@163.com</option>
+                                	<option value="@vip.qq.com">@vip.qq.com</option>
+                     </select>
                     </div>
                   </div>
 					{if $enable_email_verify == 'true'}
@@ -87,7 +97,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-key-25"></i></span>
                       </div>
-                      <input class="form-control" placeholder="邀请码{if $enable_invite_code == 'false'}(没有就不填){/if}" id="code" type="text">
+                      <input class="form-control" placeholder="邀请码(若您没有请输入welcome){if $enable_invite_code == 'false'}(没有就不填){/if}" id="code" type="text">
                     </div>
                     <div>
                     <p style="color: rgba(0,0,0,.26): text;font-size: 12px;position: absolute;">若您没有可用优惠码，请填入<code style="color: rgba(0.6,0,0,0.26)">welcome</code></p>
@@ -200,7 +210,7 @@ $("#reg_code").modal('hide')
                 url:"/auth/register",
                 dataType:"json",
                 data:{
-                    email: $("#email").val(),
+                    email: $("#email").val() + $("#type").val(),
                     name: $("#name").val(),
                     passwd: $("#passwd").val(),
                     repasswd: $("#repasswd").val(),
@@ -311,7 +321,7 @@ function time(o) {
                 url: "send",
                 dataType: "json",
                 data: {
-                    email: $("#email").val()
+                    email: $("#email").val() + $("#type").val()
                 },
                 success: function (data) {
                     if (data.ret) {
