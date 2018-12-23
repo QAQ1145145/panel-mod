@@ -89,7 +89,7 @@
                    			<button  class="copy-text btn btn-primary mt-2"  data-clipboard-text="{$config["baseUrl"]}/auth/register?code={$code->code}">点击复制链接</button>
                  			<button class="reset-invitelink btn btn-primary mt-2" type="button">重置邀请链接</button>
                   			{/if}
-                  {if $user->class==0 or $user->class==4}{else}
+                  {if $user->class==4}{else}
 						{if $config['invite_price']>=0}
 							<div class="card-main">
 								<div class="card-inner">
