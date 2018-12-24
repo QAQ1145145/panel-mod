@@ -173,7 +173,7 @@
                       <h6 class="category">免费套餐<font style="color:#778899;font-size:20px;">&nbsp;&nbsp;经济!</font></h6>
 							<h1 class="card-title">￥0<small></small></h1>
                           <ul>
-                            <li><b>20+</b> 节点</li>
+                            <li><b>10+</b> 节点</li>
                             <li><b>签到领取</b> 流量</li>
                             <li><b>3</b> 台设备(IP)</li>
                             <li><b>永久</b> 有效期</li>
@@ -185,11 +185,11 @@
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">高级节点 - 100G<font style="color:#778899;font-size:18px;">&nbsp;&nbsp;畅销!</font></h6>
+                      <h6 class="category">高级节点 - 50G<font style="color:#778899;font-size:18px;">&nbsp;&nbsp;畅销!</font></h6>
 							<h1 class="card-title">￥9.9<small>/月</small></h1>
                        <ul>
                          <li><b>80+</b> 节点</li>
-                         <li><b>100GB</b> 流量</li>
+                         <li><b>50GB</b> 流量</li>
                          <li><b>3</b> 台设备(IP)</li>
                          <li><b>30</b> 天有效期</li>
                        </ul>
@@ -200,11 +200,11 @@
               <div class="col-lg-3">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
-                      <h6 class="category">高级节点 - 300G<font style="color:#778899;font-size:18px;">&nbsp;&nbsp;推荐!</font></h6>
+                      <h6 class="category">高级节点 - 500G<font style="color:#778899;font-size:18px;">&nbsp;&nbsp;推荐!</font></h6>
 							<h1 class="card-title">￥19.9<small>/月</small></h1>
                                 <ul>
-                            <li><b>80+</b> 节点</li>
-                            <li><b>300GB</b> 流量</li>
+                            <li><b>60+</b> 节点</li>
+                            <li><b>500GB</b> 流量</li>
                             <li><b>3</b> 台设备(IP)</li>
                             <li><b>30</b> 天有效期</li>
                                 </ul>
