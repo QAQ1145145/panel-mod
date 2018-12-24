@@ -58,7 +58,7 @@
 						<div class="col-lg-12">
 							<div class="card card-lift shadow border-0">
 								<div class="card-body">
-									<p>注意：购买同级别套餐将叠加到期时间，您可以用金币兑换下面的套餐。</p>
+									<p>注意：兑换时将直接覆盖套餐。您可以用金币兑换下面的套餐。</p>
                                 	<p>当前剩余金币：<code>{$user->money} </code>{if $user->money <4.9}&nbsp;&nbsp;(好像金币不足了哦){/if}</p>
 								</div>
 							</div>
@@ -79,14 +79,14 @@
 							<h1 class="card-title">￥{$shop->price}<small>/{if $shop->class_expire() ==30 || $shop->class_expire() ==31}月{else}{if $shop->class_expire() == 90 }季{else}{if $shop->class_expire() == 180 }半年{else}{if $shop->class_expire() == 360 }年{else}次{/if}{/if}{/if}{/if}</small></h1>
                        			套餐详情<br>
                                     <ul>
-                                      <li>{if $shop->auto_renew>31 & $shop->id !=25 & $shop->id !=24}每月{/if}重置流量{$shop->bandwidth()}G</li>
+                                      <li>{if $shop->auto_renew>31 & $shop->id !=25 & $shop->id !=24}<b>每月</b>{/if}重置流量{$shop->bandwidth()}G</li>
                                       <li>网络加速/游戏加速解锁</li>
                                       {if $shop->user_class()>=4}
-                                      <li>可用节点：70+条</li>
+                                      <li>可用节点：高级节点</li>
                                       {else if $shop->user_class()>=2}
                                       <li>可用节点：20+条</li>
                                       {else}
-                                      <li>可用节点:参考等级</li>
+                                      <li>可用节点:不变化</li>
                                       {/if}
                                       <li>限制在线IP数:{$shop->connector()}个</li>
                                       <li>速度限制:{if $shop->speedlimit()!=0}{$shop->speedlimit()}Mbps{else}不限速{/if}</li>
@@ -163,7 +163,7 @@
                 </button>
             </div>
             <div class="modal-body">
-             					<p><font color="red">如您是更换套餐,那剩余流量和有效期将会重置。</font></p>					   
+             					<p><font color="red">如果之前的等级还未到期，以前的套餐将失效。</font></p>					   
 									<p id="name">商品名称：</p>
 									<p id="credit">优惠额度：</p>
 									<p id="total">使用金币：</p>
