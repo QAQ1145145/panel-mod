@@ -90,7 +90,7 @@
                 </a>
               <div class="dropdown-menu">
                 <a href="https://wiki.ddjiasu.com" target="_blank" class="dropdown-item">使用教程</a>
-                <a href="/user/ticket" class="dropdown-item">工单系统</a>
+                <!--<a href="/user/ticket" class="dropdown-item">加入我们</a>-->
                 
             <!--
             <li class="nav-item dropdown">
