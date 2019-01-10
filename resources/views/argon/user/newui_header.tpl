@@ -9,29 +9,29 @@
   <link href="https://cdn.godann.com/kitui/vendor/nucleo/css/nucleo.css" rel="stylesheet">
   <link href="https://cdn.godann.com/kitui/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link type="text/css" href="https://cdn.godann.com/kitui/css/argon.css" rel="stylesheet">
-  <!--<link href="/argon-halloween.css" rel="stylesheet">-->
+  <!--<link href="/argon-halloween.css" rel="stylesheet">-->   
 </head>
 
 <body>
   <header class="header-global">
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
       <div class="container">
-        <a class="navbar-brand mr-lg-5" href="/">
+        <a class="navbar-brand mr-lg-5" href="https://www.ddjiasu.com">
           <img src="/white.png">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="navbar_global">
           <div class="navbar-collapse-header">
             <div class="row">
               <div class="col-6 collapse-brand">
-                <a href="/">
+                <a href="https://www.ddjiasu.com">
                   <img src="/blue.png">
                 </a>
               </div>
               <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
                   <span></span>
                   <span></span>
                 </button>
@@ -41,36 +41,29 @@
           
           <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
              <li class="nav-item dropdown">
-              <a href="/user" class="nav-link" >
+              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                 <i class="ni ni-circle-08"></i>
-                <span class="nav-link-inner--text">首页</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-settings"></i>
-                <span class="nav-link-inner--text">设置中心</span>
+                <span class="nav-link-inner--text">我的</span>
               </a>
               <div class="dropdown-menu">
-                <a href="/user/edit" class="dropdown-item">资料编辑</a>
+                <a href="/user" class="dropdown-item">用户中心</a>
+                <a href="/user/edit" class="dropdown-item">账户设置</a>
                 <a href="/user/profile" class="dropdown-item">用户信息</a>
-                <a href="/user/announcement" class="dropdown-item">系统公告</a>
+                <a href="/user/invite" class="dropdown-item">推介计划</a>
+              </div>
+              </li> 
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+                <i class="ni ni-planet"></i>
+                <span class="nav-link-inner--text">使用</span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="/user/node" class="dropdown-item">节点列表</a>
+                <a href="/user/relay" class="dropdown-item">中转规则</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a href="/user/node" class="nav-link" >
-                <i class="ni ni-planet"></i>
-                <span class="nav-link-inner--text">节点列表</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="/user/relay" class="nav-link" >
-                <i class="ni ni-app"></i>
-                <span class="nav-link-inner--text">中转设置</span>
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                 <i class="ni ni-cart"></i>
                 <span class="nav-link-inner--text">商店</span>
               </a>
@@ -81,11 +74,24 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a href="/user/invite" class="nav-link" >
-                <i class="ni ni-money-coins"></i>
-                <span class="nav-link-inner--text">邀请赚返利</span>
+              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+                <i class="ni ni-zoom-split-in"></i>
+                <span class="nav-link-inner--text">审计</span>
               </a>
+              <div class="dropdown-menu">
+                <a href="/user/detect" class="dropdown-item">审计规则</a>
+                <a href="/user/detect/log" class="dropdown-item">审计记录</a>
+              </div>
             </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+                <i class="ni ni-single-copy-04"></i>
+                <span class="nav-link-inner--text">帮助</span>
+                </a>
+              <div class="dropdown-menu">
+                <a href="https://wiki.ddjiasu.com" target="_blank" class="dropdown-item">使用教程</a>
+                <a href="/user/ticket" class="dropdown-item">工单系统</a>
+                
             <!--
             <li class="nav-item dropdown">
               <a href="/user/ticket" class="nav-link"  data-toggle="dropdown" href="#" role="button" >

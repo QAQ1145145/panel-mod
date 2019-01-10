@@ -74,7 +74,7 @@
 																		{$relay_rule = $tools->pick_out_relay_rule($node->id, $user->port, $relay_rules)}
 																	{/if}
 
-						<div class="col-lg-6" style=" margin-top: 3rem;">
+						<div class="col-lg-4" style=" margin-top: 3rem;">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 							<div class="card-main">
@@ -287,24 +287,30 @@
 																	{if $node->sort == 10}
 																		{$relay_rule = $tools->pick_out_relay_rule($node->id, $user->port, $relay_rules)}
 																	{/if}
-						<div class="col-lg-6" style=" margin-top: 3rem;">
+						<div class="col-lg-4" style=" margin-top: 3rem;">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 							<div class="card-main">
 								<div class="card-inner">
 									<p class="card-heading">
-										{if $node->name == "日本7 倍率1 IDCF 原生IP - 300Mbps - #11027"}
-                                      		日本7 倍率1 IDCF 原生IP - 300Mbps
+										{if $node->name == "日本07 倍率1 IDCF 原生IP - 300Mbps - #11027"}
+                                      		日本07 倍率1 IDCF 原生IP - 300Mbps
                                       	{elseif $node->name == "回国 泉州1 倍率1 CM - 100Mbps - #11027"}
                                       		回国 泉州1 倍率1 CM - 100Mbps
                                       	{elseif $node->name == "回国 泉州2 倍率1 CM - 100Mbps - #11027"}
                                       		回国 泉州2 倍率1 CM - 100Mbps
-                                      	{elseif $node->name =="香港01 倍率0.2 原生IP HKT - 200Mbps - #55112"}
-                                      		香港01 倍率0.2 原生IP HKT - 200Mbps
+                                      	{elseif $node->name =="香港01 倍率0.5 原生IP HKT - 200Mbps - #55112"}
+                                      		香港01 倍率0.5 原生IP HKT - 200Mbps
                                       	{elseif $node->name =="中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps - #11027"}
                                       		中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps
-										{elseif $node->name == "香港 倍率2 原生IP HKBN - 100Mbps - #11027"}
-                                      		香港 倍率2 原生IP HKBN - 100Mbps
+                                      	{elseif $node->name =="香港02 倍率0.5 原生IP HKT  - 1000Mbps - #55112"}
+                                      		香港02 倍率0.5 原生IP HKT  - 1000Mbps
+										{elseif $node->name == "【网页】沪港专线 倍率1 阿里云 - #11027"}
+                                      		【网页】沪港专线 倍率1 阿里云
+										{elseif $node->name == "台湾7 倍率0.5 原生IP HiNet - 600Mbps - #55112"}
+                                      		台湾7 倍率0.5 原生IP HiNet - 600Mbps
+										{elseif $node->name == "香港09 倍率2 原生IP HKBN - 100Mbps - #11027"}
+                                      		香港09 倍率2 原生IP HKBN - 100Mbps
                                       	{else}
                                       		{$node->name}
                                       	{/if}
