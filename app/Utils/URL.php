@@ -220,6 +220,7 @@ class URL
         $return_url = '';
         if ($user->transfer_enable >0){
 			$return_url .= URL::getAnnouncement($user).($enter == 0 ? ' ' : "\n");
+			$return_url .= URL::getWarn($user).($enter == 0 ? ' ' : "\n");
             $return_url .= URL::getUserTraffic($user).($enter == 0 ? ' ' : "\n");
             $return_url .= URL::getUserClassExpiration($user).($enter == 0 ? ' ' : "\n");
         }
@@ -470,6 +471,13 @@ class URL
 	public static function getAnnouncement($user){
 		if($user->class ==100){
 			$ssurl = "127.0.0.1:1:auth_chain_a:chacha20:tls1.2_ticket_auth:YnJlYWt3YWxs/?obfsparam=&protoparam=&remarks=".Tools::base64_url_encode("双11活动,请关注官网")."&group=".Tools::base64_url_encode(Config::get('appName'));
+		}
+      	return "ssr://".Tools::base64_url_encode($ssurl);
+	}
+  
+	public static function getWarn($user){
+		if($user->enable=="0"){
+			$ssurl = "127.0.0.1:1:auth_chain_a:chacha20:tls1.2_ticket_auth:YnJlYWt3YWxs/?obfsparam=&protoparam=&remarks=".Tools::base64_url_encode("您的账户因违规已被封禁")."&group=".Tools::base64_url_encode(Config::get('appName'));
 		}
       	return "ssr://".Tools::base64_url_encode($ssurl);
 	}

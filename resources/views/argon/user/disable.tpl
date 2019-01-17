@@ -75,12 +75,13 @@
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">										
 									<p>什么情况会被禁用？</p>
-									<p>1. 0级帐户超过15天没签到会被禁用，请定期签到</p>
-									<p>2. 0级帐户超过90天没连接节点使用会被禁用，请定期连接使用</p>
+									<p>1. 5次以上触碰『屏蔽违法网站』审计规则</p>
+									<p>2. 10次以上触碰其他审计规则</p>
 									<p>3. 严重违反相关用户协议，请阅读<a target="_blank" href="{$config["baseUrl"]}/legal">用户协议</a></p>
 									<p>{$ssr_sub_token}</p>
 									{if $user->enable=="0"}
-									<button id="unlock" class="btn btn-primary mt-4">&nbsp;解除禁用</button>
+									<!--<button id="unlock" class="btn btn-primary mt-4">&nbsp;解除禁用</button>-->
+                    				<h6>若需解封请联系管理员或右下角联系客服，酌情处理，请告诉我们您的用户名。</h6>
 									{/if}
                   </div>
                 </div>
