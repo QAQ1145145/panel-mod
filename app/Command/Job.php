@@ -779,7 +779,7 @@ class Job
                 continue;
             }
 
-            if ($user->class!=0 && 
+            if ($user->class!=0 or $user->class!=1 && 
 				strtotime($user->class_expire)<time() && 
 				strtotime($user->class_expire) > 1420041600
 			){
