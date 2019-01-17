@@ -779,7 +779,7 @@ class Job
                 continue;
             }
 
-            if ($user->class!=0 or $user->class!=1 && 
+            if ($user->class!=0 && 
 				strtotime($user->class_expire)<time() && 
 				strtotime($user->class_expire) > 1420041600
 			){
@@ -804,7 +804,7 @@ class Job
                     echo $e->getMessage();
                 }
 
-                $user->class=1;
+                $user->class=0;
             }
 
             $user->save();
