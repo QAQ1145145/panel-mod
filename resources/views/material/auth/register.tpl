@@ -130,7 +130,6 @@
 													<div class="col-md-10 col-md-push-1">
 														<label class="floating-label" for="code">邀请码(必填)</label>
 														<input class="form-control" id="code" type="text">
-                                                      	<p style="color: rgba(0,0,0,.26);cursor: text;font-size: 12px;line-height: 1;position: absolute;">若您没有可用优惠码，请填入<code style="color: rgba(0.6,0,0,0.26)">welcome</code></p>
 													</div>
 												</div>
 											</div>
@@ -192,7 +191,7 @@
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-heading">
-										<h2 class="modal-title">收不到验证码？请检查垃圾箱，或按照如下教程自助查询。</h2>
+										<h2 class="modal-title">收不到验证码？</h2>
 									</div>
 									<div class="modal-inner">
 										{include file='email_nrcy.tpl'}

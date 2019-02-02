@@ -40,32 +40,10 @@ class HomeController extends BaseController
 
     public function tos()
     {
-		$orgdate=filemtime("/www/wwwroot/maile3.com/resources/views/argon/legal/tos.tpl");
+		$orgdate=filemtime("/www/wwwroot/ddjiasu.com/resources/views/argon/legal/tos.tpl");
 		$echodate=date("Y-m-d H:i:s",$orgdate);
- 		return $this->view()->assign('echodate', $echodate)->display('legal/tos.tpl');
+		return $this->view()->assign('echodate', $echodate)->display('legal/tos.tpl');
     }
-
-	public function legal()
-    {
-      	$orgdate=filemtime("/www/wwwroot/maile3.com/resources/views/argon/legal/index.tpl");
-		$echodate=date("Y-m-d H:i:s",$orgdate);
-        return $this->view()->assign('echodate', $echodate)->display('legal/index.tpl');
-    }
-
-    public function aup()
-    {
-      	$orgdate=filemtime("/www/wwwroot/maile3.com/resources/views/argon/legal/aup.tpl");
-		$echodate=date("Y-m-d H:i:s",$orgdate);
-        return $this->view()->assign('echodate', $echodate)->display('legal/aup.tpl');
-    }
-
-    public function privacy()
-    {
-      	$orgdate=filemtime("/www/wwwroot/maile3.com/resources/views/argon/legal/privacy.tpl");
-		$echodate=date("Y-m-d H:i:s",$orgdate);
-        return $this->view()->assign('echodate', $echodate)->display('legal/privacy.tpl');
-    }
-  
     
     public function staff()
     {
@@ -124,5 +102,26 @@ class HomeController extends BaseController
     public function codepay_pay_callback($request, $response, $args)
     {
         Pay::codepay_pay_callback($request);
+    }
+
+	public function legal()
+    {
+      	$orgdate=filemtime("/www/wwwroot/ddjiasu.com/resources/views/argon/legal/index.tpl");
+		$echodate=date("Y-m-d H:i:s",$orgdate);
+        return $this->view()->assign('echodate', $echodate)->display('legal/index.tpl');
+    }
+
+    public function aup()
+    {
+      	$orgdate=filemtime("/www/wwwroot/ddjiasu.com/resources/views/argon/legal/aup.tpl");
+		$echodate=date("Y-m-d H:i:s",$orgdate);
+        return $this->view()->assign('echodate', $echodate)->display('legal/aup.tpl');
+    }
+
+    public function privacy()
+    {
+      	$orgdate=filemtime("/www/wwwroot/ddjiasu.com/resources/views/argon/legal/privacy.tpl");
+		$echodate=date("Y-m-d H:i:s",$orgdate);
+        return $this->view()->assign('echodate', $echodate)->display('legal/privacy.tpl');
     }
 }

@@ -169,7 +169,6 @@ $app->group('/user', function () {
     $this->post('/unblock', 'App\Controllers\UserController:Unblock');
     $this->get('/bought', 'App\Controllers\UserController:bought');
     $this->delete('/bought', 'App\Controllers\UserController:deleteBoughtGet');
-    $this->get('/inviteurl_reset', 'App\Controllers\UserController:resetInviteURL');
 
     $this->get('/url_reset', 'App\Controllers\UserController:resetURL');
 })->add(new Auth());
@@ -287,6 +286,8 @@ $app->group('/admin', function () {
     $this->post('/code/ajax', 'App\Controllers\Admin\CodeController:ajax_code');
 
     // User Mange
+    $this->get('/find', 'App\Controllers\AdminController:find');
+    $this->post('/finduser', 'App\Controllers\AdminController:finduser');
     $this->get('/user', 'App\Controllers\Admin\UserController:index');
     $this->get('/user/{id}/edit', 'App\Controllers\Admin\UserController:edit');
     $this->put('/user/{id}', 'App\Controllers\Admin\UserController:update');

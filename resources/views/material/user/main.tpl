@@ -372,7 +372,7 @@
 							{/if}
                                <li>
 								<a href="/user/invite">
-									<i class="icon icon-lg">loyalty</i>&nbsp;邀请与返利(25%提成)
+									<i class="icon icon-lg">loyalty</i>&nbsp;邀请链接
 								</a>
 							</li>
 							
@@ -408,7 +408,7 @@
 								<a href="/user/lookingglass">
 									<i class="icon icon-lg">visibility</i>&nbsp;延迟检测
 								</a>
-								<a href="https://wiki.maile3.com/" target="blank">
+								<a href="/user/announcement">
 									<i class="icon icon-lg">start</i>&nbsp;使用教程
 								</a>
 							</li>

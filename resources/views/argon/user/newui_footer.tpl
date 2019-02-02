@@ -13,7 +13,7 @@
               <a href="/legal" class="nav-link" >服务及保障</a>
             </li>
             <li class="nav-item">
-              <a href="https://wiki.maile3.com" class="nav-link" target="_blank">帮助中心</a>
+              <a href="https://wiki.ddjiasu.com" class="nav-link" target="_blank">帮助中心</a>
             </li>
             <li class="nav-item">
               <a href="/user" class="nav-link" >用户中心</a>

@@ -22,12 +22,13 @@
 			<section class="content-inner margin-top-no">
 				<div class="row">
 
-                  <!---
 				    <div class="col-lg-12 col-md-12">
                         <div class="card margin-bottom-no">
                             <div class="card-main">
                                 <div class="card-inner">
-                                   <p>充值完成后需刷新网页以查看余额，通常一分钟内到账。</p>
+									<div class="card-inner">
+										<p class="card-heading">注意!</p>
+										<p>充值完成后需刷新网页以查看余额，通常一分钟内到账。</p>
 										{if $config["enable_admin_contact"] == 'true'}
 											<p class="card-heading">如果没有到账请立刻联系站长：</p>
 											{if $config["admin_contact1"]!=null}
@@ -41,38 +42,13 @@
 											{/if}
 										{/if}
 										<br/>
-										<p><i class="icon icon-lg">monetization_on</i>当前余额：<font color="red" size="5">{$user->money}</font> 元</p>
-                                    </div>
+										<p><i class="icon icon-lg">attach_money</i>当前余额：<font color="red" size="5">{$user->money}</font> 元</p>
+									</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-					------>
-                  <div class="col-lg-12 col-md-12">
-						<div class="card margin-bottom-no">
-							<div class="card-main">
-								<div class="card-inner">
-									<div class="card-inner">
-										<p class="card-heading">当前余额：<font color="red" size="5">{$user->money}</font> 元</p>
-									</div>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-12 col-md-12">
-						<div class="card margin-bottom-no">
-							<div class="card-main">
-								<div class="card-inner">
-									<div class="card-inner">
-                                      <p class="card-heading">红包码(与充值无关)支付宝扫码(手机点击该图片)支付宝红包,立减!充值请向下滑动!</p>
-										<p><a href="https://qr.alipay.com/c1x09807njeutfbehmjrxe2"><img src="/assets/public/img/hongbao.jpg" height="200" width="200"></a></p>
-									</div>
-									
-								</div>
-							</div>
-						</div>
-					</div>
+
 					
 				    {if $pmw!=''}
 					<div class="col-lg-12 col-md-12">
@@ -86,7 +62,6 @@
 					</div>
 					{/if}
 
-                  <!---
 					<div class="col-lg-12 col-md-12">
 						<div class="card margin-bottom-no">
 							<div class="card-main">
@@ -107,7 +82,6 @@
 							</div>
 						</div>
 					</div>
-				---->
 					
 					<div class="col-lg-12 col-md-12">
 						<div class="card margin-bottom-no">
@@ -281,6 +255,7 @@
 						$("#qrcode").html(data.qrcode);
 						$("#info").html("您的订单金额为："+data.amount+"元。");
 						$("#alipay").modal();
+						setTimeout(f, 1000);
 					} else {
 						$("#result").modal();
 						$("#msg").html(data.msg);
@@ -316,6 +291,5 @@
 		});
 		tid = setTimeout(f, 1000); //循环调用触发setTimeout
 	}
-	setTimeout(f, 1000);
 })
 </script>

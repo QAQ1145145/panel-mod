@@ -48,7 +48,7 @@ class User extends Model
     {
         return $this->attributes['auto_reset_day'];
     }
-  
+
     public function isAdmin()
     {
         return $this->attributes['is_admin'];
@@ -129,7 +129,7 @@ class User extends Model
     }
 
     public function getUuid() {
-        return Uuid::uuid3(Uuid::NAMESPACE_DNS, $this->attributes['passwd'])->toString();
+        return Uuid::uuid3(Uuid::NAMESPACE_DNS, $this->attributes['id']. '|' .$this->attributes['passwd'])->toString();
     }
 
     public function addManyInviteCodes($num)
@@ -228,12 +228,6 @@ class User extends Model
         $uid = $this->attributes['id'];
         Link::where('userid', $uid)->delete();
     }
-
-    public function clear_inviteCodes()
-     {
-         $uid = $this->attributes['id'];
-         InviteCode::where('user_id', $uid)->delete();
-     }
 
     public function online_ip_count()
     {

@@ -219,7 +219,7 @@ class URL
     public static function getAllUrl($user, $is_mu, $is_ss = 0, $enter = 0) {
         $return_url = '';
         if ($user->transfer_enable >0){
-			$return_url .= URL::getAnnouncement($user).($enter == 0 ? ' ' : "\n");
+          	$return_url .= URL::getAnnouncement($user).($enter == 0 ? ' ' : "\n");
 			$return_url .= URL::getWarn($user).($enter == 0 ? ' ' : "\n");
             $return_url .= URL::getUserTraffic($user).($enter == 0 ? ' ' : "\n");
             $return_url .= URL::getUserClassExpiration($user).($enter == 0 ? ' ' : "\n");
@@ -276,9 +276,9 @@ class URL
     public static function getV2Url($user, $node){
         $node_explode = explode(';', $node->server);
         $item = [
-            'v'=>'2',
-            'host'=>'',
-            'path'=>'',
+            'v'=>'2', 
+            'host'=>'', 
+            'path'=>'', 
             'tls'=>''
         ];
         $item['ps'] = $node->name;
@@ -290,13 +290,13 @@ class URL
             $item['net'] = $node_explode[5];
         } else {
             $item['net'] = "tcp";
-        }
+        } 
 
         if (count($node_explode) >= 7) {
             $item['type'] = $node_explode[6];
         } else {
             $item['type'] = "none";
-        }
+        } 
 
         return "vmess://".base64_encode((json_encode($item, JSON_UNESCAPED_UNICODE)));
     }
@@ -348,7 +348,7 @@ class URL
 			array_push($array_server,$server);
 		}
 		$array_all['servers']=$array_server;
-		$json_all=json_encode($array_all);
+		$json_all=json_encode($array_all);	
 		if($base64){
 			return "ssd://".base64_encode($json_all);
 		}
@@ -411,18 +411,18 @@ class URL
                     ->orWhere("user_id", "=", 0);
             }
         )->first();
-        /***节点名字后加#偏移值***/
-         $temp = explode("#", $node->name);
-         $offset = 0;
-         if ($temp[1]!=null){
-             $node_name = $temp[0];
-             if (is_numeric($temp[1])) {
-                 $offset = $temp[1];
-             }
-         } else {
-             $node_name = $node->name;
-         }
-         /************/
+       	/***节点名字后加#偏移值***/
+        $temp = explode("#", $node->name);
+        $offset = 0;
+        if ($temp[1]!=null){
+            $node_name = $temp[0];
+            if (is_numeric($temp[1])) {
+                $offset = $temp[1];
+            }
+        } else {
+            $node_name = $node->name;
+        }
+        /************/
         if ($relay_rule != null) {
             $node_name .= " - ".$relay_rule->dist_node()->name;
         }
@@ -448,8 +448,8 @@ class URL
             $user = URL::getSSRConnectInfo($user);
         }
         $return_array['address'] = $node->server;
-        /***端口偏移***/
-         $return_array['port'] = $user->port+$offset;
+       	/***端口偏移***/
+        $return_array['port'] = $user->port+$offset;
         $return_array['passwd'] = $user->passwd;
         $return_array['method'] = $user->method;
         $return_array['remark'] = $node_name;
@@ -467,10 +467,10 @@ class URL
         $new_user = clone $user;
         return $new_user;
     }
-	
+  
 	public static function getAnnouncement($user){
-		if($user->class ==100){
-			$ssurl = "127.0.0.1:1:auth_chain_a:chacha20:tls1.2_ticket_auth:YnJlYWt3YWxs/?obfsparam=&protoparam=&remarks=".Tools::base64_url_encode("双11活动,请关注官网")."&group=".Tools::base64_url_encode(Config::get('appName'));
+		if($user->class !=100){
+			$ssurl = "127.0.0.1:1:auth_chain_a:chacha20:tls1.2_ticket_auth:YnJlYWt3YWxs/?obfsparam=&protoparam=&remarks=".Tools::base64_url_encode("春节活动,请关注官网")."&group=".Tools::base64_url_encode(Config::get('appName'));
 		}
       	return "ssr://".Tools::base64_url_encode($ssurl);
 	}

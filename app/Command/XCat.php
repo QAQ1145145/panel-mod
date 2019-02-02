@@ -41,10 +41,6 @@ class XCat
                  return $this->initQQWry();
             case("sendDiaryMail"):
                 return DailyMail::sendDailyMail();
-            case("sendUserMessage"):
-                return DailyMail::sendUserMessage();
-            case("sendAdminMessage"):
-                return DailyMail::sendAdminMessage();
 			case("sendFinanceMail_day"):
 			    return FinanceMail::sendFinanceMail_day();
 			case("sendFinanceMail_week"):

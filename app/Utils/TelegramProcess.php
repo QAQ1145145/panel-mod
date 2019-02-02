@@ -208,14 +208,14 @@ class TelegramProcess
 				case 'help':
                     $help_list = "命令列表：
 /checkin - 签到（记得日常签到哦）
-/specialcheckin - 特殊签到（偶尔开放）
+/specialcheckin - 特殊签到（-1000~200MB）
 /stat - 查询等级/流量
 /account - 用户详情
 /prpr - 调戏
 /ping - 查看群组或用户id
 /help - 查看帮助
 						您可以在面板里点击 资料编辑 ，滑到页面最下方，就可以看到 Telegram 绑定指示了，绑定您的账号，更多精彩功能等着您去发掘。
-						如果您不会软件或是网站的使用，可以前往Wiki查看相关教程 https://wiki.maile3.com
+						如果您不会软件或是网站的使用，可以前往Wiki查看相关教程 https://wiki.ddjiasu.com
 ";
                 //switch - 切换SS/SSR配置
                     $bot->sendMessage($message->getChat()->getId(), $help_list);
@@ -348,14 +348,14 @@ class TelegramProcess
                 case 'help':
                     $help_list_group = "用户命令列表：
 /checkin - 签到（记得日常签到哦）
-/specialcheckin - 特殊签到（偶尔开放）
+/specialcheckin - 特殊签到（-1000~2000MB）
 /stat - 查询等级/流量
 /account - 用户详情
 /prpr - 调戏
 /ping - 查看群组或用户id
 /help - 查看帮助
 						您可以在面板里点击 资料编辑 ，滑到页面最下方，就可以看到 Telegram 绑定指示了，绑定您的账号，更多精彩功能等着您去发掘。
-						如果您不会软件或是网站的使用，可以前往Wiki查看相关教程 https://wiki.maile3.com
+						如果您不会软件或是网站的使用，可以前往Wiki查看相关教程 https://wiki.ddjiasu.com
 ";
                 //switch - 切换SS/SSR配置
                     $bot->sendMessage($message->getChat()->getId(), $help_list_group, $parseMode = null, $disablePreview = false, $replyToMessageId = $message->getMessageId());

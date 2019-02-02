@@ -44,15 +44,15 @@
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div>
                     <span class="heading">{$user->money}</span>
-                    <span class="description">剩余金币</span>
+                    <span class="description">余额</span>
                   </div>
                   <div>
-                    <span class="heading">Lv.{$user->class}</span>
+                    <span class="heading">L{$user->class}</span>
                     <span class="description">等级</span>
                   </div>
                   <div>
 					<span class="heading">{$user->online_ip_count()}/{if $user->node_connector==0}不限制{else}{$user->node_connector}{/if}</span>
-                    <span class="description">在线IP数</span>
+                    <span class="description">在线 IP 数</span>
                   </div>
                 </div>
               </div>

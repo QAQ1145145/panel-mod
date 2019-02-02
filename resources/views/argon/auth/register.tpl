@@ -125,7 +125,7 @@
                 <div class="custom-control custom-control-alternative custom-checkbox">
                     <input class="custom-control-input" id="legal" name="legal" type="checkbox"> 
                     <label class="custom-control-label" for="legal">
-                      <span>我会自己参考<a href="https://wiki.maile3.com" target="_blank">教程</a>解决使用问题</span>
+                      <span>我会自己参考<a href="https://wiki.ddjiasu.com" target="_blank">教程</a>自理使用问题</span>
                     </label>
                   </div>
 

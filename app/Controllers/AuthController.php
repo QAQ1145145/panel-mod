@@ -208,7 +208,7 @@ class AuthController extends BaseController
             // check email format
             if (!Check::isEmailLegal($email)) {
                 $res['ret'] = 0;
-                $res['msg'] = "邮箱无效。您可能填入了不规范的邮箱地址，或是使用了不被允许的临时邮箱。";
+                $res['msg'] = "邮箱无效";
                 return $response->getBody()->write(json_encode($res));
             }
 
@@ -229,7 +229,7 @@ class AuthController extends BaseController
 
 
             $mailcount = EmailVerify::where('email', '=', $email)->where('expire_in', '>', time())->count();
-            if ($mailcount >= 5) {
+            if ($mailcount >= 3) {
                 $res['ret'] = 0;
                 $res['msg'] = "此邮箱请求次数过多";
                 return $response->getBody()->write(json_encode($res));
@@ -316,7 +316,7 @@ class AuthController extends BaseController
         // check email format
         if (!Check::isEmailLegal($email)) {
             $res['ret'] = 0;
-            $res['msg'] = "邮箱无效。您可能填入了不规范的邮箱地址，或是使用了不被允许的临时邮箱。";
+            $res['msg'] = "邮箱无效";
             return $response->getBody()->write(json_encode($res));
         }
         // check email

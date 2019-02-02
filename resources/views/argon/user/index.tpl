@@ -128,7 +128,7 @@
               </div>
 										{if $user->lastSsTime()=='从未使用喵'}
 										<p style="color:#ff9180">系统检测到您从没使用过，是否需要帮助呢？</p>
-										<p style="color:#ff9180">来这里看看我们的<a href="https://wiki.maile3.com" target="_blank"/>教程</a>吧</p>
+										<p style="color:#ff9180">来这里看看我们的<a href="https://wiki.ddjiasu.com" target="_blank"/>教程</a>吧</p>
 										<hr>
 										{/if}
 										<p>{$ann->content}更新日期<code>{$ann->date}</code></p>
@@ -163,7 +163,7 @@
                   </li>
                    {/if}-->
                   <li class="nav-item">
-                    <a class="nav-link mb-sm-3 mb-md-0" href="https://wiki.maile3.com" target="_blank">使用教程</a>
+                    <a class="nav-link mb-sm-3 mb-md-0" href="https://wiki.ddjiasu.com" target="_blank">使用教程</a>
                   </li>
                 </ul>
               </div>
@@ -178,12 +178,12 @@
                       										<div sryle="padding:18px">
                                                               	<h4 style="margin-top:12px">AppleID</h4>
                                                                 <p>AppleID:<code>
-                                                                    {if $user->class>1 and $user->class!=4}                                          	 down@m-e.me
-                                                                    {else}															VIP用户可见
+                                                                    {if $user->class>1}                                          	 down@m-e.me
+                                                                    {else}															高级会员可见
                                                                     {/if}
                                                                 </code>密码<code>
-                                                                {if $user->class>1 and $user->class!=4}															Tk112211
-                                                                    {else}															VIP用户可见
+                                                                {if $user->class>1}															En112211
+                                                                    {else}															高级会员可见
                                                                     {/if}
                                                                 </code></p><hr>
                      										</div>
@@ -208,7 +208,7 @@
 																<hr>
 															<div style="padding:18px">
 																<h4 style="margin-top:12px">使用教程</h4>
-																<a class="btn btn-primary mt-4" href="https://wiki.maile3.com" target="_blank">点击查看</a>
+																<a class="btn btn-primary mt-4" href="https://wiki.ddjiasu.com" target="_blank">点击查看</a>
 															</div>
 																<hr>
                       </div>
@@ -246,7 +246,7 @@
                       											<hr>
                       											<div style="padding:18px">
 																<h4 style="margin-top:12px">使用教程</h4>
-																<a class="btn btn-primary mt-4 copy-text" href="https://wiki.maile3.com" target="_blank">点击查看</a>
+																<a class="btn btn-primary mt-4 copy-text" href="https://wiki.ddjiasu.com" target="_blank">点击查看</a>
 																</div>
 																<hr>
                      									</div>
@@ -259,7 +259,7 @@
                                                   <h4 style="margin-top:12px">ShadowsocksR For Windows</h4>
                     							  <p><img src="images/clients/ss-windows.svg" style="margin-top:12px" width="80px" align="center"></p>
                                                   <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-win.7z">软件下载</a>
-                                                  <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://www.maile3.com/user/getpcconf?is_mu=0&is_ss=0">配置下载</a>
+                                                  <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://www.ddjiasu.com/user/getpcconf?is_mu=0&is_ss=0">配置下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Shadowrocket</h4>
                     							  <p><img src="images/clients/shadowrocket.svg" style="margin-top:12px" width="80px" align="center"></p>
@@ -278,7 +278,7 @@
                                                   <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-mac.dmg">立即下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Linux、路由器</h4>
-                                                  <a class="btn btn-primary mt-4" style="margin-right:0;" href="https://wiki.maile3.com/?p=29" target="_blank">请戳这里</a>
+                                                  <a class="btn btn-primary mt-4" style="margin-right:0;" href="https://wiki.ddjiasu.com/?p=29" target="_blank">请戳这里</a>
                                                   <hr>
                                             <!----->
                  </div>

@@ -41,7 +41,7 @@ class Pay
     {
 
             return '
-                        <p><i class="icon icon-lg">monetization_on</i>&nbsp;余额&nbsp;<font color="red" size="5">'.$user->money.'</font>&nbsp;元</p>
+                        <p><i class="icon icon-lg">attach_money</i>&nbsp;余额&nbsp;<font color="red" size="5">'.$user->money.'</font>&nbsp;元</p>
 
                         <p><img src="/images/qianbai-4.png" height="250" width="200" /></p>
                         <div class="form-group form-group-label">
@@ -98,10 +98,10 @@ class Pay
     {
             return '
                         <div class="form-group pull-left">
-                        <p class="modal-title" >欢迎使用支付宝兑换金币</p>
-                        <p>输入兑换金额：</p>
+                        <p class="modal-title" >本站支持支付宝在线充值</p>
+                        <p>输入充值金额：</p>
                         <div class="form-group form-group-label">
-                        <label class="floating-label" for="price">兑换金额</label>
+                        <label class="floating-label" for="price">充值金额</label>
                         <input id="type" class="form-control" name="amount" />
                         </div>
                         <a class="btn btn-flat waves-attach" id="urlChange" ><span class="icon">√</span>&nbsp;兑换</a>
@@ -117,7 +117,7 @@ class Pay
 										<form action="/user/code/yft" method="post" target="_blank">
 										<div class="card-inner">
 											<p class="card-heading">在线充值</p>
-											<p><i class="icon icon-lg">monetization_on</i>&nbsp;余额&nbsp;<font color="red" size="5">'.$user->money.'</font>&nbsp;元</p>
+											<p><i class="icon icon-lg">attach_money</i>&nbsp;余额&nbsp;<font color="red" size="5">'.$user->money.'</font>&nbsp;元</p>
 											<p><img src="/images/qianbai-4.png" height="250" width="200" /></p>
 											<div class="form-group form-group-label">
 												<label class="floating-label" for="price">输入充值金额</label>

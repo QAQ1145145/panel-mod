@@ -47,7 +47,7 @@ class Config
 			"admin_contact2" => self::get("admin_contact2"),
 			"admin_contact3" => self::get("admin_contact3"),
 			"enable_flag" => self::get("enable_flag"),
- "mergeSub" => self::get("mergeSub")
+            "mergeSub" => self::get("mergeSub")
          ];
     }
 

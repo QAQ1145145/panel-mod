@@ -32,7 +32,7 @@
 						<table class="table ">
                             <tr>
 								
-                                <th width="80">订单ID</th>
+                             <!--   <th>ID</th> -->
                                 <th>商品名称</th>
 								<th>内容</th>
 								<th>价格</th>
@@ -44,7 +44,7 @@
                             {foreach $shops as $shop}
                             <tr>
 								
-                                <td>{$shop->id}</td>
+                          <!--       <td>#{$shop->id}</td> -->
                                 <td>{$shop->shop()->name}</td>
 								<td>{$shop->shop()->content()}</td>
 								<td>{$shop->price} 元</td>
@@ -60,7 +60,7 @@
 								<td>自动重置</td>
 								{/if}
                               <td>
-                                    <a class="btn btn-brand" {if $shop->renew==0}disabled{else} href="javascript:void(0);" onClick="delete_modal_show('{$shop->id}')"{/if}>取消自动续费</a>
+                                    <a class="btn btn-brand" {if $shop->renew==0}disabled{else} href="javascript:void(0);" onClick="delete_modal_show('{$shop->id}')"{/if}>关闭自动续费</a>
                                 </td>
                                 
                             </tr>
@@ -75,7 +75,7 @@
 							<div class="modal-content">
 								<div class="modal-heading">
 									<a class="modal-close" data-dismiss="modal">×</a>
-									<h2 class="modal-title">确认要取消自动续费？</h2>
+									<h2 class="modal-title">确认要关闭自动续费？</h2>
 								</div>
 								<div class="modal-inner">
 									<p>请您确认。</p>

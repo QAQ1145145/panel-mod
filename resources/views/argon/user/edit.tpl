@@ -289,7 +289,7 @@
                 </div>
             </div>	
 <!---teletram begin---->
-						<div class="col-lg-6">
+						<div class="col-lg-6" style="margin-top:30px;">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 										<p class="card-heading">Telegram 绑定</p>

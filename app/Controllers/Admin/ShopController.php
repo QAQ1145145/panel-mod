@@ -257,15 +257,14 @@ class ShopController extends AdminController
         $datatables->edit('period_sales', function ($data) {
  			$shop = Shop::find($data['id']);
  			$period=Config::get('sales_period');
-
  			if($period=='expire'){
  				$period=json_decode($shop->content,true)['class_expire'];
  			}
-
  			$period=$period*24*60*60;
  			$sales = Bought::where('shopid',$shop->id)->where('datetime','>' ,time()-$period)->count();
  			return $sales;
          });
+
         $body = $response->getBody();
         $body->write($datatables->generate());
     }

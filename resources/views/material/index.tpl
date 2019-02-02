@@ -30,22 +30,16 @@
                        {if $user->isLogin}
 						<div class="content">
 							<div class="inner">
-                                 <p>用户：<code style="font-family:'微软雅黑';">{$user->user_name}</code>
-                                    等级：{if $user->class==0}
-											<code style="font-family:'微软雅黑';">免费用户</code>
-                                          {elseif  $user->class==1}
-                                             <code style="font-family:'微软雅黑';">免费用户</code>
-                                          {elseif  $user->class==2}
-                                             <code style="font-family:'微软雅黑';">普通用户</code>
-                                          {elseif  $user->class==3}
-                                             <code style="font-family:'微软雅黑';">普通用户</code>
+                                  <p>用户：<code>{$user->user_name}</code>
+                                    等级：{if $user->class!=0}
+											<code>VIP{$user->class}</code>
                                           {else}
-                                             <code style="font-family:'微软雅黑';">高级用户</code>
+                                             <code>免费</code>
                                               {/if}
                                     过期时间：{if $user->class_expire!="1989-06-04 00:05:00"}
 											    <code>{$user->class_expire}</code>
                                           {else}
-                                              <code style="font-family:'微软雅黑';">不过期</code>
+                                              <code>不过期</code>
                                               {/if}</p>
                                   <p>总流量：<code>{$user->enableTraffic()}</code>
                                   已用流量：<code>{$user->usedTraffic()}</code>
@@ -57,7 +51,7 @@
                                 <li><a href="#1">简介</a></li>
 					            <li><a href="/user">用户中心</a></li>
 								<li><a href="/user/logout">退出登录</a></li>
-								<li><a href="https://wiki.maile3.com" target="blank">使用教程</a></li>
+								<li><a href="#5">下载</a></li>
                         </ul>
 						</nav>
                               {else}
@@ -76,7 +70,7 @@
                                <li><a href="#1">简介</a></li>
 								<li><a href="/auth/login">登录</a></li>
 								<li><a href="/auth/register">注册</a></li>
-                              	<li><a href="https://wiki.maile3.com" target="blank">使用教程</a></li>
+                              	<li><a href="#5">下载</a></li>
                               
                            </ul>
 						</nav>
@@ -88,7 +82,7 @@
                       <!--标签1开始-->
                       <article id="1">
                       <h2 class="major">简介</h2>
-                      <script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><div id="lwlhitokoto"><script>lwlhitokoto()</script></article>
+                      <p>「ホワイトアルバムの季節」が、また、やってきた。</p></article>
 					  <!--
 					  简介修改示例: 
 					  <p> 123</p>
@@ -111,11 +105,11 @@
 	                        <article id="5">
 							<h2 class="major">软件下载</h2>
 							<ul>
-							  <li><a href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-win.7z" class="icon fa-windows"><span class="label"></span> Windows</a></li>
-							  <li><a href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-mac.dmg" class="icon fa-apple"><span class="label">Mac</span> Mac</a></li>
-							  <li><a href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-android.apk" class="icon fa-android"><span class="label">Android</span> Android</a></li>
-							  <li><a href="itms-services://?action=download-manifest&url=https://down.m-e.me/ipa.plist" class="icon fa-apple"><span class="label">iOS</span> iOS</a></li>
-                              <li><a href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/%E5%8F%AE%E5%BD%93%E5%8A%A0%E9%80%9F%E5%99%A8-setup.exe" class="icon fa-gamepad"><span class="label">Win游戏专用</span> Win游戏专用</a></li>
+							  <li><a href="/ssr-download/ssr-win.7z" class="icon fa-windows"><span class="label"></span> Windows</a></li>
+							  <li><a href="/ssr-download/ssr-mac.dmg" class="icon fa-apple"><span class="label">Mac</span> Mac</a></li>
+							  <li><a href="/ssr-download/ssr-android.apk" class="icon fa-android"><span class="label">Android</span> Android</a></li>
+							  <li><a href="#ios" class="icon fa-apple"><span class="label">iOS</span> iOS</a></li>
+                              <li><a href="/ssr-download/SSTap.7z" class="icon fa-gamepad"><span class="label">Win游戏专用</span> Win游戏专用</a></li>
                             
 	                         </ul>
                              </article>

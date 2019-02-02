@@ -45,7 +45,7 @@
                     <span class="description">剩余金币</span>
                   </div>
                   <div>
-                    <span class="heading">L{$user->class}</span>
+                    <span class="heading">Lv.{$user->class}</span>
                     <span class="description">等级</span>
                   </div>
                   <div>
@@ -77,11 +77,12 @@
 									<p>什么情况会被禁用？</p>
 									<p>1. 5次以上触碰『屏蔽违法网站』审计规则</p>
 									<p>2. 10次以上触碰其他审计规则</p>
-									<p>3. 严重违反相关用户协议，请阅读<a target="_blank" href="{$config["baseUrl"]}/legal">用户协议</a></p>
+                   					<p>3. 分享账号或公开自己订阅地址</p>
+									<p>4. 严重违反相关用户协议，请阅读<a target="_blank" href="{$config["baseUrl"]}/legal">用户协议</a></p>
 									<p>{$ssr_sub_token}</p>
 									{if $user->enable=="0"}
 									<!--<button id="unlock" class="btn btn-primary mt-4">&nbsp;解除禁用</button>-->
-                    				<h6>若需解封请联系管理员或右下角联系客服，酌情处理，请告诉我们您的用户名。</h6>
+                    				<h6>若需解封请联系右下角联系客服或联系QQ/TG群组管理员，酌情处理，请告诉我们您的用户名。</h6>
 									{/if}
                   </div>
                 </div>
