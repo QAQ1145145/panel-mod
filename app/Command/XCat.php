@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Command;
 
@@ -47,6 +47,10 @@ class XCat
 			    return FinanceMail::sendFinanceMail_week();
 			case("sendFinanceMail_month"):
 			    return FinanceMail::sendFinanceMail_month();
+            case("sendUserMessage"):
+                return DailyMail::sendUserMessage();
+            case("sendAdminMessage"):
+                return DailyMail::sendAdminMessage();
             case("reall"):
                     return DailyMail::reall();
             case("syncusers"):
