@@ -1,4 +1,4 @@
-
+﻿
 
 
 
@@ -70,7 +70,7 @@
 								<th>操作</th>
                                 <th>ID</th>
                                 <th>商品名称</th>
-								<th>内容</th>
+                             	<th>兑换时间</th>
 								<th>价格</th>
                                 <th>续费时间</th>
 								<th>续费时重置流量</th>
@@ -83,7 +83,7 @@
                                 </td>
                                 <td>#{$shop->id}</td>
                                 <td>{$shop->shop()->name}</td>
-								<td>{$shop->shop()->content()}</td>
+                              	<td>{date("20y年m月d日 h:i",$shop->datetime)}</td>
 								<td>{$shop->price} 金币</td>
 								{if $shop->renew==0}
                                 <td>不自动续费</td>
