@@ -1,4 +1,4 @@
-{include file='admin/main.tpl'}
+﻿{include file='admin/main.tpl'}
 
 
 
@@ -91,7 +91,44 @@ function changetouser_modal_show(id) {
 
 $(document).ready(function(){
  	table_1 = $('#table_1').DataTable({
-			"stateSave": true,
+						stateSave: true,
+ 			serverSide: true,
+ 			ajax: {
+ 				url :"/admin/user/ajax",
+                 type: "POST",
+ 			},
+ 			"columns": [
+ 				{ "data": "op" },
+ 				{ "data": "id" },
+ 				{ "data": "user_name" },
+ 				{ "data": "remark" },
+ 				{ "data": "email" },
+ 				{ "data": "money" },
+ 				{ "data": "im_type" },
+ 				{ "data": "im_value" },
+ 				{ "data": "node_group" },
+ 				{ "data": "account_expire_in" },
+ 				{ "data": "class" },
+ 				{ "data": "class_expire" },
+ 				{ "data": "passwd" },
+ 				{ "data": "port" },
+ 				{ "data": "method" },
+ 				{ "data": "protocol" },
+ 				{ "data": "obfs" },
+ 				{ "data": "online_ip_count" },
+ 				{ "data": "last_ss_time" },
+ 				{ "data": "used_traffic" },
+ 				{ "data": "enable_traffic" },
+ 				{ "data": "last_checkin_time" },
+ 				{ "data": "today_traffic" },
+ 				{ "data": "is_enable" },
+ 				{ "data": "reg_date" },
+ 				{ "data": "reg_location" },
+ 				{ "data": "auto_reset_day" },
+ 				{ "data": "auto_reset_bandwidth" },
+ 				{ "data": "ref_by" },
+ 				{ "data": "ref_by_user_name" }
+ 			],
 			"columnDefs": [
 				{
 						targets: [ '_all' ],
@@ -155,27 +192,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$.ajaxSettings.async = false;
-	page = 1;
-	while (1) {
-			next = 1;
-			$.getJSON("user/ajax?page=" + page, function( data ) {
-					if (data.next == 0) {
-						next = 0;
-					}
-					for ( var i=0, ien=data.data.length ; i<ien ; i++ ) {
-						data.data[i][0] = '<a class="btn btn-brand" href="/admin/user/' + data.data[i][0] + '/edit">编辑</a>' +
-						'<a class="btn btn-brand-accent" id="delete" href="javascript:void(0);" onClick="delete_modal_show(\'' + data.data[i][0] + '\')">删除</a>'+
-						'<a class="btn btn-brand-accent" id="changetouser" href="javascript:void(0);" onClick="changetouser_modal_show(\'' + data.data[i][0] + '\')">切换为此用户</a>';
-					}
-					table_1.rows.add(data.data).draw();
-			});
 
-			if (next == 0) break;
-
-			page++;
-	}
-	$.ajaxSettings.async = true;
 	
 	
 	function changetouser_id(){
@@ -211,4 +228,3 @@ $(document).ready(function(){
 
 
 </script>
-s

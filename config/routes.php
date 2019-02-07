@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 use Slim\App;
 use Slim\Container;
@@ -294,6 +294,7 @@ $app->group('/admin', function () {
     $this->delete('/user', 'App\Controllers\Admin\UserController:delete');
     $this->post('/user/changetouser', 'App\Controllers\Admin\UserController:changetouser');
     $this->get('/user/ajax', 'App\Controllers\Admin\UserController:ajax');
+  	$this->post('/user/ajax', 'App\Controllers\Admin\UserController:ajax_post');
 
 
     $this->get('/coupon', 'App\Controllers\AdminController:coupon');
