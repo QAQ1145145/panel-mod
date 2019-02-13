@@ -171,6 +171,8 @@ $app->group('/user', function () {
     $this->delete('/bought', 'App\Controllers\UserController:deleteBoughtGet');
 
     $this->get('/url_reset', 'App\Controllers\UserController:resetURL');
+  
+	$this->get('/inviteurl_reset', 'App\Controllers\UserController:resetInviteURL');
 })->add(new Auth());
 
 // Auth

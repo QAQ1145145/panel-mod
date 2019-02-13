@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace App\Controllers;
 
@@ -51,6 +51,11 @@ class UserController extends BaseController
     private $user;
 
     public function __construct()
+    {
+        $this->user = Auth::getUser();
+    }
+  
+    public function shopUIswitch()
     {
         $this->user = Auth::getUser();
     }
@@ -1945,6 +1950,14 @@ class UserController extends BaseController
         $user = $this->user;
         $user->clean_link();
         $newResponse = $response->withStatus(302)->withHeader('Location', '/user');
+        return $newResponse;
+    }
+  
+    public function resetInviteURL($request, $response, $args)
+    {
+        $user = $this->user;
+        $user->clear_inviteCodes();
+        $newResponse = $response->withStatus(302)->withHeader('Location', '/user/invite');
         return $newResponse;
     }
 	
