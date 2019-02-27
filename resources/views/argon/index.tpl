@@ -336,9 +336,14 @@ img {
      <div class="collapse navbar-collapse"> 
       <ul class="nav navbar-nav navbar-right"> 
        <li class="active"> <a href="/"> <i class="material-icons">dashboard</i> 首页 </a> </li> 
+       {if $user->isLogin}
+       <li class=""> <a href="user/"> <i class="material-icons">assignment_ind</i> 用户中心 </a> </li> 
+       <li class=""> <a href="/user/logout"> <i class="material-icons">cloud_off</i> 登出 </a> </li> 
+			{else}
        <li class=""> <a href="auth/register"> <i class="material-icons">person_add</i> 注册 </a> </li> 
        <li class=""> <a href="auth/login"> <i class="material-icons">fingerprint</i> 登录 </a> </li> 
        <li class=""> <a href="user#download"> <i class="material-icons">turned_in_not</i> 下载 </a> </li> 
+			{/if}
       </ul> 
      </div> 
     </div> 
