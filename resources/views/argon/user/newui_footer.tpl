@@ -13,7 +13,7 @@
               <a href="/legal" class="nav-link" >服务及保障</a>
             </li>
             <li class="nav-item">
-              <a href="https://wiki.ddjiasu.com" class="nav-link" target="_blank">帮助中心</a>
+              <a href="https://wiki.ddjiasu.me" class="nav-link" target="_blank">帮助中心</a>
             </li>
             <li class="nav-item">
               <a href="/user" class="nav-link" >用户中心</a>
@@ -26,7 +26,7 @@
       </div>
     </div>
   </footer>
-  <script src="https://cdn.godann.com/kitui/vendor/jquery/jquery.min.js"></script>
+ <!-- <script src="https://cdn.godann.com/kitui/vendor/jquery/jquery.min.js"></script>
   <script src="https://cdn.godann.com/kitui/vendor/popper/popper.min.js"></script>
 	<script src="https://cdn.godann.com/theme/material/js/jquery.md5.js"></script>
 	<script src="https://cdn.godann.com/theme/material/js/gt.js"></script>
@@ -34,6 +34,16 @@
   <script src="https://cdn.godann.com/kitui/vendor/bootstrap/bootstrap.min.js"></script>
   <script src="https://cdn.godann.com/kitui/vendor/headroom/headroom.min.js"></script>
   <script src="https://cdn.godann.com/kitui/js/argon.js?v=1.0.0"></script>  
-	<script src="https://cdn.jsdelivr.net/npm/clipboard@1.5.16/dist/clipboard.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/clipboard@1.5.16/dist/clipboard.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/popper/popper.min.js"></script>
+<script src="https://cdn.godann.com/theme/material/js/jquery.md5.js"></script>
+<script src="https://cdn.godann.com/theme/material/js/gt.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0"></script>
+<script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/headroom/headroom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/js/argon.js?v=1.0.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@1.5.16/dist/clipboard.min.js"></script>
+<script src="/assets/js/qrcode.min.js"></script>
 </body>
 </html>
