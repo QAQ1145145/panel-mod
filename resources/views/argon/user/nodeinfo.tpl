@@ -240,4 +240,4 @@
 
 
 </script>
-<script src="https://cdn.godann.com/kitui/js/switch.js"></script>
+<script src="/assets/js/switch.js"></script>

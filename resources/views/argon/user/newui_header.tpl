@@ -15,6 +15,7 @@
   <link href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link type="text/css" href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/css/argon.css" rel="stylesheet">
   <!--<link type="text/css" href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/css/argon.css?v=1.0.1" rel="stylesheet">-->
+  <link type="text/css" href="/theme/argon.css" rel="stylesheet">
 </head>
 
 <body>

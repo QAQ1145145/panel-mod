@@ -5,10 +5,17 @@
   <meta name="msvalidate.01" content="4652A53480D3E379798BE86168C0A149" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-  	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
- 	<link href="https://cdn.godann.com/kitui/vendor/nucleo/css/nucleo.css" rel="stylesheet">
- 	<link href="https://cdn.godann.com/kitui/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  	<link type="text/css" href="https://cdn.godann.com/kitui/css/argon.css" rel="stylesheet">
+  <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://cdn.godann.com/kitui/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="https://cdn.godann.com/kitui/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  
+  <link href="/theme/argon.css" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link type="text/css" href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/css/argon.css" rel="stylesheet">
+  <!--<link type="text/css" href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/css/argon.css?v=1.0.1" rel="stylesheet">-->
+  <link type="text/css" href="/theme/argon.css" rel="stylesheet">
   <!--<link href="/argon-halloween.css" rel="stylesheet">-->
 </head>
 
@@ -45,7 +52,7 @@
                 <span class="nav-link-inner--text">介绍</span>
               </a>
               <div class="dropdown-menu">
-                <a href="https://wiki.maile3.com" target="_blank" class="dropdown-item">帮助文档</a>
+                <a href="https://wiki.ddjiasu.me" target="_blank" class="dropdown-item">帮助文档</a>
                 <a href="/staff" class="dropdown-item">STAFF</a>
               </div>
             </li>
