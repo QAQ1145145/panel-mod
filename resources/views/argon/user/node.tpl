@@ -314,7 +314,7 @@
                                       	{else}
                                       		{$node->name}
                                       	{/if}
-                                     	{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
+                                     	<!--{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}//注释掉中转目标节点-->
 									</p>
 										{if $node->mu_only != 1 && $node->sort != 11}
 											{if $node->node_class > $user->class}
@@ -389,7 +389,7 @@
 	<div class="modal-dialog modal-xs">
 		<div class="modal-content">
 			<div class="modal-inner" style="height:480px">
-				<iframe class="iframe-seamless" frameborder="0" scrolling="no" title="Modal with iFrame" id="infoifram"></iframe>
+				<iframe class="iframe-seamless" style="width:100%;height:100%;" frameborder="0" scrolling="no" title="Modal with iFrame" id="infoifram"></iframe>
 			</div>
 		</div>
 	</div>
