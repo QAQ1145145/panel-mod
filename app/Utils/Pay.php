@@ -5,6 +5,7 @@ use App\Models\Code;
 use App\Models\Paylist;
 use App\Models\Payback;
 use App\Services\Config;
+use App\Services\Payment;
 class Pay
 {
     public static function getHTML($user)
@@ -27,6 +28,8 @@ class Pay
                 return Pay::codepay_html($user);
             case 'f2fpay_codepay':
                 return Pay::f2fpay_codepay_html($user);
+            case 'trimepay':
+    			return Payment::purchaseHTML();
             default:
                 return "";
         }
@@ -98,10 +101,10 @@ class Pay
     {
             return '
                         <div class="form-group pull-left">
-                        <p class="modal-title" >本站支持支付宝在线充值</p>
-                        <p>输入充值金额：</p>
+                        <p class="modal-title" >本站支持支付宝兑换金币</p>
+                        <p>输入兑换金额：</p>
                         <div class="form-group form-group-label">
-                        <label class="floating-label" for="price">充值金额</label>
+                        <label class="floating-label" for="price">金币兑换</label>
                         <input id="type" class="form-control" name="amount" />
                         </div>
                         <a class="btn btn-flat waves-attach" id="urlChange" ><span class="icon">√</span>&nbsp;兑换</a>

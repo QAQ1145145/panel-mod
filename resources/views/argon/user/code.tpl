@@ -58,17 +58,17 @@
                 </div>
               </div>
             </div>
-			
-			
-			
-		 <div>
-			<div>
-                  <div class="card-body">
-										<div class="form-group form-group-label">
-											<label class="floating-label" for="code">欢迎使用支付宝App兑换（捐赠）金币，我们会将您的捐赠金额用于维持长期稳定的服务。</label>
-                  </div>
-                </div>
-            </div>		
+
+			<div class="row row-grid justify-content-between align-items-center mt-lg">
+				<div class="col-lg-12">
+					<div class="card card-lift shadow border-0">
+						<div class="card-body">
+							<p>欢迎自愿使用兑换（捐赠）金币，我们会将您的捐赠金额用于维持长期稳定的服务。</p>
+                        	<p>当前剩余金币：<code>{$user->money} </code></p>
+						</div>
+					</div>
+				</div>	
+			</div>
 			
 		 <div class="row row-grid justify-content-between align-items-center mt-lg">
 			<div class="col-lg-6">
@@ -82,16 +82,29 @@
                   </div>
                 </div>
             </div>
-           			{if $pmw!=''}
-			<div class="col-lg-6">
+
+			<!--<div class="col-lg-6" style="margin-top:10px;">
+                <div class="card card-lift shadow border-0">
+                  <div class="card-body">
+						<h6 class="category">兑换码</h6>
+										<div class="form-group form-group-label">
+											<label class="floating-label" for="code">兑换金币</label>
+											<input class="form-control" id="code" type="text">
+										</div>
+											<button class="btn btn-primary mt-4" id="code-update" >&nbsp;兑换</button>
+                  </div>
+                </div>
+            </div>-->
+                      			{if $pmw!=''}
+			<div class="col-lg-8" style="margin-top:20px;">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 										{$pmw}
                   </div>
                 </div>
-            </div>			
+            </div>
 					{/if}
-
+        </div>
         </div>
 			
 			
@@ -164,7 +177,7 @@
 							<div style="background-clip: padding-box;background-color: #fff;border: 1px solid transparent;border-radius: 25px;position: relative;box-shadow: 0 1px 50px rgba(245,124,0,.5);outline: 0;box-sizing: border-box;display: block;">
 								<div style="margin-top: 24px;padding-right: 24px;padding-left: 24px;position: relative;box-sizing: border-box;display: block;">
 									<a style="color: #727272;cursor: pointer;display: block;float: right;margin-right: -8px;padding-right: 8px;padding-left: 8px;font-size: 20px;line-height: 28px;background-color: transparent;color: #ff0022;text-decoration: none;background-image: none;box-sizing: border-box;" data-dismiss="modal">×</a>
-									<h2 style="color: #32325d: 400;margin-top: 48px;margin-bottom: 12px;box-sizing: border-box;display: block;font-size: 1.5em;-webkit-margin-before: 0.83em;-webkit-margin-after: 0.83em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;">正在连接支付宝</h2>
+									<h2 style="color: #32325d: 400;margin-top: 48px;margin-bottom: 12px;box-sizing: border-box;display: block;font-size: 1.5em;-webkit-margin-before: 0.83em;-webkit-margin-after: 0.83em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;">正在处理</h2>
 								</div>
 								<div class="modal-inner">
 									<p id="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;正在处理...</p>
@@ -178,7 +191,7 @@
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h6 class="modal-title" id="modal-title-default">正在连接支付宝</h6>
+                <h6 class="modal-title" id="modal-title-default">正在处理</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -192,7 +205,7 @@
 					
 					
 					
-					<div class="modal fade"  id="alipay" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+					<!--<div class="modal fade"  id="alipay" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
     <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -213,7 +226,7 @@
             </div>
         </div>
     </div>
-    </div>
+    </div>-->
 					
 					
 
@@ -224,7 +237,7 @@
 
 {include file='user/newui_footer.tpl'}
 
-<script>
+<!--<script>
 
   $("#buy_code").click(function () {
 	$("#result").modal();
@@ -324,6 +337,35 @@
 		tid = setTimeout(f, 1000); //循环调用触发setTimeout
 	}
 	setTimeout(f, 1000);
+})
+</script>-->
+<script>
+	$(document).ready(function () {
+		$("#code-update").click(function () {
+			$.ajax({
+				type: "POST",
+				url: "code",
+				dataType: "json",
+				data: {
+					code: $("#code").val()
+				},
+				success: function (data) {
+					if (data.ret) {
+						$("#result").modal();
+						$("#msg").html(data.msg);
+						window.setTimeout("location.href=window.location.href", {$config['jump_delay']});
+					} else {
+						$("#result").modal();
+						$("#msg").html(data.msg);
+						window.setTimeout("location.href=window.location.href", {$config['jump_delay']});
+					}
+				},
+				error: function (jqXHR) {
+					$("#result").modal();
+					$("#msg").html("发生错误：" + jqXHR.status);
+				}
+			})
+		})
 })
 </script>
 
