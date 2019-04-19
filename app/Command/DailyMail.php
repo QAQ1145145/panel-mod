@@ -42,7 +42,7 @@ class DailyMail
                         "user" => $user,"text" => $text,"lastday"=>$lastday
                     ], [
                     ]);
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                     echo $e->getMessage();
                 }
                 $text="";
@@ -59,51 +59,51 @@ class DailyMail
         );
     }
   
-	public static function sendUserMessage() #sendUserMessage,给用户发送通知		
-     {		
- 		$users = User::all();		
-		
-         foreach ($users as $user) {		
-             if ($user->email_Notification==0) {		
-                 #管理员账户email_Notification设为1,用户设为0		
- 				echo "Sending:".$user->id."... Done.\r\n";		
-                 $subject = "全体通知"; #邮件标题		
-                 $to = $user->email;		
-		
-                 try {		
-                     Mail::send($to, $subject, 'news/Message.tpl', [		
-                         "user" => $user		
-                     ], [		
-                     ]);		
-                 } catch (Exception $e) {		
-                     echo $e->getMessage();		
-                 }		
-             }		
-         }		
-     }		
-		
-     public static function sendAdminMessage() #sendAdminMessage,给管理员发送通知,用于测试发送效果		
-     {		
- 		$users = User::all();		
-		
-         foreach ($users as $user) {		
-             if ($user->email_Notification==1) {		
-                 #管理员账户email_Notification设为1,用户设为0		
- 				echo "Sending:".$user->id."... Done.\r\n";		
-                 $subject = "全体通知"; #邮件标题		
-                 $to = $user->email;		
-		
-                 try {		
-                     Mail::send($to, $subject, 'news/Message.tpl', [		
-                         "user" => $user		
-                     ], [		
-                     ]);		
-                 } catch (Exception $e) {		
-                     echo $e->getMessage();		
-                 }		
-             }		
-         }		
-     }
+	public static function sendUserMessage() #sendUserMessage,给用户发送通知
+    {
+		$users = User::all();
+
+        foreach ($users as $user) {
+            if ($user->email_Notification==0 and $user->class!=0) {
+                #管理员账户email_Notification设为1,用户设为0
+				echo "Sending:".$user->id."... Done.\r\n";
+                $subject = "全体通知"; #邮件标题
+                $to = $user->email;
+
+                try {
+                    Mail::send($to, $subject, 'news/Message.tpl', [
+                        "user" => $user
+                    ], [
+                    ]);
+                } catch (\Exception $e) {
+                    echo $e->getMessage();
+                }
+            }
+        }
+    }
+
+    public static function sendAdminMessage() #sendAdminMessage,给管理员发送通知,用于测试发送效果
+    {
+		$users = User::all();
+
+        foreach ($users as $user) {
+            if ($user->email_Notification==1) {
+                #管理员账户email_Notification设为1,用户设为0
+				echo "Sending:".$user->id."... Done.\r\n";
+                $subject = "全体通知"; #邮件标题
+                $to = $user->email;
+
+                try {
+                    Mail::send($to, $subject, 'news/Message.tpl', [
+                        "user" => $user
+                    ], [
+                    ]);
+                } catch (\Exception $e) {
+                    echo $e->getMessage();
+                }
+            }
+        }
+    }
 
 
     public static function reall()

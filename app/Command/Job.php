@@ -74,7 +74,7 @@ class Job
                 "text" => $text
             ], ["/tmp/ssmodbackup.zip"
             ]);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo $e->getMessage();
         }
         system("rm -rf /tmp/ssmodbackup", $ret);
@@ -176,7 +176,7 @@ class Job
                           "user" => $user,"text" => $text
                       ], [
                       ]);
-                  } catch (Exception $e) {
+                  } catch (\Exception $e) {
                       echo $e->getMessage();
                   }
                 }
@@ -207,7 +207,7 @@ class Job
                         "user" => $user,"text" => $text
                     ], [
                     ]);
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                     echo $e->getMessage();
                 }
             }
@@ -394,7 +394,7 @@ class Job
                         "user" => $user,"text" => $text
                     ], [
                     ]);
-                } catch (Exception $e) {
+                } catch (\Exception $e) {
                     echo $e->getMessage();
                 }
 
@@ -411,7 +411,7 @@ class Job
                             "user" => $user,"text" => $text
                         ], [
                         ]);
-                    } catch (Exception $e) {
+                    } catch (\Exception $e) {
                         echo $e->getMessage();
                     }
                     $myfile = fopen(BASE_PATH."/storage/".$bought->id.".renew", "w+") or die("Unable to open file!");
@@ -451,7 +451,7 @@ class Job
                                 "user" => $user,"text" => $text
                             ], [
                             ]);
-                        } catch (Exception $e) {
+                        } catch (\Exception $e) {
                             echo $e->getMessage();
                         }
                     }
@@ -483,7 +483,7 @@ class Job
                                 "user" => $user,"text" => $text
                             ], [
                             ]);
-                        } catch (Exception $e) {
+                        } catch (\Exception $e) {
                             echo $e->getMessage();
                         }
 
@@ -522,9 +522,9 @@ class Job
                                     $notice_text = "喵喵喵~ ".$node->name." 节点掉线了喵~域名解析被切换到了 ".$Temp_node->name." 上了喵~";
                                 }
                             }
-                        } else {
+                        } /*else {
                             $notice_text = "喵喵喵~ ".$node->name." 节点掉线了喵~";
-                        }
+                        }*/
                     }
 
                     Telegram::Send($notice_text);
@@ -549,7 +549,7 @@ class Job
                                 "user" => $user,"text" => $text
                             ], [
                             ]);
-                        } catch (Exception $e) {
+                        } catch (\Exception $e) {
                             echo $e->getMessage();
                         }
 
@@ -581,9 +581,9 @@ class Job
 
 
                             $notice_text = "喵喵喵~ ".$node->name." 节点恢复了喵~域名解析被切换回来了喵~";
-                        } else {
+                        } /*else {
                             $notice_text = "喵喵喵~ ".$node->name." 节点恢复了喵~";
-                        }
+                        }*/
                     }
 
                     Telegram::Send($notice_text);
@@ -626,7 +626,7 @@ class Job
                                         "user" => $user,"text" => $text
                                     ], [
                                     ]);
-                                } catch (Exception $e) {
+                                } catch (\Exception $e) {
                                     echo $e->getMessage();
                                 }
                             }
@@ -660,7 +660,7 @@ class Job
                             "user" => $user,"text" => $text
                         ], [
                         ]);
-                    } catch (Exception $e) {
+                    } catch (\Exception $e) {
                         echo $e->getMessage();
                     }
                 }
@@ -676,7 +676,7 @@ class Job
                             "user" => $user,"text" => $text
                         ], [
                         ]);
-                    } catch (Exception $e) {
+                    } catch (\Exception $e) {
                         echo $e->getMessage();
                     }
 
@@ -700,7 +700,7 @@ class Job
                             "user" => $user,"text" => $text
                         ], [
                         ]);
-                    } catch (Exception $e) {
+                    } catch (\Exception $e) {
                         echo $e->getMessage();
                     }
 
@@ -718,32 +718,25 @@ class Job
             }
 
 
-            if ((int)Config::get('enable_auto_clean_unused_days')!=0 && max($user->t, strtotime($user->reg_date)) + ((int)Config::get('enable_auto_clean_unused_days')*86400) < time() && $user->class == 0 && $user->money <= Config::get('auto_clean_min_money')) {
 
-                if (Config::get('enable_auto_clean_unused')=='true') {
-                    $subject = Config::get('appName')."-您的用户账户已经被删除了";
-                    $to = $user->email;
-                    $text = "您好，系统发现您的账号已经 ".Config::get('enable_auto_clean_unused_days')." 天没使用了，帐号已经被删除。" ;
-                    try {
-                        Mail::send($to, $subject, 'news/warn.tpl', [
-                            "user" => $user,"text" => $text
-                        ], [
-                        ]);
-                    } catch (Exception $e) {
-                        echo $e->getMessage();
-                    }
-
-                    Radius::Delete($user->email);
-
-                    RadiusBan::where('userid', '=', $user->id)->delete();
-
-                    Wecenter::Delete($user->email);
-
-                    $user->delete();
-
-
-                    continue;
+            if (Config::get('auto_clean_unused_days')>0 && 
+				max($user->t, strtotime($user->reg_date)) + (Config::get('auto_clean_unused_days')*86400) < time() && 
+				$user->class == 0 && 
+				$user->money <= Config::get('auto_clean_min_money')
+			) {
+				$subject = Config::get('appName')."-您的用户账户已经被删除了";
+                $to = $user->email;
+                $text = "您好，系统发现您的账号已经 ".Config::get('auto_clean_unused_days')." 天没使用了，帐号已经被删除。" ;
+                try {
+                    Mail::send($to, $subject, 'news/warn.tpl', [
+                        "user" => $user,"text" => $text
+                    ], [
+                    ]);
+                } catch (\Exception $e) {
+                    echo $e->getMessage();
                 }
+                $user->kill_user();
+                continue;
             }
 
             if ($user->class!=0 && (((Config::get('enable_account_expire_reset')=='true' && strtotime($user->expire_in) < time()) ? $user->transfer_enable != Tools::toGB(Config::get('enable_account_expire_reset_traffic')) : true) && ((Config::get('enable_class_expire_reset')=='true' && ($user->class!=0 && strtotime($user->class_expire)<time() && strtotime($user->class_expire) > 1420041600))? $user->transfer_enable != Tools::toGB(Config::get('enable_class_expire_reset_traffic')) : true)) && strtotime($user->class_expire)<time() && strtotime($user->class_expire) > 1420041600) {
@@ -754,6 +747,7 @@ class Job
                     $user->last_day_t = 0;
                   	$user->auto_reset_day = 0;
 					$user->auto_reset_bandwidth = 0;
+                  	$user->node_connector  = 1 ;
 
                     $subject = Config::get('appName')."-您的用户等级已经过期了";
                     $to = $user->email;
@@ -763,7 +757,7 @@ class Job
                             "user" => $user,"text" => $text
                         ], [
                         ]);
-                    } catch (Exception $e) {
+                    } catch (\Exception $e) {
                         echo $e->getMessage();
                     }
                 }
@@ -843,7 +837,7 @@ class Job
 																	], [
 																	]);
 								}
-								catch (Exception $e) {
+								catch (\Exception $e) {
 									echo $e->getMessage();
 								}
 								if (Config::get('enable_cloudxns')=='true' && ($node->sort==0 || $node->sort==10)) {
@@ -899,7 +893,7 @@ class Job
 									                            ], [
 									                            ]);
 								}
-								catch (Exception $e) {
+								catch (\Exception $e) {
 									echo $e->getMessage();
 								}
 								if (Config::get('enable_cloudxns')=='true'&& ($node->sort==0 || $node->sort==10)) {

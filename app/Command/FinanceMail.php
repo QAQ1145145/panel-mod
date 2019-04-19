@@ -74,7 +74,7 @@ class FinanceMail
 			"user" => $user,"title"=>$title,"text" => $text
 			], [
 			]);
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 			echo $e->getMessage();
 			}
 		}
@@ -134,7 +134,7 @@ class FinanceMail
 			"user" => $user,"title"=>$title,"text" => $text
 			], [
 			]);
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 			echo $e->getMessage();
 			}
 		}
@@ -192,7 +192,7 @@ class FinanceMail
 			"user" => $user,"title"=>$title,"text" => $text
 			], [
 			]);
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 			echo $e->getMessage();
 			}
 		}
