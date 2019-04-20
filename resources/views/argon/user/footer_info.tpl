@@ -1,7 +1,7 @@
 
   </main>
   
-<script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/js/jquery.min.js"></script>
+<script src="/theme/argon/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/popper/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/js/jquery.md5.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/GBigCousin/argon/js/gt.js"></script>

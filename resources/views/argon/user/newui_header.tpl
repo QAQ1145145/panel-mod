@@ -11,9 +11,9 @@
   
   <link href="/theme/argon.css" rel="stylesheet">-->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link type="text/css" href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/css/argon.css" rel="stylesheet">
+  <link href="/theme/argon/nucleo.css" rel="stylesheet">
+  <link href="/theme/argon/font-awesome.min.css" rel="stylesheet">
+  <!--<link type="text/css" href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/css/argon.css" rel="stylesheet">-->
   <!--<link type="text/css" href="https://cdn.jsdelivr.net/gh/GBigCousin/argon/assets/css/argon.css?v=1.0.1" rel="stylesheet">-->
   <link type="text/css" href="/theme/argon.css" rel="stylesheet">
 </head>
@@ -66,6 +66,8 @@
               <div class="dropdown-menu">
                 <a href="/user/node" class="dropdown-item">节点列表</a>
                 <a href="/user/relay" class="dropdown-item">中转规则</a>
+				<a href="/user/trafficlog" class="dropdown-item">流量记录</a>
+
               </div>
             </li>
             <li class="nav-item dropdown">
