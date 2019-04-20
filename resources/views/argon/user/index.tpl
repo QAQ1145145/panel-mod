@@ -74,8 +74,8 @@
               <div class="progress-wrapper">
                 <div class="progress-info">
                   <div class="progress-percentage">
-                    <span style="color:#B5B5B5;" title="{number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% 剩余">{$user->LastusedTraffic()}</span>
-                    <span style=""> / </span><span style="color:#32CD32;" title="{number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% 剩余">{$user->unusedTraffic()}</span>
+                    <span style="color:#B5B5B5;" title="{number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% 剩余">{$user->usedTraffic()}</span>
+                    <span style=""> / </span><span style="color:#32CD32;" title="{number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}% 剩余">{$user->enableTraffic()}</span>
                     <span>({number_format(($user->transfer_enable-($user->u+$user->d))/$user->transfer_enable*100,2)}%)</span>
                   </div>
                 </div>
@@ -128,12 +128,12 @@
               </div>
 										{if $user->lastSsTime()=='从未使用喵'}
 										<p style="color:#ff9180">系统检测到您从没使用过，是否需要帮助呢？</p>
-										<p style="color:#ff9180">来这里看看我们的<a href="https://wiki.ddjiasu.com" target="_blank"/>教程</a>吧</p>
+										<p style="color:#ff9180">来这里看看我们的<a href="https://wiki.ddjiasu.me" target="_blank"/>教程</a>吧</p>
 										<hr>
 										{/if}
 										<p>{$ann->content}更新日期<code>{$ann->date}</code></p>
                         <p style="background-color:transparent;color: #ff4081;text-decoration: none;cursor: pointer;"><a href="/user/announcement">更多公告</a></p>
-              			<p style="background-color:transparent;color: #ff4081;text-decoration: none;cursor: pointer;"><a href="tg://proxy?server=65.52.167.176&port=24000&secret=ddae034d152d3d98aa6ac004e394aa8faa">点击配置TG代理</a></p>
+              			<!--<p style="background-color:transparent;color: #ff4081;text-decoration: none;cursor: pointer;"><a href="tg://proxy?server=65.52.167.176&port=24000&secret=ddae034d152d3d98aa6ac004e394aa8faa">点击配置TG代理</a>-->
                 </div>
               </div>
             </div>
@@ -163,7 +163,7 @@
                   </li>
                    {/if}-->
                   <li class="nav-item">
-                    <a class="nav-link mb-sm-3 mb-md-0" href="https://wiki.ddjiasu.com" target="_blank">使用教程</a>
+                    <a class="nav-link mb-sm-3 mb-md-0" href="https://wiki.ddjiasu.me" target="_blank">使用教程</a>
                   </li>
                 </ul>
               </div>
@@ -179,11 +179,11 @@
                                                               	<h4 style="margin-top:12px">AppleID</h4>
                                                                 <p>AppleID:<code>
                                                                     {if $user->class>1}                                          	 down@m-e.me
-                                                                    {else}															高级会员可见
+                                                                    {else}															VIP可见
                                                                     {/if}
                                                                 </code>密码<code>
                                                                 {if $user->class>1}															En112211
-                                                                    {else}															高级会员可见
+                                                                    {else}															VIP可见
                                                                     {/if}
                                                                 </code></p><hr>
                      										</div>
@@ -208,7 +208,7 @@
 																<hr>
 															<div style="padding:18px">
 																<h4 style="margin-top:12px">使用教程</h4>
-																<a class="btn btn-primary mt-4" href="https://wiki.ddjiasu.com" target="_blank">点击查看</a>
+																<a class="btn btn-primary mt-4" href="https://wiki.ddjiasu.me" target="_blank">点击查看</a>
 															</div>
 																<hr>
                       </div>
@@ -246,39 +246,63 @@
                       											<hr>
                       											<div style="padding:18px">
 																<h4 style="margin-top:12px">使用教程</h4>
-																<a class="btn btn-primary mt-4 copy-text" href="https://wiki.ddjiasu.com" target="_blank">点击查看</a>
+																<a class="btn btn-primary mt-4 copy-text" href="https://wiki.ddjiasu.me" target="_blank">点击查看</a>
 																</div>
 																<hr>
                      									</div>
 												<div class="tab-pane fade" id="download" role="tabpanel" aria-labelledby="download-tab">
 											<!----->
-                                                  <h4 style="margin-top:12px">叮当加速器</h4>
-                    							  <p><img src="images/clients/logo.png" style="margin-top:12px" width="80px" align="center"></p>
+                                                  <h4 style="margin-top:12px">叮当加速器 For Windows</h4>
+                    							  <p><img src="/images/clients/logo.png" style="margin-top:12px" width="80px" align="center"></p>
                                                   <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/%E5%8F%AE%E5%BD%93%E5%8A%A0%E9%80%9F%E5%99%A8-setup.exe">立即下载</a>
                                                   <hr>
-                                                  <h4 style="margin-top:12px">ShadowsocksR For Windows</h4>
+                                                  <!--<h4 style="margin-top:12px">ShadowsocksR For Windows</h4>
                     							  <p><img src="images/clients/ss-windows.svg" style="margin-top:12px" width="80px" align="center"></p>
                                                   <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-win.7z">软件下载</a>
-                                                  <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://www.ddjiasu.com/user/getpcconf?is_mu=0&is_ss=0">配置下载</a>
-                                                  <hr>
+                                                  <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://www.ddjiasu.me/user/getpcconf?is_mu=0&is_ss=0">配置下载</a>
+                                                  <hr>-->
                                                   <h4 style="margin-top:12px">Shadowrocket</h4>
-                    							  <p><img src="images/clients/shadowrocket.svg" style="margin-top:12px" width="80px" align="center"></p>
+                    							  <p><img src="/images/clients/shadowrocket.svg" style="margin-top:12px" width="80px" align="center"></p>
                                                   <a class="btn btn-primary mt-2" style="margin-right:0;" href="itms-services://?action=download-manifest&url=https://down.m-e.me/shadowrocket.plist">立即下载</a>
+                      										<div sryle="padding:18px">
+                                                              	<h4 style="margin-top:12px">AppleID</h4>
+                                                                <p>AppleID:<code>
+                                                                    {if $user->class>1}                                          	 down@m-e.me
+                                                                    {else}															VIP可见
+                                                                    {/if}
+                                                                </code>密码<code>
+                                                                {if $user->class>1}															En112211
+                                                                    {else}															VIP可见
+                                                                    {/if}
+                                                                </code></p>
+                     										</div>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Quantumult</h4>
-                                                  <p><img src="images/clients/quantumult.jpg" style="margin-top:12px;border-radius:50%;" width="80px" align="center"></p>
+                                                  <p><img src="/images/clients/quantumult.jpg" style="margin-top:12px;border-radius:50%;" width="80px" align="center"></p>
                                                   <a class="btn btn-primary mt-2" style="margin-right:0;" href="itms-services://?action=download-manifest&url=https://down.m-e.me/quantumult.plist">立即下载</a>
+                      										<div sryle="padding:18px">
+                                                              	<h4 style="margin-top:12px">AppleID</h4>
+                                                                <p>AppleID:<code>
+                                                                    {if $user->class>1}                                          	 down@m-e.me
+                                                                    {else}															VIP可见
+                                                                    {/if}
+                                                                </code>密码<code>
+                                                                {if $user->class>1}															En112211
+                                                                    {else}															VIP可见
+                                                                    {/if}
+                                                                </code></p>
+                     										</div>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Shadowsocks For Android</h4>
-                    							  <p><img src="images/clients/ss-android.png" style="margin-top:12px" width="80px" align="center"></p>
+                    							  <p><img src="/images/clients/ss-android.png" style="margin-top:12px" width="80px" align="center"></p>
                                                   <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-android.apk">立即下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">ShadowsocksR For MacOS</h4>
-                    							  <p><img src="images/clients/ss-mac.svg" style="margin-top:12px" width="80px" align="center"></p>
+                    							  <p><img src="/images/clients/ss-mac.svg" style="margin-top:12px" width="80px" align="center"></p>
                                                   <a class="btn btn-primary mt-2" style="margin-right:0;" href="https://qcloud.coding.net/u/bfsdo0/p/tap-mod/git/raw/master/ssr-mac.dmg">立即下载</a>
                                                   <hr>
                                                   <h4 style="margin-top:12px">Linux、路由器</h4>
-                                                  <a class="btn btn-primary mt-4" style="margin-right:0;" href="https://wiki.ddjiasu.com/?p=29" target="_blank">请戳这里</a>
+                                                  <a class="btn btn-primary mt-4" style="margin-right:0;" href="https://wiki.ddjiasu.me/?p=29" target="_blank">请戳这里</a>
                                                   <hr>
                                             <!----->
                  </div>
