@@ -1,0 +1,230 @@
+ <!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#2d79fb">
+    <meta name="author" content="Webpixels">
+    <title>NetSpeeder</title>
+    <link rel="stylesheet" href="../../../../data/fonts.css">
+    <link rel="stylesheet" href="../../../../data/css/all.min.css">
+    <link rel="stylesheet" href="../../../../data/css/theme.css">
+</head>
+
+<body class="bg-primary">
+    <header class="header-transparent" id="header-main">
+        <div id="search-main" class="navbar-search">
+            <div class="container">
+                <div class="navbar-search-suggestions">
+                    <h6>Search Suggestions</h6>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a class="list-link" href="../../../../data/img/backgrounds/bottom-wave.svg#">
+                                        <i class="far fa-search"></i>
+                                        <span>macbook pro</span> in Laptops
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="list-link" href="../../../../data/img/backgrounds/bottom-wave.svg#">
+                                        <i class="far fa-search"></i>
+                                        <span>iphone 8</span> in Smartphones
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="list-link" href="../../../../data/img/backgrounds/bottom-wave.svg#">
+                                        <i class="far fa-search"></i>
+                                        <span>macbook pro</span> in Laptops
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="list-link" href="../../../../data/img/backgrounds/bottom-wave.svg#">
+                                        <i class="far fa-search"></i>
+                                        <span>beats pro solo 3</span> in Headphones
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="list-link" href="../../../../data/img/backgrounds/bottom-wave.svg#">
+                                        <i class="far fa-search"></i>
+                                        <span>smasung galaxy 10</span> in Phones
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-main navbar-expand-lg navbar-sticky navbar-transparent navbar-dark bg-dark" id="navbar-main">
+            <div class="container">
+                <a class="navbar-brand mr-lg-5"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-main-collapse">
+                    <ul class="navbar-nav align-items-lg-center">
+                         <li class="nav-item ">
+                            <a class="nav-link" href="../../../../index.html">主页</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                            <a class="nav-link" href="../../../../data/img/backgrounds/bottom-wave.svg#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">介绍</a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-arrow py-0">
+                                <div class="list-group">
+                                    <a href="https://help.netspeeder.xyz" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                           <div class="media-body ml-3">
+                                                <h6 class="mb-1">帮助文档</h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../../../../staff" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                              <div class="media-body ml-3">
+                                                <h6 class="mb-1">STAFF</h6>
+                                                 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                            <a class="nav-link" href="../../../../data/img/backgrounds/bottom-wave.svg#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">服务政策</a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-arrow py-0">
+                                <div class="list-group">
+                                    <a href="../../../../legal.1" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                           <div class="media-body ml-3">
+                                                <h6 class="mb-1">总则</h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../../../../legal/tos" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                              <div class="media-body ml-3">
+                                                <h6 class="mb-1">服务条款</h6>
+                                                 </div>
+                                        </div>
+                                    </a>
+                                    <a href="../../../../legal/privacy" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                              <div class="media-body ml-3">
+                                                <h6 class="mb-1">隐私条款</h6>
+                                                 </div>
+                                        </div>
+                                    </a>
+                                    <a href="../../../../legal/aup" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                              <div class="media-body ml-3">
+                                                <h6 class="mb-1">可使用政策</h6>
+                                                 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                     			                         <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                            <a class="nav-link" href="../../../../data/img/backgrounds/bottom-wave.svg#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">用户中心</a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-arrow py-0">
+                                <div class="list-group">
+                                    <a href="../../../../user/download" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                           <div class="media-body ml-3">
+                                                <h6 class="mb-1">登录</h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../../../../auth/register" class="list-group-item list-group-item-action">
+                                        <div class="media d-flex align-items-center">
+                                              <div class="media-body ml-3">
+                                                <h6 class="mb-1">注册</h6>
+                                                 </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                                          </ul>
+                </div>
+            </div>
+        </nav>
+    </header>    <main>
+        <section class="bg-darker">
+            <div class="spotlight overflow-hidden bg-cover bg-size--cover" data-spotlight="fullscreen" style="background-position: center center" data-separator="rounded-left" data-separator-orientation="bottom">
+                <div class="spotlight-holder">
+                    <div class="container py-xl d-flex align-items-center">
+                        <div class="col pt-md pt-lg-0">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 text-center">
+                                    <h6 class="font-weight-700 text-uppercase text-white ls-2 mb-md">哦豁</h6>
+                                    <h1 class="text-white">404</h1><br>
+           							<p><a href="javascript:history.back()" class="btn btn-outline-white btn-circle btn-translate--hover">返回</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   </main>
+    <footer class="footer footer-dark bg-gradient-primary">
+        <div class="container">
+            <div class="row pt-md">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="../../../../index.html">
+                        <img src="../speeder.png" alt="Footer logo" style="height: 70px;">
+                    </a>
+                </div>
+                <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0">
+                    <h6 class="heading mb-3">资源与支持</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="../../../../user/download">客户端</a>
+                        </li>
+                        <li><a href="https://help.netspeeder.xyz">帮助文档</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0">
+                    <h6 class="heading mb-3">条款及保障</h6>
+                    <ul class="list-unstyled text-small">
+                        <li><a href="../../../../legal.1">总则</a>
+                        </li>
+                        <li><a href="../../../../legal/tos">服务条款</a>
+                        </li>
+                        <li><a href="../../../../legal/privacy">隐私条款</a>
+                        </li>
+                        <li><a href="../../../../legal/aup">可使用政策</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-sm-4 mb-5 mb-lg-0">
+                    <h6 class="heading mb-3">关于我们</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="https://t.me/NetSpeederXYZ">Telegram Group</a>
+                        </li>
+                        <li><a href="https://t.me/BlackStoreOwner">卓</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-md-between py-4 mt-4 delimiter-top">
+                <div class="col-md-6">
+                    <div class="copyright text-sm font-weight-bold text-center text-md-left">
+                      CopyRight &copy;2017-2019 <a href="../../../../index.html" class="font-weight-bold">NetSpeeder</a>. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<script src="http://netspeeder.net/js/jquery.boa.js"></script>
+    <script src="http://netspeeder.net/js/bootstrap.bundle.min.js"></script>
+    <script src="http://netspeeder.net/js/in-view.min.js"></script>
+    <script src="http://netspeeder.net/js/typed.min.js"></script>
+    <script src="http://netspeeder.net/js/theme.js"></script>
+
+</body>
+</html>
