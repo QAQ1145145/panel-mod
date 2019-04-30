@@ -52,7 +52,7 @@
                 </div>
               </div>
             </div>
-			<div class="mt-5 py-5 border-top text-center">
+			<!--<div class="mt-5 py-5 border-top text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-9">
 				免费节点
@@ -80,21 +80,7 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<p class="card-heading">
-                                        {if $node->name == "德国 倍率1 原生IP - 100Mbps - #10827"}
-                                      		德国 倍率1 原生IP - 100Mbps
-										{elseif $node->name == "芬兰 倍率1 原生IP- 100Mbps - #10587"}
-                                      		芬兰 倍率1 原生IP- 100Mbps
-                                      	{elseif $node->name == "香港 倍率2 原生IP HGC - 20Mbps - #19358"}
-                                      		香港 倍率2 原生IP HGC - 20Mbps
-                                    	{elseif $node->name == "香港 倍率2 原生IP HKBN - 100Mbps - #11027"}
-                                      		香港 倍率2 原生IP HKBN - 100Mbps
-                                      	{elseif $node->name == "香港13 倍率3 原生IP HKT - 100Mbps - #11027"}
-                                      		香港13 倍率3 原生IP HKT - 100Mbps
-                                    	{elseif $node->name == "香港14 倍率3 原生IP HKT - 100Mbps - #11027"}
-                                      		香港14 倍率3 原生IP HKT - 100Mbps
-                                      	{else}
                                       		{$node->name}
-                                      	{/if}
 										{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
 										{if $node->mu_only != 1 && $node->sort != 11}
@@ -158,12 +144,12 @@
 {/foreach}
 
 
-        </div>
+        </div>-->
 		
-			<!--<div class="mt-5 py-5 border-top text-center">
+			<div class="mt-5 py-5 border-top text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-9">	
-				普通节点
+				随缘赞助节点
                 </div>
               </div>
             </div>
@@ -171,7 +157,7 @@
 			        <div class="row row-grid justify-content-between align-items-center mt-lg">
 																{$id=0}
 											{foreach $node_prefix as $prefix => $nodes}		
-										{if $node_class[$prefix] >= 1 & $node_class[$prefix] < 4 }			
+										{if $node_class[$prefix] < 4 }			
 												{$id=$id+1}
 																{foreach $nodes as $node}		
 
@@ -179,27 +165,13 @@
 																	{if $node->sort == 10}
 																		{$relay_rule = $tools->pick_out_relay_rule($node->id, $user->port, $relay_rules)}
 																	{/if}
-						<div class="col-lg-6" style=" margin-top: 3rem;">
+						<div class="col-lg-4" style=" margin-top: 3rem;">
                 <div class="card card-lift shadow border-0">
                   <div class="card-body">
 							<div class="card-main">
 								<div class="card-inner">
 									<p class="card-heading">
-                                     	{if $node->name == "德国 倍率1 原生IP - 100Mbps - #10827"}
-                                      		德国 倍率1 原生IP - 100Mbps
-										{elseif $node->name == "芬兰 倍率1 原生IP- 100Mbps - #10587"}
-                                      		芬兰 倍率1 原生IP- 100Mbps
-                                      	{elseif $node->name == "香港 倍率2 原生IP HGC - 20Mbps - #19358"}
-                                      		香港 倍率2 原生IP HGC - 20Mbps
-                                    	{elseif $node->name == "香港 倍率2 原生IP HKBN - 100Mbps - #11027"}
-                                      		香港 倍率3 原生IP HKBN - 100Mbps
-                                      	{elseif $node->name == "香港13 倍率3 原生IP HKT - 100Mbps - #11027"}
-                                      		香港13 倍率3 原生IP HKT - 100Mbps
-                                    	{elseif $node->name == "香港14 倍率3 原生IP HKT - 100Mbps - #11027"}
-                                      		香港14 倍率3 原生IP HKT - 100Mbps
-                                      	{else}
                                       		{$node->name}
-                                      	{/if}
                                       	{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}
 									</p>
 											{if $node->mu_only != 1 && $node->sort != 11}
@@ -263,7 +235,7 @@
 {/foreach}
 
 
-        </div>-->
+        </div>
 		
 		
 <div class="mt-5 py-5 border-top text-center">
@@ -293,37 +265,20 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<p class="card-heading">
-										{if $node->name == "日本07 倍率1 IDCF 原生IP - 300Mbps - #11027"}
-                                      		日本07 倍率1 IDCF 原生IP - 300Mbps
-                                      	{elseif $node->name == "回国 泉州1 倍率1 CM - 100Mbps - #11027"}
-                                      		回国 泉州1 倍率1 CM - 100Mbps
-                                      	{elseif $node->name == "回国 泉州2 倍率1 CM - 100Mbps - #11027"}
-                                      		回国 泉州2 倍率1 CM - 100Mbps
-                                      	{elseif $node->name =="香港01 倍率0.5 原生IP HKT - 200Mbps - #55112"}
-                                      		香港01 倍率0.5 原生IP HKT - 200Mbps
-                                      	{elseif $node->name =="中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps - #11027"}
-                                      		中转/游戏 泉州->香港3 倍率1 阿里云 - 50Mbps
-                                      	{elseif $node->name =="香港02 倍率0.5 原生IP HKT  - 1000Mbps - #55112"}
-                                      		香港02 倍率0.5 原生IP HKT  - 1000Mbps
-										{elseif $node->name == "【网页】沪港专线 倍率1 阿里云 - #11027"}
-                                      		【网页】沪港专线 倍率1 阿里云
-										{elseif $node->name == "台湾7 倍率0.5 原生IP HiNet - 600Mbps - #55112"}
-                                      		台湾7 倍率0.5 原生IP HiNet - 600Mbps
-										{elseif $node->name == "香港09 倍率2 原生IP HKBN - 100Mbps - #11027"}
-                                      		香港09 倍率2 原生IP HKBN - 100Mbps
-                                      	{else}
-                                      		{$node->name}
-                                      	{/if}
+                                      		{if $node->name == "【视频】 深新专线2 倍率1 阿里云 - #443"}【视频】 深新专线2 倍率1 阿里云 - #125{else}{$node->name}{/if}
                                      	<!--{if $relay_rule != null} - {$relay_rule->dist_node()->name}{/if}//注释掉中转目标节点-->
 									</p>
+                                  		{if $node->node_class > $user->class}
+										<a class="btn btn-flat pull-right" >等级不足</a>
+                                  		{else}
 										{if $node->mu_only != 1 && $node->sort != 11}
-											{if $node->node_class > $user->class}
-												<a class="btn btn-flat pull-right" >等级不足</a>
-											{else}
 												<a class="btn btn-sm btn-primary pull-right" href="javascript:void(0);" onClick="urlChange('{$node->id}',0,{if $relay_rule != null}{$relay_rule->id}{else}0{/if})">普通端口</a>
 											{/if}
 										{/if}
+                                  	                            {if $node->node_class > $user->class}
+                                  								{else}
 																	{if ($node->sort == 0 || $node->sort == 10) && $node->custom_rss == 1 && $node->mu_only != -1}
+
 																		{foreach $node_muport as $single_muport}
 
 																			{if !($single_muport['server']->node_class <= $user->class && ($single_muport['server']->node_group == 0 || $single_muport['server']->node_group == $user->node_group))}
@@ -343,6 +298,7 @@
 																						
 																		{/foreach}
 																	{/if}
+                                  								{/if}
 									<p>
 										节点状态：
 										{if $node_heartbeat[$prefix]=="在线"}
